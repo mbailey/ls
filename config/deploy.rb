@@ -21,7 +21,7 @@ set :gems_for_project, %w(fastercsv will_paginate) # list of gems to be installe
 # Update these if you're not running everything on one host.
 role :app, 'ls.failmode.com'
 role :web, 'ls.failmode.com'
-role :db,  'db.failmode.com', :primary => true
+role :db,  'db.failmode.com', :primary => true, :no_release => true 
 
 namespace :deploy do
   task :restart, :roles => :app, :except => { :no_release => true } do
