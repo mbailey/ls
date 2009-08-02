@@ -4,5 +4,5 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/admin', :controller => 'volunteers'
   map.connect '/search', :controller => 'volunteers', :action => 'search'
   
-  map.root :controller => "home"
+  map.root :controller => "volunteers", :action => "new"
 end
