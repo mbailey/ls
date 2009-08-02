@@ -2,8 +2,7 @@ require 'deprec'
   
 set :application, "ls"
 set :domain, "ls.goodfordogs.org"
-set :repository,  "git://github.com/notahat/fun4paws.git"
-set :branch, "master"
+set :repository,  "git@github.com:mbailey/ls.git"
 set :scm, :git
 
 set :gateway, 'x1.failmode.com'
