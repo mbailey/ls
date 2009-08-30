@@ -40,15 +40,9 @@
     <div class="clear"></div>
 	<%= f.text_field_row :can_keep_other, 'Other (please specify)' %>
 	<div class="row clear">	
-	<%= f.label :can_transport, 'Are you able to pick up the pet(s) from a designated location?' %>
+	<%= f.label :can_transport, 'Are you able to transport the animals to and from the hospital for weekly checkups?' %>
 	Yes <%= f.radio_button :can_transport, true %>
 	No <%= f.radio_button :can_transport, false %>
-	</div>
-	
-	<div class="row clear">
-	<%= f.label :will_take_stray, 'Some of the pets will have lost their families. Are you prepared to foster a displaced (stray) pet until an adoptive home can be found?' %>
-	Yes <%= f.radio_button :will_take_stray, true %>
-	No <%= f.radio_button :will_take_stray, false %>
 	</div>
 	
 	<div class="row clear">

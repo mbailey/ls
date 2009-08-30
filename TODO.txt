@@ -1,3 +1,57 @@
+#
+
+- How secure is your fencing?
+Is your property securely fenced to prevent a dog escaping.
+ 
+ 
+What kind of shelter is available outside?
+: text field
+
+
+
+# Why do you want to be involved?
+Moving overseas
+loves kittens, hates cats
+loves cookies
+
+# How did you hear about foster care program?
+# Have you been involved in foster care program?
+  # Details including organizations name
+# What previous animal experience have you had?
+# Which of the following would you foster?
+  - injured dogs
+  - puppies
+  - puppies with mum
+  - injured cats
+  - kittens
+  - kittens with mum
+  
+# Medicating cats
+# Medicating dogs
+
+
+T&C
+I understand that the animal remains the property of LSAH while under my care.
+
+I am prepared to accept LSAH's decision about euthanizing and animal on humane grounds.
+
+I agree to keep and care for the animal as instructed by the vet or foster care supervisor. 
+
+I accept that foster animals may cause damage to property...[responsibility]
+
+I agree to allow a LSAH representative to make a home visit to ensure suitability of the home.  This will be carried about at a mutually agreed time prior to commencement of fostering.
+
+I agree for a police check to be done.
+
+
+
+
+
+
+
+
+
+
 Milestone 1
 
 * populate missing latlngs
