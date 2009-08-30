@@ -35,10 +35,10 @@
     </div>
 	<div class="row clear">
     <%= f.label :can_keep_cats, 'Number of cats?' %>
-    <%= f.select :can_keep_cats, (0..2).to_a  %>
+    <%= f.select :can_keep_cats, (0..6).to_a  %>
     </div>
     <div class="clear"></div>
-	<%= f.text_field_row :can_keep_other, 'Other (please specify)' %>
+	<%= f.text_field_row :can_keep_other, 'Other (please specify)', 'size' => 60 %>
 	<div class="row clear">	
 	<%= f.label :can_transport, 'Are you able to transport the animals to and from the hospital for weekly checkups?' %>
 	Yes <%= f.radio_button :can_transport, true %>
@@ -51,14 +51,9 @@
 	No <%= f.radio_button :can_administer_medical_care, false %>
 	</div>
 	<div class="clear">
-	<%= f.text_field_row :special_skills, 'Please list any relevant experience such as vet nursing, dog training etc?' %>
+	<%= f.text_field_row :special_skills, 'Please list any relevant experience such as vet nursing, dog training etc?', 'size' => 60 %>
     </div>
-	
-	<div class="row clear">
-	<%= f.label :requires_financial_support, "Do you need financial support to meet the pet’s basic needs? <br/> (This will not disqualify anyone from being a foster carer)" %>
-	Yes <%= f.radio_button :requires_financial_support, true %>
-	No <%= f.radio_button :requires_financial_support, false %>
-	</div>    
+	  
   </fieldset>
 
   <fieldset>
@@ -76,7 +71,11 @@
 	No <%= f.radio_button :can_sleep_inside_ongoing, false %>
 	</div>
 	
-	<%= f.text_field_row :how_secure, 'How dog secure is your fencing? height, picket, pailing etc.' %>
+	<div class="row" style="width: 100%">
+	<%= f.label :how_secure, 'Is your property securely fenced to prevent a dog escaping?' %>
+	Yes <%= f.radio_button :how_secure, true %>
+	No <%= f.radio_button :how_secure, false %>
+	</div>
 	
 	<div class="row" style="width: 100%">
 	<%= f.label :dog_safe_gates, 'Do you have dog safe gates?' %>
@@ -106,28 +105,25 @@
 
 	<div class="clear"></div>
 
-    <%= f.text_field_row :other_owned, 'Any other pets? (please specify)' %>
+    <%= f.text_field_row :other_owned, 'Any other pets? (please specify)', 'size' => 60 %>
   </fieldset>
 
   <fieldset>
 	<legend>Terms and Conditions</legend>
-	<p>You agree to return the pet and provided equipment to the owner on the owner’s request.</p>
-
-	<p>You agree to allow the pet owner to make regular reasonable contact with you to discuss the well being of their pet(s).</p>
-
-	<p>You agree that if for any reason you do not wish to continue to foster the pet(s), you will immediately contact Fun4Paws and allow them to manage a suitable relocation.</p>
-
-	<p>If for any reason you are going to be absent from the residence, Fun4Paws will need to be informed. Fun4Paws will assist in organizing appropriate care.</p>
-
-	<p>You agree to take full responsibility for the welfare of the pet(s) whilst it is in your care, excluding vet cost. You understand that any fees arising from negligence in caring for the dog will be the sole responsibility of the foster carer.</p>
-
-	<p>If for any number of reasons the pet becomes available for adoption, the carer will be given the first option to adopt.</p>
-
-	<p>Children’s access to the foster pet must be supervised at all times.</p>
-
-	<p>If you have a swimming pool or water feature it must be securely fenced for the safety of the pet.</p>
 	
-	<p><strong>By clicking on 'I accept' below you are agreeing to the Terms and Conditions above.</strong></p>
+<p>I understand that the animal remains the property of LSAH while under my care.</p>
+
+<p>I agree to keep and care for the animal as instructed by the vet or foster care supervisor.</p>
+
+<p>I understand that foster animals may cause damage to property and will not hold Lort Smith responsible for this should it occur.</p>
+
+<p>I agree to allow a LSAH representative to make a home visit to ensure suitability of the home.  This will be carried about at a mutually agreed time prior to commencement of fostering.</p>
+  
+<p>I am prepared to accept LSAH's decision about euthanizing and animal on humane grounds.</p>
+
+<p>I agree for a police check to be done.</p>
+    
+<p><strong>By clicking on 'I accept' below you are agreeing to the Terms and Conditions above.</strong></p>
   <%= f.submit "I accept. Register me." %>
   </fieldset>
 
