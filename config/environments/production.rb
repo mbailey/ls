@@ -22,3 +22,5 @@ config.action_controller.perform_caching             = true
 
 # Disable delivery errors, bad email addresses will be ignored
 # config.action_mailer.raise_delivery_errors = false
+
+GOOGLE_API_KEY = 'ABQIAAAAC7LDoM1owmUzuDy0v9kzUBREMnZv0X1tQqE1JWxNzS4YsVCfjBSuWBxaG5_EV1GF8GmthLm6mi-ICw'
