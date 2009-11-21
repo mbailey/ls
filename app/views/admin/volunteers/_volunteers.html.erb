@@ -12,7 +12,7 @@
 <% for volunteer in @volunteers %>
   <tr>
 	<td><%=h volunteer.id %></td>
-    <td><%= link_to h("#{volunteer.first_name} #{volunteer.last_name}"), admin_volunteers_path(volunteer) %></td>
+    <td><%= link_to h("#{volunteer.first_name} #{volunteer.last_name}"), [:admin, volunteer] %></td>
     <td><%=h volunteer.suburb %></td>
     <td><%=h volunteer.postcode %></td>
     <td><%=h volunteer.can_keep_dogs %></td>
