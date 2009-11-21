@@ -1,0 +1,191 @@
+= Factory Steps
+
+A set of cucumber steps and helper methods for generating factory objects using Machinist and
+possibly other factory plugins which support the same interface.
+
+== Install
+
+  gem install factory_steps
+
+Then run the generator
+
+  ./script/generate factory_steps
+
+This creates 2 files
+
+	features/step_definitions/factory_steps.rb
+	features/support/factory_steps_helpers.rb
+
+== Usage
+
+The basic principle is that you are usually only focusing on one record or instance of any given model
+per scenario. With that in mind you, once you have created the record you can use 'this' to refer to the
+instance of the model for the rest of your steps. This can avoid steps bloat and unnecessary detail in your
+steps which are a distraction from describing the behaviour.
+
+
+=== Examples
+
+Trivial:
+
+  Given a "post" exists
+  Then there should be 1 "post"
+
+
+Specify an attribute value:
+
+  Given a "post" exists with a "title" of "Old Title"
+  When I am on the edit page for this "post" # your custom step
+  And I fill in "Title" with "New Title"
+  And I press "Save"
+  Then this "post" should have a "title" of "New Title"
+
+
+Using a blueprint:
+
+  Given an "unpublished" "post" exists
+  When I am on the edit page for this "post" # your custom step
+  And I check "Publish"
+  And I press "Save"
+  Then this "post" should have be "published"
+
+
+This last one requires a named blueprint called :unpublished and that you have boolean method 'published?'
+
+Using association:
+
+  Given an "post" exists
+  And a "comment" exists for this "post"
+  Then there should be 1 "comment" for this "post"
+
+Using association on logged in user:
+
+  Given an "post" exists
+  And a "comment" exists for this "post"
+  Then there should be 1 "comment" for this "post"
+
+
+=== Helpers
+
+You can easily retrieve an object for a particular model created using a factory step with the following
+helper method:
+
+  get_current_object_for(Post)
+
+Though often you are getting the model name from a step argument which is a pain to always format into a
+class. Fortunately you pass the model name in a number of forms with no problem
+
+  get_current_object_for(:post)
+  get_current_object_for('post')
+  get_current_object_for('Post')
+
+And for multi word classes
+
+  # returns SpamComment
+  get_current_object_for('spam_comment')
+  get_current_object_for('spam comment')
+
+Handling object creation yourself still allows you to use the assertion steps if you store it using this
+helper method:
+
+  set_current_object_for(Post, post)
+
+Or create the object using a factory
+
+  set_current_object_for(Post)
+
+Or pass attributes to the factory with a hash
+
+  set_current_object_for(Post, :title => 'Big Post')
+
+You can directly use the helper method for getting a model class from the example values:
+
+  model_class('post') #=> Post
+
+
+=== Steps
+
+==== Object Creation
+
+Create object from model name
+
+  Given a "user" exists
+
+
+Create model object using named blueprint
+
+  Given an "admin" "user" exists
+
+
+Create model object with a specific attribute value
+
+  Given a "user" exists with "name" of "Pete Best"
+
+
+Create associated object for an existing object created with a factory step
+
+  Given a "comment" exists for this "post"
+
+
+Create associated object for an existing object with a specific attribute value
+
+  Given a "comment" exists for this "post" with "body" of "Nice post!"
+
+
+Create associated object from named blueprint for an existing object created with a factory step
+
+  Given a "spam" "comment" exists for this "post"
+
+
+Create associated object for an associated object of the logged in user
+
+  Given a "comment" exists for my "post"
+
+
+Create associated object of an associated object of the logged in user, with a specific attribute value
+
+  Given a "comment" exists for my "post" with a "body" of "Great post. I really like your blog."
+
+
+==== Assertions
+
+Assert that an object created with a factory step has specific attribute value
+
+  Then this "post" should have a "title" of "Big Post"
+
+
+Assert that an object created with a factory step has boolean method evaluating to true
+
+  Then this "post" should be "published"
+
+
+The method 'published?' should be defined on the model
+
+Assert a record count of a particular model
+
+  Then there should be 1 "post"
+
+  or
+
+  Then there should be 2 "posts"
+
+
+Assert a record count for an association on an object created with a factory step
+
+  Then there should be 1 "comment" for this "post"
+
+
+Assert a record count of a particular model with condition on an attribute value
+
+  Then there should be 1 "post" with "title" of "Big Post"
+
+
+Assert a record count of a particular model with the condition of attribute being null
+
+  Then there should be 1 "post" with a null "title"
+
+
+Assert a record count of a particular model with the condition of attribute being non-null
+
+  Then there should be 1 "post" with a null "title"
+
