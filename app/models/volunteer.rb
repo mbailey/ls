@@ -1,6 +1,6 @@
 require 'fastercsv'
 class Volunteer < ActiveRecord::Base
-  acts_as_mappable
+  # acts_as_mappable
   validates_presence_of :first_name, :last_name
   wraps_attribute :email_address, EmailAddress
   validates_presence_of :address_1, :suburb
