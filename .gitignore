@@ -19,3 +19,4 @@ vendor/gems/doc
 vendor/gems/environment.rb
 vendor/gems/gems
 vendor/gems/specifications
+bin/*
