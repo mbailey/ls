@@ -15,7 +15,7 @@ class Admin::VolunteersController < ApplicationController
     # @volunteers = Volunteer.paginate_by_board_id @board.id, :page => params[:page], :order => 'updated_at DESC'
     @volunteer_count = Volunteer.count
     
-    @volunteers = Volunteer.paginate :page => params[:page], :order => 'id DESC'
+    @volunteers = Volunteer.paginate :page => params[:page], :order => 'state, id'
 
     respond_to do |format|
       format.html # index.html.erb
