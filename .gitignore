@@ -12,3 +12,11 @@ config/database.yml
 mail_processing_command.txt
 collateral
 clean_lists/*
+vendor/plugins/geokit-rails/test/fixtures/mock_addresses.yml
+vendor/plugins/geokit-rails/test/fixtures/mock_organizations.yml
+vendor/gems/dirs
+vendor/gems/doc
+vendor/gems/environment.rb
+vendor/gems/gems
+vendor/gems/cache
+vendor/gems/specifications

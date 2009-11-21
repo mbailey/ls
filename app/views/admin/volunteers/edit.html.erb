@@ -1,6 +1,6 @@
 <h1>Editing volunteer</h1>
 
-<% form_for(@volunteer) do |f| %>
+<% form_for([:admin, @volunteer]) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -44,5 +44,5 @@
   </p>
 <% end %>
 
-<%= link_to 'Show', @volunteer %> |
-<%= link_to 'Back', volunteers_path %>
+<%= link_to 'Show', admin_volunteer_path(@volunteer) %> |
+<%= link_to 'Back', admin_volunteers_path %>

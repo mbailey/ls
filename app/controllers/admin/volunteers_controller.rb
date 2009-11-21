@@ -86,7 +86,7 @@ class Admin::VolunteersController < ApplicationController
     respond_to do |format|
       if @volunteer.update_attributes(params[:volunteer])
         flash[:notice] = 'Volunteer was successfully updated.'
-        format.html { redirect_to(@volunteer) }
+        format.html { redirect_to([:admin, @volunteer]) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
