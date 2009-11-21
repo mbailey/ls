@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Volunteers: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'application' %>
+<!--[if gte IE 7]> 
+  <style>
+    legend {
+      position: absolute;
+      top: -.8em;
+      left: .5em;
+    }
+    fieldset {
+      position: relative;
+      margin-top: 1em;
+      padding: 20px;
+    }
+  </style>
+<![endif]-->
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=<%= Geokit::Geocoders::google %>"
+  type="text/javascript"></script>
+</head>
+<body>
+	<div>Admin Dashboard</div>
+
+<%= image_tag '/images/lsah_logo.gif' %> 
+<p style="color: green"><%= flash[:notice] %></p>
+<div class='clear'></div>
+
+<%= yield  %>
+
+</body>
+</html>

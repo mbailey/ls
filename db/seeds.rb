@@ -1,3 +1,11 @@
+User.find_or_create_by_username(
+  :username => 'admin',
+  :password => 'testing',
+  :password_confirmation => 'testing'
+)
+
+
+
 @v1 = Volunteer.find_or_create_by_email_address(
   :first_name => 'user', 
   :last_name => 'one', 

@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(:version => 20091121130300) do
     t.string   "work_phone"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "email_address"
     t.integer  "can_keep_dogs"
     t.integer  "can_keep_cats"
     t.string   "can_keep_other"
@@ -51,14 +50,15 @@ ActiveRecord::Schema.define(:version => 20091121130300) do
     t.boolean  "can_transport"
     t.boolean  "requires_financial_support"
     t.integer  "offer_duration"
+    t.string   "email_address"
     t.boolean  "will_take_stray"
     t.string   "how_secure"
-    t.boolean  "dog_safe_gates",              :limit => 255
+    t.integer  "dog_safe_gates",              :limit => 1
     t.string   "special_skills"
     t.boolean  "can_administer_medical_care"
     t.float    "lat"
     t.float    "lng"
-    t.string   "state",                                      :default => "pending"
+    t.string   "state",                                    :default => "pending"
   end
 
 end
