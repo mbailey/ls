@@ -1,13 +1,60 @@
-#
+Add users
+- name
+- email
+- password
+- role
+- created_by
 
-- How secure is your fencing?
-Is your property securely fenced to prevent a dog escaping.
- 
- 
+foster_carer
+- type [carer,volly]
+- date_created
+- home_visit_date
+- police_check_date
+- review periods [fortnightly, weekly, monthly] # how often to bring in
+- available
+- status [application being processed, active, not active, not suitable] # track change
+- grading [entry]
+- where_keeping checkbox? [backyard, garage, laundry, en suite, verandah, spare room, entire house]
+- home visit comments
+- competancies
+  - cage confinemant
+  - cat flu
+  - emergency boarders
+  - ear meds
+  - oral meds
+  - eye meds
+  - mange
+  - parvo
+  - mum and bubs
+  - ringworm
+  - 28 day dogs
+  - 28 day cats
+- grading [entry level, competent, experienced, highly experienced]
+- manageability [green, yellow, red]
+- equipment
+  - confinement cage
+  - play pen
+  - foster care pack
+  
+carer_status
+- carer_id
+- status
+- created_at
+- created_by
+
+capabilities
+- available
+- kind [dog, puppy, cat, kitten, rabbit, ferret, fish, bird]
+- location [inside, outside]
+- approved by
+- deleted_at
+
+
+
+
+
 What kind of shelter is available outside?
 : text field
-
-
 
 # Why do you want to be involved?
 Moving overseas
@@ -29,19 +76,6 @@ loves cookies
 # Medicating cats
 # Medicating dogs
 
-
-T&C
-I understand that the animal remains the property of LSAH while under my care.
-
-I am prepared to accept LSAH's decision about euthanizing and animal on humane grounds.
-
-I agree to keep and care for the animal as instructed by the vet or foster care supervisor. 
-
-I accept that foster animals may cause damage to property...[responsibility]
-
-I agree to allow a LSAH representative to make a home visit to ensure suitability of the home.  This will be carried about at a mutually agreed time prior to commencement of fostering.
-
-I agree for a police check to be done.
 
 
 
