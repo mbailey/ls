@@ -10,7 +10,7 @@ class Volunteer < ActiveRecord::Base
   wraps_attribute :work_phone,   PhoneNumber, :allow_blank => true
   validate :must_have_at_least_one_phone_number
   
-  before_validation_on_create :geocode_address
+  # before_validation_on_create :geocode_address
 
   
   named_scope :can_keep_dogs, lambda { |number|
