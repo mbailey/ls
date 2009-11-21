@@ -1,4 +1,4 @@
-class Admin::VolunteersController < ApplicationController
+class Admin::VolunteersController < Admin::BaseController
   before_filter :require_user
 
   def map
@@ -13,8 +13,7 @@ class Admin::VolunteersController < ApplicationController
   def index
     # @volunteers = Volunteer.find(:all)
     # @volunteers = Volunteer.paginate_by_board_id @board.id, :page => params[:page], :order => 'updated_at DESC'
-    @volunteer_count = Volunteer.count
-    @volunteers = Volunteer.paginate :page => params[:page], :order => 'state, id'
+    @volunteers = Volunteer.pending.paginate :page => params[:page], :order => 'state, id'
 
     respond_to do |format|
       format.html # index.html.erb
