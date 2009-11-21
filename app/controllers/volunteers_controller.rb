@@ -1,5 +1,6 @@
 class VolunteersController < ApplicationController
-  before_filter :authenticate, :except => [:new, :create]
+  before_filter :require_no_user, :only => [:new, :create]
+  before_filter :require_user, :except => [:new, :create]
 
   # GET /volunteers/1
   # GET /volunteers/1.xml

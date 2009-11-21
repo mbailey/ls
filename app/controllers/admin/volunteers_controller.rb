@@ -1,20 +1,20 @@
 class Admin::VolunteersController < ApplicationController
-  before_filter :authenticate, :except => [:new, :create]
-  
+  before_filter :require_user
+
   def map
     @volunteers = Volunteer.find(:all)
     respond_to do |format|
       format.html {render :layout => false}
     end
   end
-  
+
   # GET /volunteers
   # GET /volunteers.xml
   def index
     # @volunteers = Volunteer.find(:all)
     # @volunteers = Volunteer.paginate_by_board_id @board.id, :page => params[:page], :order => 'updated_at DESC'
     @volunteer_count = Volunteer.count
-    
+
     @volunteers = Volunteer.paginate :page => params[:page], :order => 'id DESC'
 
     respond_to do |format|
@@ -24,7 +24,7 @@ class Admin::VolunteersController < ApplicationController
       }
     end
   end
-  
+
   def search
     if params['address']
       @volunteers = Volunteer.can_keep_dogs(params['can_keep_dogs']).hours_at_home(params['hours_at_home']).find(:all, :origin => "#{params['address']}, australia", :within => params['within'], :order => :distance).paginate :page => params[:page]
@@ -86,7 +86,7 @@ class Admin::VolunteersController < ApplicationController
     respond_to do |format|
       if @volunteer.update_attributes(params[:volunteer])
         flash[:notice] = 'Volunteer was successfully updated.'
-        format.html { redirect_to(@volunteer) }
+        format.html { redirect_to([:admin, @volunteer]) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

@@ -12,6 +12,10 @@ module NavigationHelpers
       '/'
     when /the volunteer signup page/
       root_path
+    when /the admin volunteers page/
+      admin_volunteers_path
+    when /the details page for this (.*)$/
+      admin_volunteer_path get_current_object_for($1)
 
     # Add more mappings here.
     # Here is a more fancy example:

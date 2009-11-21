@@ -1,0 +1,12 @@
+<h3>Please log in:</h3>
+<% form_for @user_session, :url => user_session_path, :method => :post do |f| %>
+  <p>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label :password %>
+    <%= f.password_field :password, :size => 20 %>
+  </p>
+  <%= f.submit "Login", :class => 'button' %>
+<% end  %>

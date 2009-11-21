@@ -23,7 +23,7 @@
 		<th>Work phone:</th>
 		<td><%=h @volunteer.work_phone %></td>
 	</tr> -->
-	
+
 	<% Volunteer.viewable_fields.map do |f| %>
 		<tr>
 			<th><%= f.humanize.capitalize %>:</th>
@@ -37,5 +37,5 @@
 
 
 
-<%= link_to 'Edit', edit_volunteer_path(@volunteer) %> |
-<%= link_to 'Back', volunteers_path %>
+<%= link_to 'Edit', edit_admin_volunteer_path(@volunteer) %> |
+<%= link_to 'Back', admin_volunteers_path %>

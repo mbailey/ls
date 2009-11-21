@@ -53,6 +53,18 @@ class Volunteer < ActiveRecord::Base
     save
   end
 
+  def pending?
+    state == 'pending'
+  end
+
+  def approved?
+    state == 'approved'
+  end
+
+  def rejected?
+    state == 'rejected'
+  end
+
   private
   def geocode_address
     geo=Geokit::Geocoders::MultiGeocoder.geocode(address)

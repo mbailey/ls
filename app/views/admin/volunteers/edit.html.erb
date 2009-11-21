@@ -1,6 +1,6 @@
 <h1>Editing volunteer</h1>
 
-<% form_for(@volunteer) do |f| %>
+<% form_for([:admin, @volunteer]) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -40,9 +40,13 @@
     <%= f.text_field :work_phone %>
   </p>
   <p>
+    <%= f.label :state, "Status" %><br />
+    <%= f.select :state, ['pending', 'approved', 'rejected'] %>
+  </p>
+  <p>
     <%= f.submit "Update" %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @volunteer %> |
-<%= link_to 'Back', volunteers_path %>
+<%= link_to 'Show', [:admin, @volunteer] %> |
+<%= link_to 'Back', admin_volunteers_path %>

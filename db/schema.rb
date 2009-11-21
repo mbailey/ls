@@ -9,7 +9,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090218133257) do
+ActiveRecord::Schema.define(:version => 20091121130300) do
+
+  create_table "users", :force => true do |t|
+    t.string   "username",          :limit => 25, :null => false
+    t.string   "email",                           :null => false
+    t.string   "first_name",        :limit => 50, :null => false
+    t.string   "last_name",         :limit => 50, :null => false
+    t.string   "crypted_password",                :null => false
+    t.string   "password_salt",                   :null => false
+    t.string   "persistence_token",               :null => false
+    t.string   "perishable_token",                :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "volunteers", :force => true do |t|
     t.string   "first_name"
@@ -23,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20090218133257) do
     t.string   "work_phone"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email_address"
     t.integer  "can_keep_dogs"
     t.integer  "can_keep_cats"
     t.string   "can_keep_other"
@@ -37,7 +51,6 @@ ActiveRecord::Schema.define(:version => 20090218133257) do
     t.boolean  "can_transport"
     t.boolean  "requires_financial_support"
     t.integer  "offer_duration"
-    t.string   "email_address"
     t.boolean  "will_take_stray"
     t.string   "how_secure"
     t.boolean  "dog_safe_gates",              :limit => 255
@@ -45,6 +58,7 @@ ActiveRecord::Schema.define(:version => 20090218133257) do
     t.boolean  "can_administer_medical_care"
     t.float    "lat"
     t.float    "lng"
+    t.string   "state",                                      :default => "pending"
   end
 
 end
