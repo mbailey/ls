@@ -1,0 +1,41 @@
+<table>
+	<!-- <tr>
+		<th>Name:</th>
+		<td><%=h @volunteer.first_name %> <%=h @volunteer.last_name %></td>
+	</tr>
+	<tr>
+		<th>Address:</th>
+		<td>
+			<%=h @volunteer.address_1 %><br/>
+	  		<%=h @volunteer.address_2 %><br/>
+	  		<%=h @volunteer.suburb %> <%=h @volunteer.postcode %>
+		</td>
+	</tr>
+	<tr>
+		<th>Mobile phone:</th>
+		<td><%=h @volunteer.mobile_phone %></td>
+	</tr>
+	<tr>
+		<th>Home phone:</th>
+		<td><%=h @volunteer.home_phone %></td>
+	</tr>
+	<tr>
+		<th>Work phone:</th>
+		<td><%=h @volunteer.work_phone %></td>
+	</tr> -->
+	
+	<% Volunteer.viewable_fields.map do |f| %>
+		<tr>
+			<th><%= f.humanize.capitalize %>:</th>
+			<td><%=h @volunteer.send(f) %></td>
+		</tr>
+	<% end %>
+
+</table>
+
+
+
+
+
+<%= link_to 'Edit', edit_volunteer_path(@volunteer) %> |
+<%= link_to 'Back', volunteers_path %>

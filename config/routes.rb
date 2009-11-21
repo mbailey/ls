@@ -1,8 +1,14 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :volunteers, :collection => { :map => :get, :search => :get }
+
+  map.namespace :admin do |admin|
+    admin.resources :volunteers, :collection => { :map => :get, :search => :get }
+    admin.root :controller => 'volunteers'
+  end
+  
   map.resources :home
-  map.connect '/admin', :controller => 'volunteers'
+  map.resources :volunteers, :only => [:new, :create]
   map.connect '/search', :controller => 'volunteers', :action => 'search'
   
   map.root :controller => "volunteers", :action => "new"
+  
 end

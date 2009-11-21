@@ -1,5 +1,38 @@
-class VolunteersController < ApplicationController
+class Admin::VolunteersController < ApplicationController
   before_filter :authenticate, :except => [:new, :create]
+  
+  def map
+    @volunteers = Volunteer.find(:all)
+    respond_to do |format|
+      format.html {render :layout => false}
+    end
+  end
+  
+  # GET /volunteers
+  # GET /volunteers.xml
+  def index
+    # @volunteers = Volunteer.find(:all)
+    # @volunteers = Volunteer.paginate_by_board_id @board.id, :page => params[:page], :order => 'updated_at DESC'
+    @volunteer_count = Volunteer.count
+    
+    @volunteers = Volunteer.paginate :page => params[:page], :order => 'id DESC'
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @volunteers }
+      format.csv  { send_data(Volunteer.generate_csv(@volunteers), :type => 'text/csv; charset=utf-8; header=present', :filename => "all_volunteers.csv")
+      }
+    end
+  end
+  
+  def search
+    if params['address']
+      @volunteers = Volunteer.can_keep_dogs(params['can_keep_dogs']).hours_at_home(params['hours_at_home']).find(:all, :origin => "#{params['address']}, australia", :within => params['within'], :order => :distance).paginate :page => params[:page]
+    end
+    respond_to do |format|
+      format.html # index.html.erb
+    end
+  end
 
   # GET /volunteers/1
   # GET /volunteers/1.xml
