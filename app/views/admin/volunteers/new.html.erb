@@ -1,0 +1,133 @@
+<h1>Register as a pet foster carer</h1>
+
+<% form_for(@volunteer) do |f| %>
+  <%= f.error_messages %>
+  <fieldset>
+    <legend>Personal details</legend>
+	<%= f.text_field_row :first_name %>
+	<%= f.text_field_row :last_name %>
+  </fieldset>
+
+  <fieldset>
+    <legend>Contact details</legend>
+    <p><b>We need an email address and at least one phone number we can contact you on.</b></p>
+    <%= f.text_field_row :email_address %>
+    <div class="clear">
+      <%= f.text_field_row :mobile_phone, nil, :value => @volunteer.mobile_phone.format %>
+      <%= f.text_field_row :home_phone, nil, :value => @volunteer.home_phone.format %>
+      <%= f.text_field_row :work_phone, nil, :value => @volunteer.work_phone.format %>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Address</legend>
+    <%= f.text_field_row :address_1 %>
+    <%= f.text_field_row :address_2 %>
+    <%= f.text_field_row :suburb %>
+    <%= f.text_field_row :postcode %>
+  </fieldset>
+
+  <fieldset>
+	<legend>Assistance you can offer</legend>
+	<div class="row">
+    <%= f.label :can_keep_dogs, 'Number of dogs?' %>
+    <%= f.select :can_keep_dogs, (0..2).to_a %>
+    </div>
+	<div class="row clear">
+    <%= f.label :can_keep_cats, 'Number of cats?' %>
+    <%= f.select :can_keep_cats, (0..6).to_a  %>
+    </div>
+    <div class="clear"></div>
+	<%= f.text_field_row :can_keep_other, 'Other (please specify)', 'size' => 60 %>
+	<div class="row clear">	
+	<%= f.label :can_transport, 'Are you able to transport the animals to and from the hospital for weekly checkups?' %>
+	Yes <%= f.radio_button :can_transport, true %>
+	No <%= f.radio_button :can_transport, false %>
+	</div>
+	
+	<div class="row clear">
+	<%= f.label :can_administer_medical_care, 'Are you able to administer basic medical care under vet advice if required?' %>
+	Yes <%= f.radio_button :can_administer_medical_care, true %>
+	No <%= f.radio_button :can_administer_medical_care, false %>
+	</div>
+	<div class="clear">
+	<%= f.text_field_row :special_skills, 'Please list any relevant experience such as vet nursing, dog training etc?', 'size' => 60 %>
+    </div>
+	  
+  </fieldset>
+
+  <fieldset>
+    <legend>Conditions at home</legend>
+
+	<div class="row" style="width: 100%">
+	<%= f.label :can_keep_inside_initially, 'Are you able to safely confine the foster pet(s) within your house for an initial settling in period?' %>
+	Yes <%= f.radio_button :can_keep_inside_initially, true %>
+	No <%= f.radio_button :can_keep_inside_initially, false %>
+	</div>
+	
+	<div class="row clear" style="width: 100%">
+    <%= f.label :can_sleep_inside_ongoing, 'Can the animal sleep inside on an ongoing basis?' %>
+	Yes <%= f.radio_button :can_sleep_inside_ongoing, true %>
+	No <%= f.radio_button :can_sleep_inside_ongoing, false %>
+	</div>
+	
+	<div class="row" style="width: 100%">
+	<%= f.label :how_secure, 'Is your property securely fenced to prevent a dog escaping?' %>
+	Yes <%= f.radio_button :how_secure, true %>
+	No <%= f.radio_button :how_secure, false %>
+	</div>
+	
+	<div class="row" style="width: 100%">
+	<%= f.label :dog_safe_gates, 'Do you have dog safe gates?' %>
+	Yes <%= f.radio_button :dog_safe_gates, true %>
+	No <%= f.radio_button :dog_safe_gates, false %>
+	</div>
+	
+	<div class="row" style="width: 100%">
+	<%= f.label :hours_spent_at_home_per_day, 'How many hours a day are you generally home?' %>
+	<%= f.select :hours_spent_at_home_per_day, (0..24).to_a %>
+	</div>
+	
+	<div class="row" style="width: 100%">
+	<%= f.label :children, 'How many children live at the property?' %>
+	<%= f.select :children, (0..5).to_a %>
+	</div>
+	
+	<div class="row clear" style="width: 100%">
+    <%= f.label :dogs_owned, 'How many dogs live at the property?' %>
+    <%= f.select :dogs_owned, (0..5).to_a %>
+    </div>
+
+	<div class="row clear" style="width: 100%">
+    <%= f.label :cats_owned, 'How many cats live at the property?' %>
+    <%= f.select :cats_owned, (0..5).to_a %>
+    </div>
+
+	<div class="clear"></div>
+
+    <%= f.text_field_row :other_owned, 'Any other pets? (please specify)', 'size' => 60 %>
+  </fieldset>
+
+  <fieldset>
+	<legend>Terms and Conditions</legend>
+	
+<p>I understand that the animal remains the property of LSAH while under my care.</p>
+
+<p>I agree to keep and care for the animal as instructed by the vet or foster care supervisor.</p>
+
+<p>I understand that foster animals may cause damage to property and will not hold Lort Smith responsible for this should it occur.</p>
+
+<p>I agree to allow a LSAH representative to make a home visit to ensure suitability of the home.  This will be carried about at a mutually agreed time prior to commencement of fostering.</p>
+  
+<p>I am prepared to accept LSAH's decision about euthanizing and animal on humane grounds.</p>
+
+<p>I agree for a police check to be done.</p>
+    
+<p><strong>By clicking on 'I accept' below you are agreeing to the Terms and Conditions above.</strong></p>
+  <%= f.submit "I accept. Register me." %>
+  </fieldset>
+
+  <div class="clear">
+  </div>
+
+<% end %>
