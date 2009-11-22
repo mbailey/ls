@@ -1,0 +1,24 @@
+<h1>Editing Home Check</h1>
+
+<% form_for([:admin, @home_check]) do |f| %>
+  <%= f.error_messages %>
+
+  <div class="row clear">
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="row clear">
+    <%= f.label :scheduled_at %>
+    <%= f.datetime_select :scheduled_at %>
+  </div>
+  <div class="row clear">
+    <label><%= f.check_box :completed %> Completed</label>
+  </div>
+  <div class="row clear">
+    <%= f.label :notes %>
+    <%= f.text_area :notes %>
+  </div>
+  <div class="row clear">
+    <%= f.submit 'Update' %>
+  </div>
+<% end %>

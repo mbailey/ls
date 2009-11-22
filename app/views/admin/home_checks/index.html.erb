@@ -1,0 +1,19 @@
+<h1>Home Checks</h1>
+
+<table>
+  <tr>
+    <th>Volunteer</th>
+    <th>Scheduled at</th>
+    <th>Completed</th>
+    <th>Notes</th>
+  </tr>
+
+<% @home_checks.each do |home_check| %>
+  <tr>
+    <td><%=h home_check.volunteer.name %></td>
+    <td><%= link_to home_check.scheduled_at, edit_admin_home_check_path(home_check) %></td>
+    <td><%=h home_check.completed %></td>
+    <td><%=h home_check.notes %></td>
+  </tr>
+<% end %>
+</table>
