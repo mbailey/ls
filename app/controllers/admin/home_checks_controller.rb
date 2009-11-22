@@ -3,6 +3,7 @@ class Admin::HomeChecksController < Admin::BaseController
   # GET /home_checks.xml
   def index
     @home_checks = HomeCheck.all
+    
 
     respond_to do |format|
       format.html # index.html.erb
@@ -42,7 +43,7 @@ class Admin::HomeChecksController < Admin::BaseController
   # POST /home_checks.xml
   def create
     @volunteer = Volunteer.find(params[:volunteer_id])
-    @home_check = HomeCheck.new(params[:home_check].merge(:volunteer => @volunteer))
+    @home_check = HomeCheck.new(params[:home_check].merge(:volunteer => @volunteer, :booked_by => current_user))
 
     respond_to do |format|
       if @home_check.save
@@ -64,7 +65,7 @@ class Admin::HomeChecksController < Admin::BaseController
     respond_to do |format|
       if @home_check.update_attributes(params[:home_check])
         flash[:notice] = 'HomeCheck was successfully updated.'
-        format.html { redirect_to(@home_check) }
+        format.html { redirect_to(admin_home_checks_url) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

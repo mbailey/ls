@@ -3,6 +3,8 @@
 <table>
   <tr>
     <th>Volunteer</th>
+    <th>Booked by</th>
+    <th>Performed By</th>
     <th>Scheduled at</th>
     <th>Completed</th>
     <th>Notes</th>
@@ -11,6 +13,8 @@
 <% @home_checks.each do |home_check| %>
   <tr>
     <td><%=h home_check.volunteer.name %></td>
+    <td><%=h home_check.booked_by.name %></td>
+    <td><%=h home_check.performed_by && home_check.performed_by.name %></td>
     <td><%= link_to home_check.scheduled_at, edit_admin_home_check_path(home_check) %></td>
     <td><%=h home_check.completed %></td>
     <td><%=h home_check.notes %></td>

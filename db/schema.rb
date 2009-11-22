@@ -9,27 +9,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091122090155) do
+ActiveRecord::Schema.define(:version => 20091122100214) do
 
   create_table "home_checks", :force => true do |t|
-    t.integer  "user_id"
+    t.integer  "booked_by_id"
     t.integer  "volunteer_id"
     t.datetime "scheduled_at"
     t.boolean  "completed"
     t.text     "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "placements", :force => true do |t|
-    t.string   "animal_id"
-    t.string   "animal_desc"
-    t.integer  "volunteer_id"
-    t.datetime "start_date"
-    t.datetime "end_date"
-    t.text     "notes"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "performed_by_id"
   end
 
   create_table "users", :force => true do |t|
@@ -57,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20091122090155) do
     t.string   "work_phone"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email_address"
     t.integer  "can_keep_dogs"
     t.integer  "can_keep_cats"
     t.string   "can_keep_other"
@@ -71,15 +62,14 @@ ActiveRecord::Schema.define(:version => 20091122090155) do
     t.boolean  "can_transport"
     t.boolean  "requires_financial_support"
     t.integer  "offer_duration"
-    t.string   "email_address"
     t.boolean  "will_take_stray"
     t.string   "how_secure"
-    t.integer  "dog_safe_gates",              :limit => 1
+    t.boolean  "dog_safe_gates"
     t.string   "special_skills"
     t.boolean  "can_administer_medical_care"
     t.float    "lat"
     t.float    "lng"
-    t.string   "state",                                    :default => "pending"
+    t.string   "state",                       :default => "pending"
     t.boolean  "interview_completed"
     t.text     "interview_notes"
     t.datetime "interview_date"
