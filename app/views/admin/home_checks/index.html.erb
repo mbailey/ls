@@ -2,7 +2,6 @@
 
 <table>
   <tr>
-    <th>User</th>
     <th>Volunteer</th>
     <th>Scheduled at</th>
     <th>Completed</th>
@@ -11,14 +10,10 @@
 
 <% @home_checks.each do |home_check| %>
   <tr>
-    <td><%=h home_check.user.name %></td>
     <td><%=h home_check.volunteer.name %></td>
-    <td><%=h home_check.scheduled_at %></td>
+    <td><%= link_to home_check.scheduled_at, edit_admin_home_check_path(home_check) %></td>
     <td><%=h home_check.completed %></td>
     <td><%=h home_check.notes %></td>
-    <td><%= link_to 'Show', [:admin, home_check] %></td>
-    <td><%= link_to 'Edit', edit_admin_home_check_path(home_check) %></td>
-    <td><%= link_to 'Destroy', [:admin, home_check], :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
