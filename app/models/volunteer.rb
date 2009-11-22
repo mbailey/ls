@@ -1,4 +1,5 @@
 class Volunteer < ActiveRecord::Base
+    
   # acts_as_mappable
   validates_presence_of :first_name, :last_name
   wraps_attribute :email_address, EmailAddress
@@ -30,6 +31,10 @@ class Volunteer < ActiveRecord::Base
   def interview
     nil
   end
+  
+  def completing_interview?
+    interview_completed_changed? && interview_completed?
+  end    
   
   def self.generate_csv(volunteers)
      FasterCSV.generate do |csv|

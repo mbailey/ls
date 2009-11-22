@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091121130300) do
+ActiveRecord::Schema.define(:version => 20091122065637) do
 
   create_table "users", :force => true do |t|
     t.string   "username",          :limit => 25, :null => false
@@ -59,6 +59,10 @@ ActiveRecord::Schema.define(:version => 20091121130300) do
     t.float    "lat"
     t.float    "lng"
     t.string   "state",                                    :default => "pending"
+    t.boolean  "interview_completed"
+    t.text     "interview_notes"
+    t.datetime "interview_date"
+    t.integer  "interview_user_id"
   end
 
 end
