@@ -5,10 +5,12 @@ module VolunteersHelper
   end
   
   def next_action_link(volunteer)
-    if volunteer.approved? or volunteer.rejected?
+    if volunteer.approved? 
       link_to 'place an animal', '#'
+    elsif volunteer.rejected?
+      "volunteer application rejected!"
     elsif volunteer.interview.blank?
-      link_to 'conduct interview', '#'
+      link_to 'conduct interview', edit_admin_volunteer_path(volunteer)
     elsif volunteer.home_check.blank?
       link_to "book a home check", '#'
     else
