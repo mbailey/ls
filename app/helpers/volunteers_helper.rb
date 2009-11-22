@@ -14,7 +14,7 @@ module VolunteersHelper
     elsif volunteer.home_check.blank?
       link_to "book a home check", [:new, :admin, volunteer, :home_check]
     else
-      link_to "home check booked for #{volunteer.home_check.scheduled_at}", [:edit, :admin, volunteer.home_check]
+      link_to "home check booked for #{volunteer.home_check.scheduled_at.to_s(:date_and_time)}", [:edit, :admin, volunteer.home_check]
     end
   end
   
