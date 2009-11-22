@@ -10,6 +10,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :volunteers, :only => [:new, :create]
   map.connect '/search', :controller => 'volunteers', :action => 'search'
 
+  map.logout 'logout', :controller => 'user_sessions', :action => 'destroy'
+
   map.root :controller => "volunteers", :action => "new"
 
 end
