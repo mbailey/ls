@@ -1,7 +1,10 @@
 User.find_or_create_by_username(
+  :first_name => 'admin',
+  :last_name => 'account',
   :username => 'admin',
   :password => 'testing',
-  :password_confirmation => 'testing'
+  :password_confirmation => 'testing',
+  :email => 'admin@example.com'
 )
 
 
