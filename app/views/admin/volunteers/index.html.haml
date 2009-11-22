@@ -1,4 +1,4 @@
-%h1== Listing volunteers (#{@volunteer_count} in total)
+%h1= "Listing volunteers (#{@volunteers.size} in total)"
 
 / = link_to 'download csv file', '/admin/volunteers.csv'
 / = link_to 'view all on map', '/volunteers/map'

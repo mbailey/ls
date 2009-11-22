@@ -24,10 +24,10 @@ legend { background: #fff; border: 1px solid #BCD2EE; padding: 7px 4px 4px 4px; 
 input[type='submit']{background: #2E6AB1; color: #fff; font-size: 14px;}
 
 /* =Tables */
-table, tr, th, td { border-bottom: 1px dotted #CDC1C5; padding: 5px; margin: 0; text-align: left; }
-table { width: 800px; background-color: #fafafa; border-collapse: collapse; border-spacing: 0; }
-th { background: #666; color: #fff;}
-td { border-bottom: 1px #fff dotted; }
+table, tr, th, td { border-bottom: 1px dotted #CDC1C5; margin: 0; text-align: left; }
+table {width: 800px; background-color: #fafafa; border-collapse: collapse; border-spacing: 0; }
+th { background: #666; color: #fff; padding: 5px; font-weight: normal;}
+td { border-bottom: 1px #fff dotted; padding: 5px;}
 tr.odd { background: #B0E2FF; }
 tr.even { background: #fff; }
 
@@ -38,6 +38,7 @@ p#help { float: right; background: #FEFFF1; padding: 30px; color: #F08080; }
 #notice {padding: 5px; margin: 0 0 10px 0; background: #D0F1D7; color: green; border: 1px solid green;}
 
 /* =Layout */
+#header, #content {width: 800px;}
 #header {margin-bottom: 40px;}
 #content {}
 

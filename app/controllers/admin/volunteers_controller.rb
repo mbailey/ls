@@ -14,7 +14,6 @@ class Admin::VolunteersController < Admin::BaseController
     # @volunteers = Volunteer.find(:all)
     # @volunteers = Volunteer.paginate_by_board_id @board.id, :page => params[:page], :order => 'updated_at DESC'
     @volunteers = Volunteer.pending.paginate :page => params[:page], :order => 'state, id'
-
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @volunteers }
