@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  animal_id: MyString
+  animal_desc: MyString
+  volunteer_id: 1
+  start_date: 2009-11-22 20:01:55
+  end_date: 2009-11-22 20:01:55
+  notes: MyText
+
+two:
+  animal_id: MyString
+  animal_desc: MyString
+  volunteer_id: 1
+  start_date: 2009-11-22 20:01:55
+  end_date: 2009-11-22 20:01:55
+  notes: MyText

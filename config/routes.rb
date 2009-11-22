@@ -1,10 +1,13 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :placements
+
   map.resource :user_session
 
   map.namespace :admin do |admin|
     admin.resources :volunteers, :collection => { :pending => :get, :map => :get, :search => :get } do |volunteer|
       volunteer.resource :interview
     end
+    admin.resources :placements
     admin.root :controller => 'volunteers'
   end
 

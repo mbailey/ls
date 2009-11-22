@@ -9,7 +9,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091122065637) do
+ActiveRecord::Schema.define(:version => 20091122090155) do
+
+  create_table "placements", :force => true do |t|
+    t.string   "animal_id"
+    t.string   "animal_desc"
+    t.integer  "volunteer_id"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.text     "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "username",          :limit => 25, :null => false
