@@ -1,0 +1,7 @@
+%h1
+  Editing volunteer
+- form_for(@volunteer, :url => admin_volunteer_interview_path(@volunteer)) do |f|
+  -#= f.error_messages
+  = render :partial => 'admin/interviews/interview', :locals => {:f => f}
+  = render :partial => 'admin/volunteers/volunteer', :locals => {:f => f}
+  = f.submit "Update"

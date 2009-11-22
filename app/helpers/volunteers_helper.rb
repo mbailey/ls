@@ -9,8 +9,8 @@ module VolunteersHelper
       link_to 'place an animal', '#'
     elsif volunteer.rejected?
       "volunteer application rejected!"
-    elsif volunteer.interview.blank?
-      link_to 'conduct interview', edit_admin_volunteer_path(volunteer)
+    elsif not volunteer.interview_completed?
+      link_to 'conduct interview', edit_admin_volunteer_interview_path(volunteer)
     elsif volunteer.home_check.blank?
       link_to "book a home check", '#'
     else

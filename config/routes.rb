@@ -2,8 +2,9 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :user_session
 
   map.namespace :admin do |admin|
-    admin.resources :volunteers, :collection => { :pending => :get, :map => :get, :search => :get }, :shallow => true do |volunteer|
-      volunteer.resources :home_checks
+    admin.resources :volunteers, :collection => { :pending => :get, :map => :get, :search => :get } do |volunteer|
+      volunteer.resource :home_check
+      volunteer.resource :interview
     end
     admin.resources :home_checks, :only => :index
     admin.root :controller => 'volunteers'

@@ -69,6 +69,10 @@ ActiveRecord::Schema.define(:version => 20091122082311) do
     t.float    "lat"
     t.float    "lng"
     t.string   "state",                       :default => "pending"
+    t.boolean  "interview_completed"
+    t.text     "interview_notes"
+    t.datetime "interview_date"
+    t.integer  "interview_user_id"
   end
 
 end
