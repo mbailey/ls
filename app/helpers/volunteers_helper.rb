@@ -13,9 +13,10 @@ module VolunteersHelper
       link_to 'conduct interview', edit_admin_volunteer_interview_path(volunteer)
     elsif volunteer.home_check.blank?
       link_to "book a home check", [:new, :admin, volunteer, :home_check]
-    else
+    elsif ! volunteer.home_check.completed
       link_to "home check booked for #{volunteer.home_check.scheduled_at}", [:edit, :admin, volunteer.home_check]
-    end
+    else
+      link_to 'approve or reject application', edit_admin_volunteer_path(volunteer)
   end
   
   
