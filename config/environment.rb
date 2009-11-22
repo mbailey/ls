@@ -22,6 +22,7 @@ Rails::Initializer.run do |config|
 
   # Specify gems in RAILS_ROOT/Gemfile
   # Then run 'gem bundle --cached' to install
+  config.gem 'haml'
 
   # Only load the plugins named here, in the order given. By default, all plugins
   # in vendor/plugins are loaded in alphabetical order.

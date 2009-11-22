@@ -6,7 +6,8 @@ source 'http://gems.rubyforge.org'
 gem 'fastercsv', '1.4.0'
 gem "authlogic", ">= 2.1.2", :only => :bundle
 
-gem 'haml', '2.2.13'
+gem 'haml', '2.2.13', :only => :bundle
+
 gem 'actionmailer', '2.3.4'
 gem 'actionpack', '2.3.4'
 gem 'activerecord', '2.3.4'
