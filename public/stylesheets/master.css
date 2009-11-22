@@ -1,0 +1,30 @@
+/* 
+-----------------------------------------------
+Master Stylesheet
+Author:   Elle Meredith
+Version:  2009.11
+
+----------------------------------------------- */
+
+@import url("reset.css");            /* Reset default styles */
+@import url("application.css");      /* general */
+
+
+/* =Global Super Classes
+Miscellaneous conveniences:
+----------------------------------------------- */
+
+.hide               { display: none; }
+.invisible          { visibility: hidden; }
+
+.left               { float: left; }
+.right              { float: right; }
+.clear              { clear:both; }
+
+.last 				      { margin-right: 0; }
+
+form label          { cursor: pointer; }
+acronym, abbr       { border-bottom: 1px dotted; cursor: help; }
+
+/* =Eliminate border around link images */
+a img, :link img, :visited img { border: none; }

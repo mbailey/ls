@@ -1,0 +1,5 @@
+/* IE specials */
+legend {position: absolute; top: -0.8em; left: 0.5em;}
+fieldset { position: relative; margin-top: 1em; pading: 20px;}
+* html .digg_pagination { height: 1%; }
+*:first-child+html .digg_pagination { overflow: hidden; }
