@@ -2,11 +2,11 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :user_session
 
   map.namespace :admin do |admin|
+    admin.resources :home_checks, :only => [:index, :show, :edit, :destroy]
     admin.resources :volunteers, :collection => { :pending => :get, :map => :get, :search => :get } do |volunteer|
       volunteer.resource :home_check
       volunteer.resource :interview
     end
-    admin.resources :home_checks, :only => :index
     admin.root :controller => 'volunteers'
   end
 
@@ -17,5 +17,4 @@ ActionController::Routing::Routes.draw do |map|
   map.logout 'logout', :controller => 'user_sessions', :action => 'destroy'
 
   map.root :controller => "volunteers", :action => "new"
-
 end

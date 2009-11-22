@@ -1,4 +1,4 @@
-<h1>Listing home_checks</h1>
+<h1>Home Checks</h1>
 
 <table>
   <tr>
@@ -12,7 +12,7 @@
 <% @home_checks.each do |home_check| %>
   <tr>
     <td><%=h home_check.user.name %></td>
-    <td><%=h home_check.volunteer_id %></td>
+    <td><%=h home_check.volunteer.name %></td>
     <td><%=h home_check.scheduled_at %></td>
     <td><%=h home_check.completed %></td>
     <td><%=h home_check.notes %></td>

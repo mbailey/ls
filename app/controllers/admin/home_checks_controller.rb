@@ -1,4 +1,4 @@
-class Admin::HomeChecksController < ApplicationController
+class Admin::HomeChecksController < Admin::BaseController
   # GET /home_checks
   # GET /home_checks.xml
   def index
