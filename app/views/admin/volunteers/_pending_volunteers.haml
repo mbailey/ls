@@ -3,7 +3,7 @@
     %th Name
     %th Suburb
     %th Next Action
-    %th Details
+    %th{:colspan => 2} Details
   - for volunteer in @volunteers
     %tr
       %td 
@@ -14,9 +14,7 @@
         = next_action_link(volunteer)
       %td 
         = 'dog' if volunteer.can_keep_dogs
-      %td
         = 'cat' if volunteer.can_keep_cats
-      %td
         = 'other' if volunteer.can_keep_other
       %td
-        = link_to 'Destroy', volunteer, :confirm => 'Are you sure?', :method => :delete if params[:d]
+        = link_to 'Destroy', [:admin, volunteer], :confirm => 'Are you sure?', :method => :delete if params[:d]
