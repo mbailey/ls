@@ -1,0 +1,22 @@
+%table
+  %tr
+    %th Name
+    %th Suburb
+    %th Next Action
+    %th Details
+  - for volunteer in @volunteers
+    %tr
+      %td 
+        = link_to h("#{volunteer.first_name} #{volunteer.last_name}"), [:admin, volunteer]
+      %td 
+        =h volunteer.suburb
+      %td 
+        = next_action_link(volunteer)
+      %td 
+        = 'dog' if volunteer.can_keep_dogs
+      %td
+        = 'cat' if volunteer.can_keep_cats
+      %td
+        = 'other' if volunteer.can_keep_other
+      %td
+        = link_to 'Destroy', volunteer, :confirm => 'Are you sure?', :method => :delete if params[:d]

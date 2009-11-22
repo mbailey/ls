@@ -1,0 +1,7 @@
+%h2 Listing volunteers (#{@volunteers.total_entries} in total)
+
+= will_paginate @volunteers, :class => 'apple_pagination'
+= render :partial => 'pending_volunteers'
+= will_paginate @volunteers, :class => 'apple_pagination'
+
+= link_to 'New volunteer', new_admin_volunteer_path

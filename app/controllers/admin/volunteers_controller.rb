@@ -13,6 +13,17 @@ class Admin::VolunteersController < Admin::BaseController
   def index
     # @volunteers = Volunteer.find(:all)
     # @volunteers = Volunteer.paginate_by_board_id @board.id, :page => params[:page], :order => 'updated_at DESC'
+    @volunteers = Volunteer.paginate :page => params[:page], :order => 'state, id'
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @volunteers }
+      format.csv  { send_data(Volunteer.generate_csv(@volunteers), :type => 'text/csv; charset=utf-8; header=present', :filename => "all_volunteers.csv")
+      }
+    end
+  end
+  
+  def pending
     @volunteers = Volunteer.pending.paginate :page => params[:page], :order => 'state, id'
     respond_to do |format|
       format.html # index.html.erb
