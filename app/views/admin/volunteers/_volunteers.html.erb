@@ -1,6 +1,5 @@
 <table>
   <tr>
-	<th>Id</th>
     <th>Name</th>
     <th>Suburb</th>
     <th>Status</th>
@@ -11,7 +10,6 @@
   </tr>
 <% for volunteer in @volunteers %>
   <tr>
-	<td><%=h volunteer.id %></td>
     <td><%= link_to h("#{volunteer.first_name} #{volunteer.last_name}"), [:admin, volunteer] %></td>
     <td><%=h volunteer.suburb %></td>
     <td><%=h volunteer.state %></td>

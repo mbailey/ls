@@ -1,0 +1,4 @@
+/* Admin page styles */
+#admin_dashboard {border-bottom: 1px dotted #2E6AB1; float: left; overflow: hidden; width: 800px; margin-bottom: 20px;}
+#admin_dashboard ul {list-style: none;}
+#admin_dashboard li a {display: block; float: left; background: #2E6AB1; color: #fff; text-decoration: none; padding: 5px 8px; font-weight: normal; margin: 0 3px 0 0; line-height: 1;}

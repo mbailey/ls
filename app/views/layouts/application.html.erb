@@ -15,7 +15,9 @@
   <%= image_tag '/images/lsah_logo.gif' %>
 </div>
 <div id="content">
-  <p><%= flash[:notice] %></p>
+  <% if flash[:notice] %>
+    <p id="notice"><%= flash[:notice] %></p>
+  <% end%>
   <%= yield  %>
 </div>
 

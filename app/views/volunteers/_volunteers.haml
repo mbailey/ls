@@ -1,0 +1,38 @@
+%table
+  %tr
+    %th
+      Id
+    %th
+      Name
+    %th
+      Suburb
+    %th
+      Postcode
+    %th
+      Dog
+    %th
+      Cat
+    %th
+      Other
+    %th
+      Skills
+  - for volunteer in @volunteers
+  %tr
+    %td
+      = h volunteer.id
+    %td
+      = link_to h("#{volunteer.first_name} #{volunteer.last_name}"), volunteer
+    %td
+      = h volunteer.suburb
+    %td
+      = h volunteer.postcode
+    %td
+      = h volunteer.can_keep_dogs
+    %td
+      = h volunteer.can_keep_cats
+    %td
+      = h volunteer.can_keep_other
+    %td
+      = h volunteer.special_skills
+    %td
+      = link_to 'Destroy', volunteer, :confirm => 'Are you sure?', :method => :delete if params[:d]

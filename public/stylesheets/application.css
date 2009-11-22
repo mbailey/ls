@@ -11,25 +11,35 @@
 body { font: 15px/18px Helvetica, Arial, sans-serif; width: 800px; margin: 2em auto; color: #555; background: #fff;}
 a { color: #333; font-weight: bold; }
 
-/* = Headings */
-h1 {}
+/* = Headings and typography */
+h1 {font-size: 30px; font-weight:  normal; }
+h1, h2, h3 {margin: 15px 0; color: #2E6AB1;}
+p {margin-bottom: 10px;}
 
 /* =Forms */
 input { margin: 2px 20px 5px 0; padding: 5px;}
-label { display: block; font-weight: bold; }
-fieldset { background: #F0F8FF; float: left; border: 1px solid #F0F8FF; border-top: 1px dashed #BCD2EE; border-bottom: 1px dashed #BCD2EE; width: 600px; margin: .5em 0 1em 0; }
+label { display: block; }
+fieldset { background: #F0F8FF; float: left; border: 1px solid #F0F8FF; border-top: 1px dashed #BCD2EE; border-bottom: 1px dashed #BCD2EE; width: 660px; margin: .5em 0 1em 0; padding: 15px; }
 legend { background: #fff; border: 1px solid #BCD2EE; padding: 7px 4px 4px 4px; font-size: 18px; }
+input[type='submit']{background: #2E6AB1; color: #fff; font-size: 14px;}
 
 /* =Tables */
 table, tr, th, td { border-bottom: 1px dotted #CDC1C5; padding: 5px; margin: 0; text-align: left; }
+table { width: 800px; background-color: #fafafa; border-collapse: collapse; border-spacing: 0; }
+th { background: #666; color: #fff;}
+td { border-bottom: 1px #fff dotted; }
 tr.odd { background: #B0E2FF; }
 tr.even { background: #fff; }
-table { width: 800px; background-color: #fafafa; border-collapse: collapse; border-spacing: 0; }
-td { border-bottom: 1px #B0E2FF solid; }
+
 
 div.row { font-size: 14px; margin: 8px 0; float: left; }
 .fieldWithErrors input { background-color: #fcc; }
 p#help { float: right; background: #FEFFF1; padding: 30px; color: #F08080; }
+#notice {padding: 5px; margin: 0 0 10px 0; background: #D0F1D7; color: green; border: 1px solid green;}
+
+/* =Layout */
+#header {margin-bottom: 40px;}
+#content {}
 
 
 

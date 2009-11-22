@@ -15,17 +15,19 @@
 
 <div id="header">
   <%= image_tag '/images/lsah_logo.gif' %>
-</div>
-<div id="nav">
+</div><!-- #header -->
+<div id="admin_dashboard">
   <ul>
-    <li><a href="#">Link 1</a></li>
-    <li><a href="#">Link 2</a></li>
-    <li><a href="#">Link 3</a></li>
+    <li><%= link_to "Volunteers", admin_volunteers_path %></li>
+    <li><a href="#">Actions to Do</a></li>
+    <li><%= link_to 'Log Out', logout_path %></li>
   </ul>
-</div>
+</div><!-- #admin_dashboard -->
 <div id="content">
-  <p><%= flash[:notice] %></p>
+  <% if flash[:notice] %>
+    <p id="notice"><%= flash[:notice] %></p>
+  <% end%>
   <%= yield  %>
-</div>
+</div><!-- #content -->
 </body>
 </html>
