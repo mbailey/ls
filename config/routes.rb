@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :placements
+
   map.resource :user_session
 
   map.namespace :admin do |admin|
@@ -7,6 +9,7 @@ ActionController::Routing::Routes.draw do |map|
       volunteer.resource :home_check
       volunteer.resource :interview
     end
+    admin.resources :placements
     admin.root :controller => 'volunteers'
   end
 
