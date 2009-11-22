@@ -11,6 +11,16 @@
 
 ActiveRecord::Schema.define(:version => 20091122090155) do
 
+  create_table "home_checks", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "volunteer_id"
+    t.datetime "scheduled_at"
+    t.boolean  "completed"
+    t.text     "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "placements", :force => true do |t|
     t.string   "animal_id"
     t.string   "animal_desc"
