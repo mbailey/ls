@@ -5,13 +5,32 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Volunteers: <%= controller.action_name %></title>
+<<<<<<< HEAD:app/views/layouts/admin.html.erb
   <%= stylesheet_link_tag 'master' %>
   <%= stylesheet_link_tag 'admin' %>
   <!--[if IE]> <%= stylesheet_link_tag 'ie' %><![endif]-->
+=======
+  <%= stylesheet_link_tag 'application' %>
+<!--[if gte IE 7]> 
+  <style>
+    legend {
+      position: absolute;
+      top: -.8em;
+      left: .5em;
+    }
+    fieldset {
+      position: relative;
+      margin-top: 1em;
+      padding: 20px;
+    }
+  </style>
+<![endif]-->
+>>>>>>> 466e6676b1d5b78a6907e888d362ff9dead493ac:app/views/layouts/admin.html.erb
 <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=<%= Geokit::Geocoders::google %>"
   type="text/javascript"></script>
 </head>
 <body>
+<<<<<<< HEAD:app/views/layouts/admin.html.erb
 <div id="header">
   <%= image_tag '/images/lsah_logo.gif' %>
 </div>
@@ -26,6 +45,15 @@
   <p><%= flash[:notice] %></p>
   <%= yield  %>
 </div>
+=======
+	<div>Admin Dashboard</div>
+
+<%= image_tag '/images/lsah_logo.gif' %> 
+<p style="color: green"><%= flash[:notice] %></p>
+<div class='clear'></div>
+
+<%= yield  %>
+>>>>>>> 466e6676b1d5b78a6907e888d362ff9dead493ac:app/views/layouts/admin.html.erb
 
 </body>
 </html>

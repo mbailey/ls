@@ -8,6 +8,8 @@ class Volunteer < ActiveRecord::Base
   wraps_attribute :home_phone,   PhoneNumber, :allow_blank => true
   wraps_attribute :work_phone,   PhoneNumber, :allow_blank => true
   validate :must_have_at_least_one_phone_number
+  
+  named_scope :pending, :conditions => {:state => 'pending'}
 
   # before_validation_on_create :geocode_address
 

@@ -3,7 +3,7 @@
 	<th>Id</th>
     <th>Name</th>
     <th>Suburb</th>
-    <th>Postcode</th>
+    <th>Status</th>
     <th>Dog</th>
     <th>Cat</th>
     <th>Other</th>
@@ -14,7 +14,7 @@
 	<td><%=h volunteer.id %></td>
     <td><%= link_to h("#{volunteer.first_name} #{volunteer.last_name}"), [:admin, volunteer] %></td>
     <td><%=h volunteer.suburb %></td>
-    <td><%=h volunteer.postcode %></td>
+    <td><%=h volunteer.state %></td>
     <td><%=h volunteer.can_keep_dogs %></td>
     <td><%=h volunteer.can_keep_cats %></td>
     <td><%=h volunteer.can_keep_other %></td>
