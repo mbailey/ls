@@ -4,8 +4,8 @@
   <%= f.error_messages %>
 
   <div class="row clear">
-    <%= f.label :user_id %>
-    <%= f.text_field :user_id %>
+    <%= f.label :performed_by_id %>
+    <%= f.collection_select :performed_by_id, User.all, :id, :name %>
   </div>
   <div class="row clear">
     <%= f.label :scheduled_at %>

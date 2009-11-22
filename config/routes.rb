@@ -4,7 +4,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :user_session
 
   map.namespace :admin do |admin|
-    admin.resources :home_checks, :only => [:index, :show, :edit, :destroy]
+    admin.resources :home_checks, :only => [:index, :show, :update, :edit, :destroy]
     admin.resources :volunteers, :collection => { :pending => :get, :map => :get, :search => :get } do |volunteer|
       volunteer.resource :home_check
       volunteer.resource :interview
