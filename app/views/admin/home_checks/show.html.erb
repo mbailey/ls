@@ -1,0 +1,28 @@
+<p>
+  <b>User:</b>
+  <%=h @home_check.user_id %>
+</p>
+
+<p>
+  <b>Volunteer:</b>
+  <%=h @home_check.volunteer_id %>
+</p>
+
+<p>
+  <b>Scheduled at:</b>
+  <%=h @home_check.scheduled_at %>
+</p>
+
+<p>
+  <b>Completed:</b>
+  <%=h @home_check.completed %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%=h @home_check.notes %>
+</p>
+
+
+<%= link_to 'Edit', edit_home_check_path(@home_check) %> |
+<%= link_to 'Back', home_checks_path %>

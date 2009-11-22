@@ -9,6 +9,8 @@ class Volunteer < ActiveRecord::Base
   wraps_attribute :work_phone,   PhoneNumber, :allow_blank => true
   validate :must_have_at_least_one_phone_number
   
+  has_one :home_check
+  
   named_scope :pending, :conditions => {:state => 'pending'}
 
   # before_validation_on_create :geocode_address
@@ -22,10 +24,6 @@ class Volunteer < ActiveRecord::Base
     { :conditions => ["hours_spent_at_home_per_day >= ?", number.to_i] }
   }
 
-
-  def home_check
-    nil
-  end
   
   def interview
     nil

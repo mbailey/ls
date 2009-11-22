@@ -8,7 +8,7 @@ Add users
 foster_carer
 - type [carer,volly]
 - date_created
-- home_visit_date
+- home_check_date
 - police_check_date
 - review periods [fortnightly, weekly, monthly] # how often to bring in
 - available

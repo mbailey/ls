@@ -1,0 +1,19 @@
+<h1>Schedule a Home Visit</h1>
+
+<% form_for([:admin, @volunteer, @home_check]) do |f| %>
+  <%= f.error_messages %>
+  
+  <div class="row">
+    <%= f.label :scheduled_at %>
+    <%= f.datetime_select :scheduled_at %>
+  </div>
+  
+  <div class="row">
+    <%= f.label :user_id %>
+    <%= f.collection_select :user_id, User.all, :id, :name %>
+  </div>
+  
+  <div class="row">
+    <%= f.submit "Schedule" %>
+  </div>
+<% end %>

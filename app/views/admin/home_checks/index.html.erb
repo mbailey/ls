@@ -1,0 +1,24 @@
+<h1>Listing home_checks</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Volunteer</th>
+    <th>Scheduled at</th>
+    <th>Completed</th>
+    <th>Notes</th>
+  </tr>
+
+<% @home_checks.each do |home_check| %>
+  <tr>
+    <td><%=h home_check.user.name %></td>
+    <td><%=h home_check.volunteer_id %></td>
+    <td><%=h home_check.scheduled_at %></td>
+    <td><%=h home_check.completed %></td>
+    <td><%=h home_check.notes %></td>
+    <td><%= link_to 'Show', [:admin, home_check] %></td>
+    <td><%= link_to 'Edit', edit_admin_home_check_path(home_check) %></td>
+    <td><%= link_to 'Destroy', [:admin, home_check], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>

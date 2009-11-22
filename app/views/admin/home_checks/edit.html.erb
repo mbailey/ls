@@ -1,0 +1,32 @@
+<h1>Editing home_check</h1>
+
+<% form_for(@home_check) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :volunteer_id %><br />
+    <%= f.text_field :volunteer_id %>
+  </p>
+  <p>
+    <%= f.label :scheduled_at %><br />
+    <%= f.datetime_select :scheduled_at %>
+  </p>
+  <p>
+    <%= f.label :completed %><br />
+    <%= f.check_box :completed %>
+  </p>
+  <p>
+    <%= f.label :notes %><br />
+    <%= f.text_area :notes %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @home_check %> |
+<%= link_to 'Back', home_checks_path %>
