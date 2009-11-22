@@ -1,5 +1,4 @@
 class Admin::VolunteersController < Admin::BaseController
-  before_filter :require_user
 
   def map
     @volunteers = Volunteer.find(:all)
