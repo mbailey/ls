@@ -17,6 +17,7 @@ module VolunteersHelper
       link_to "home check booked for #{volunteer.home_check.scheduled_at}", [:edit, :admin, volunteer.home_check]
     else
       link_to 'approve or reject application', edit_admin_volunteer_path(volunteer)
+    end
   end
   
   
