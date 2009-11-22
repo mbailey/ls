@@ -1,7 +1,0 @@
-<h1>Listing volunteers (<%= @volunteer_count %> in total)</h2> <%= link_to 'download csv file', '/admin/volunteers.csv', :style => "padding: 0 100px;"%> <%= link_to 'view all on map', '/volunteers/map', :style => "padding: 0 100px;" %>
-
-<%= will_paginate @volunteers, :class => 'apple_pagination' %>
-<%= render :partial => 'volunteers' %>
-<%= will_paginate @volunteers, :class => 'apple_pagination' %>
-
-<%= link_to 'New volunteer', new_admin_volunteer_path %>

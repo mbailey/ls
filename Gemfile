@@ -6,6 +6,7 @@ source 'http://gems.rubyforge.org'
 gem 'fastercsv', '1.4.0'
 gem "authlogic", ">= 2.1.2", :only => :bundle
 
+gem 'haml', '2.2.13'
 gem 'actionmailer', '2.3.4'
 gem 'actionpack', '2.3.4'
 gem 'activerecord', '2.3.4'
@@ -15,7 +16,6 @@ gem 'mislav-will_paginate', :require_as => 'will_paginate', :only => :bundle
 gem "andre-geokit", :require_as => 'geokit'
 gem 'rails', '2.3.4', :only => :bundle
 gem 'mysql', '2.8.1'
-gem 'haml', '>= 2.0.9'
 gem 'json', '>= 1.1.7'
 gem 'sqlite3-ruby', :require_as => 'sqlite3'
 
