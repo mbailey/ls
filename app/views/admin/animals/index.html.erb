@@ -6,6 +6,7 @@
 
 <% @animals.each do |animal| %>
   <tr>
+    <td><%= image_tag animal.avatar.url(:icon) %></td>
     <td><%= link_to 'Show', [:admin, animal] %></td>
     <td><%= link_to 'Edit', edit_admin_animal_path(animal) %></td>
     <td><%= link_to 'Destroy', [:admin, animal], :confirm => 'Are you sure?', :method => :delete %></td>

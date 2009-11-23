@@ -1,9 +1,12 @@
-- form_for([:admin, @animal]) do |f|
+- form_for([:admin, @animal], :html => { :multipart => true }) do |f|
   = f.error_messages
 
   .row.clear
     = f.label :name
     = f.text_field :name
+    
+  .row.clear
+    = f.file_field :avatar
     
     
 

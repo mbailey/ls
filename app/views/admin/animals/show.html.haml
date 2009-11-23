@@ -1,0 +1,11 @@
+.animal_details
+  .details{:style => 'float: left; padding: 30px'}
+    name
+  .photo{:style=>'padding: 30px'}
+    = image_tag @animal.avatar.url(:medium)
+
+
+%br
+= link_to 'Edit', edit_admin_animal_path(@animal)
+|
+= link_to 'Back', admin_animals_path
