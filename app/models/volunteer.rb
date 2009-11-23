@@ -1,5 +1,7 @@
 class Volunteer < ActiveRecord::Base
-    
+  has_one :home_check
+  has_many :placements
+
   # acts_as_mappable
   validates_presence_of :first_name, :last_name
   wraps_attribute :email_address, EmailAddress
@@ -9,9 +11,7 @@ class Volunteer < ActiveRecord::Base
   wraps_attribute :home_phone,   PhoneNumber, :allow_blank => true
   wraps_attribute :work_phone,   PhoneNumber, :allow_blank => true
   validate :must_have_at_least_one_phone_number
-  
-  has_one :home_check
-  
+
   named_scope :pending, :conditions => {:state => 'pending'}
 
   # before_validation_on_create :geocode_address
@@ -25,15 +25,18 @@ class Volunteer < ActiveRecord::Base
     { :conditions => ["hours_spent_at_home_per_day >= ?", number.to_i] }
   }
 
-  
+  def home_check
+    nil
+  end
+
   def interview
     nil
   end
-  
+
   def completing_interview?
     interview_completed_changed? && interview_completed?
-  end    
-  
+  end
+
   def self.generate_csv(volunteers)
      FasterCSV.generate do |csv|
        csv << CSV_FIELDS
@@ -53,7 +56,7 @@ class Volunteer < ActiveRecord::Base
   def name
     "#{first_name} #{last_name}"
   end
-  
+
   def address
     "#{address_1}, #{address_2}, #{suburb}, #{postcode}, australia"
   end

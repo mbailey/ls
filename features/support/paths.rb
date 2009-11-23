@@ -16,6 +16,8 @@ module NavigationHelpers
       admin_volunteers_path
     when /the details page for this (.*)$/
       admin_volunteer_path get_current_object_for($1)
+    when /the placements page/
+      admin_placements_path
 
     # Add more mappings here.
     # Here is a more fancy example:

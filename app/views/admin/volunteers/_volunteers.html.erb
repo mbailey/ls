@@ -9,7 +9,7 @@
     <th colspan="2">Skills</th>
   </tr>
 <% for volunteer in @volunteers %>
-  <tr>
+  <tr class="volunteer">
     <td><%= link_to h("#{volunteer.first_name} #{volunteer.last_name}"), [:admin, volunteer] %></td>
     <td><%=h volunteer.suburb %></td>
     <td><%=h volunteer.state %></td>
