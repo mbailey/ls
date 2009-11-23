@@ -7,7 +7,7 @@ class PlacementSearch
   end
 
   def all
-    return Volunteer.all if @params.blank?
+    return Volunteer.all# if @params.blank?
     # TODO actual search filtering of volunteers
   end
 
