@@ -2,7 +2,7 @@ class Volunteer < ActiveRecord::Base
   has_one :home_check
   has_many :placements
 
-  # acts_as_mappable
+  acts_as_mappable
   validates_presence_of :first_name, :last_name
   wraps_attribute :email_address, EmailAddress
   validates_presence_of :address_1, :suburb
@@ -14,7 +14,7 @@ class Volunteer < ActiveRecord::Base
 
   named_scope :pending, :conditions => {:state => 'pending'}
 
-  # before_validation_on_create :geocode_address
+  before_validation_on_create :geocode_address
 
 
   named_scope :can_keep_dogs, lambda { |number|
