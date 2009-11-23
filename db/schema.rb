@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091123101147) do
+ActiveRecord::Schema.define(:version => 20091123122027) do
 
   create_table "animals", :force => true do |t|
     t.string   "name"
@@ -62,6 +62,8 @@ ActiveRecord::Schema.define(:version => 20091123101147) do
     t.text     "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "status",           :default => "seeking_carer"
+    t.string   "experience_level"
   end
 
   create_table "users", :force => true do |t|
@@ -116,6 +118,7 @@ ActiveRecord::Schema.define(:version => 20091123101147) do
     t.text     "interview_notes"
     t.datetime "interview_date"
     t.integer  "interview_user_id"
+    t.string   "experience_level"
   end
 
 end
