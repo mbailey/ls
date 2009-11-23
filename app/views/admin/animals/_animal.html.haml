@@ -1,20 +1,30 @@
-- form_for([:admin, @animal], :html => { :multipart => true }) do |f|
-  = f.error_messages
+.animal
+  - form_for([:admin, @animal], :html => { :multipart => true }) do |f|
+    .details{:style => 'float: left; padding: 30px'}
+  
+      = f.error_messages
 
-  .row.clear
-    = f.label :name
-    = f.text_field :name
+      .row.clear
+        = f.label :kind   
+        = f.select :kind, Animal::KINDS
     
-  .row.clear
-    = f.file_field :avatar
+      .row.clear
+        = f.label :name
+        = f.text_field :name
     
-    
+      .row.clear
+        = f.label :identifier
+        = f.text_field :identifier
+ 
+      .row.clear
+        = f.label :description   
+        = f.text_area :description
 
-  -# t.string   "name"
-  -# t.string   "identifier"
-  -# t.string   "kind"
-  -# t.string   "image_url"
-  -# t.string   "description"
-
-  .row.clear 
-    = f.submit 'Update'
+    .photo{:style=>'padding: 30px'}
+      = image_tag @animal.avatar.url(:medium)
+      
+      = f.label :avatar
+      = f.file_field :avatar
+      
+    .row.clear 
+      = f.submit 'Update'

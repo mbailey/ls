@@ -1,6 +1,10 @@
 class Volunteer < ActiveRecord::Base
+  
+  EXPERIENCE_LEVELS = %w(novice intermediate advanced expert)
+  
   has_one :home_check
   has_many :placements
+  has_many :placement_requests
 
   acts_as_mappable
   validates_presence_of :first_name, :last_name

@@ -1,10 +1,23 @@
-.animal_details
+.animal
   .details{:style => 'float: left; padding: 30px'}
-    name
+    %p
+      %b= @animal.kind
+    %p
+      %b Name:
+      = @animal.name
+    %p
+      %b Identifier:
+      = @animal.identifier
+  
   .photo{:style=>'padding: 30px'}
     = image_tag @animal.avatar.url(:medium)
 
 
+- if @animal.current_placement?
+
+  = render :partial => 'admin/placements/placement', :object => @animal.current_placement
+      
+    
 %br
 = link_to 'Edit', edit_admin_animal_path(@animal)
 |
