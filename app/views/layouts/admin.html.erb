@@ -18,10 +18,12 @@
 </div><!-- #header -->
 <div id="admin_dashboard">
   <ul>
+    <li><%= link_to 'Animals', admin_animals_path %></li>
     <li><%= link_to "Volunteers", admin_volunteers_path %></li>
     <li><%= link_to 'Process an Application', pending_admin_volunteers_path %></li>
     <li><%= link_to 'Home Checks', admin_home_checks_path %></li>
-    <li><%= link_to 'Place an animal', admin_placements_path %></li>
+    <li><%= link_to 'Placements', admin_placements_path %></li>
+    <li><%= link_to 'Place an animal', search_admin_placements_path %></li>
     <li><%= link_to 'Log Out', logout_path %></li>
   </ul>
 </div><!-- #admin_dashboard -->

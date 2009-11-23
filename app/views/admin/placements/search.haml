@@ -1,0 +1,17 @@
+- form_for(:search, @search, :url => admin_placements_path, :html => { :method => :get }) do |f|
+  %p
+    = f.label :kind
+    = f.select :kind, Animal::KINDS
+
+  %p
+    = f.label :hours_at_home
+    = f.text_field :hours_at_home
+
+  %p
+    = f.label :level_of_experience
+    = f.select :level_of_experience, []
+
+  = f.submit 'Search'
+
+
+= render :partial => 'admin/volunteers/volunteers'

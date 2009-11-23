@@ -1,0 +1,6 @@
+- form_for([:admin, @placement]) do |f|
+  = f.error_messages
+  %fieldset
+    %legend Personal details
+    = f.text_field_row :animal_id
+  = f.submit "update"
