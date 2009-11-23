@@ -1,0 +1,10 @@
+- form_for([:admin, @placement]) do |f|
+  = f.error_messages
+  %p
+    = animal_icon @placement.animal
+    = animal_details @placement.animal
+  %p
+    = f.select :experience_level, Volunteer::EXPERIENCE_LEVELS
+    
+  %p
+    = f.submit "update"

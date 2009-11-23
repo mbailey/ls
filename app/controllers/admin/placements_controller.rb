@@ -37,6 +37,10 @@ class Admin::PlacementsController < Admin::BaseController
     end
   end
 
+  def edit
+    @placement = Placement.find(params[:id])
+  end
+  
   def update
     @placement = Placement.find(params[:id])
 
