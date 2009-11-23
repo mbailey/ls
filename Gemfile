@@ -19,6 +19,8 @@ gem 'rails', '2.3.4', :only => :bundle
 gem 'mysql', '2.8.1'
 gem 'json', '>= 1.1.7'
 gem 'sqlite3-ruby', :require_as => 'sqlite3'
+gem 'rmagick', :require_as => 'RMagick'
+
 
 # Gems used with testing only
 gem 'fakeweb', '1.2.5', :only => :test
