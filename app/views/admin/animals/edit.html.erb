@@ -1,0 +1,12 @@
+<h1>Editing animal</h1>
+
+<% form_for(@animal) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @animal %> |
+<%= link_to 'Back', animals_path %>

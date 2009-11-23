@@ -1,0 +1,19 @@
+- form_for([:admin, @animal]) do |f|
+  = f.error_messages
+
+  .row.clear
+    = f.label :name
+    = f.text_field :name
+    
+  .row.clear
+    = f.file_field :photo
+    
+
+  -# t.string   "name"
+  -# t.string   "identifier"
+  -# t.string   "kind"
+  -# t.string   "image_url"
+  -# t.string   "description"
+
+  .row.clear 
+    = f.submit 'Update'

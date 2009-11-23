@@ -9,7 +9,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091122100214) do
+ActiveRecord::Schema.define(:version => 20091123092442) do
+
+  create_table "animals", :force => true do |t|
+    t.string   "name"
+    t.string   "identifier"
+    t.string   "kind"
+    t.string   "image_url"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
 
   create_table "home_checks", :force => true do |t|
     t.integer  "booked_by_id"
@@ -22,9 +40,26 @@ ActiveRecord::Schema.define(:version => 20091122100214) do
     t.integer  "performed_by_id"
   end
 
+  create_table "placement_requests", :force => true do |t|
+    t.integer  "placement_id"
+    t.integer  "volunteer_id"
+    t.datetime "request_date"
+    t.string   "request_method"
+    t.text     "request_msg"
+    t.datetime "response_date"
+    t.string   "response_method"
+    t.text     "response_msg"
+    t.string   "response_type"
+    t.datetime "followup_date"
+    t.string   "followup_method"
+    t.text     "followup_msg"
+    t.string   "followup_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "placements", :force => true do |t|
     t.string   "animal_id"
-    t.string   "animal_desc"
     t.integer  "volunteer_id"
     t.datetime "start_date"
     t.datetime "end_date"
@@ -58,7 +93,6 @@ ActiveRecord::Schema.define(:version => 20091122100214) do
     t.string   "work_phone"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "email_address"
     t.integer  "can_keep_dogs"
     t.integer  "can_keep_cats"
     t.string   "can_keep_other"
@@ -73,14 +107,15 @@ ActiveRecord::Schema.define(:version => 20091122100214) do
     t.boolean  "can_transport"
     t.boolean  "requires_financial_support"
     t.integer  "offer_duration"
+    t.string   "email_address"
     t.boolean  "will_take_stray"
     t.string   "how_secure"
-    t.boolean  "dog_safe_gates",              :limit => 255
+    t.integer  "dog_safe_gates",              :limit => 1
     t.string   "special_skills"
     t.boolean  "can_administer_medical_care"
     t.float    "lat"
     t.float    "lng"
-    t.string   "state",                                      :default => "pending"
+    t.string   "state",                                    :default => "pending"
     t.boolean  "interview_completed"
     t.text     "interview_notes"
     t.datetime "interview_date"
