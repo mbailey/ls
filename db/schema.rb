@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(:version => 20091123122027) do
     t.integer  "performed_by_id"
   end
 
-  create_table "placement_requests", :force => true do |t|
+  create_table "invitations", :force => true do |t|
     t.integer  "placement_id"
     t.integer  "carer_id"
     t.datetime "request_date"
