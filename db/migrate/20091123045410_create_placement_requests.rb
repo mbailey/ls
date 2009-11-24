@@ -2,7 +2,7 @@ class CreatePlacementRequests < ActiveRecord::Migration
   def self.up
     create_table :placement_requests do |t|
       t.integer :placement_id
-      t.integer :volunteer_id
+      t.integer :carer_id
       t.datetime :request_date
       t.string :request_method
       t.text :request_msg

@@ -2,7 +2,7 @@
 
 one:
   placement_id: 1
-  volunteer_id: 1
+  carer_id: 1
   request_date: 2009-11-23 15:54:10
   request_method: MyString
   request_msg: MyText
@@ -17,7 +17,7 @@ one:
 
 two:
   placement_id: 1
-  volunteer_id: 1
+  carer_id: 1
   request_date: 2009-11-23 15:54:10
   request_method: MyString
   request_msg: MyText

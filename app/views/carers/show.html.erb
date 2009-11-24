@@ -1,0 +1,10 @@
+<h1>Carer: <%=h @carer.first_name.capitalize %> <%=h @carer.last_name.capitalize %></h1>
+<dl>
+  <% Carer.viewable_fields.map do |f| %>
+		<dt><%= f.humanize.capitalize %>:</dt>
+		<dd><%=h @carer.send(f) %></dd>
+  <% end %>
+</dl>
+
+<%= link_to 'Edit', edit_admin_carer_path(@carer) %> |
+<%= link_to 'Back', admin_carers_path %>

@@ -12,7 +12,7 @@
         = link_to((image_tag placement.animal.avatar.url(:icon)), edit_admin_placement_path(placement))
         =h placement.animal.identifier
       %td
-        = link_to 'Destroy', volunteer, :confirm => 'Are you sure?', :method => :delete if params[:d]
+        = link_to 'Destroy', carer, :confirm => 'Are you sure?', :method => :delete if params[:d]
         
 = link_to 'Create new placement', new_admin_placement_path
 

@@ -9,7 +9,7 @@ User.find_or_create_by_username(
 
 
 
-@v1 = Volunteer.find_or_create_by_email_address(
+@v1 = Carer.find_or_create_by_email_address(
   :first_name => 'user', 
   :last_name => 'one', 
   :address_1 => '1 The Street', 
@@ -19,7 +19,7 @@ User.find_or_create_by_username(
   :email_address => 'v1@example.com'
 )
 
-@v2 = Volunteer.find_or_create_by_email_address(
+@v2 = Carer.find_or_create_by_email_address(
   :first_name => 'user', 
   :last_name => 'two', 
   :address_1 => '2 The Street', 
@@ -29,7 +29,7 @@ User.find_or_create_by_username(
   :email_address => 'v2@example.com'
 )
 
-@v3 = Volunteer.find_or_create_by_email_address(
+@v3 = Carer.find_or_create_by_email_address(
   :first_name => 'user', 
   :last_name => 'three', 
   :address_1 => '3 The Street', 
@@ -39,7 +39,7 @@ User.find_or_create_by_username(
   :email_address => 'v3@example.com'
 )
 
-@v4 = Volunteer.find_or_create_by_email_address(
+@v4 = Carer.find_or_create_by_email_address(
   :first_name => 'user', 
   :last_name => 'four', 
   :address_1 => 'Upstairs', 
@@ -50,7 +50,7 @@ User.find_or_create_by_username(
   :email_address => 'v4@example.com'
 )
 
-@v5 = Volunteer.find_or_create_by_email_address(
+@v5 = Carer.find_or_create_by_email_address(
   :first_name => 'user', 
   :last_name => 'five', 
   :address_1 => '5 The Street', 

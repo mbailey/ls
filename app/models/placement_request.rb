@@ -2,7 +2,7 @@ class PlacementRequest < ActiveRecord::Base
   
   RESPONSE_TYPES = %w(declined accepted)
   
-  belongs_to :volunteer
+  belongs_to :carer
   belongs_to :placement
   
   named_scope :outstanding, :conditions => "response_type IS NULL"

@@ -1,0 +1,20 @@
+%table
+  %tr
+    %th Name
+    %th Suburb
+    %th Next Action
+    %th{:colspan => 2} Details
+  - for carer in @carers
+    %tr
+      %td 
+        = link_to h("#{carer.first_name} #{carer.last_name}"), [:admin, carer]
+      %td 
+        =h carer.suburb
+      %td 
+        = next_action_link(carer)
+      %td 
+        = 'dog' if carer.can_keep_dogs
+        = 'cat' if carer.can_keep_cats
+        = 'other' if carer.can_keep_other
+      %td
+        = link_to 'Destroy', [:admin, carer], :confirm => 'Are you sure?', :method => :delete if params[:d]
