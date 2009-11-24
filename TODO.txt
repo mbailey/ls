@@ -120,4 +120,4 @@ Milestone 2
 # Reporting
 
 
-# Volunteer.find(:all, :origin => owner, :within => 1)
+# Carer.find(:all, :origin => owner, :within => 1)

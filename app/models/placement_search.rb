@@ -7,8 +7,8 @@ class PlacementSearch
   end
 
   def all
-    return Volunteer.all# if @params.blank?
-    # TODO actual search filtering of volunteers
+    return Carer.all# if @params.blank?
+    # TODO actual search filtering of carers
   end
 
   def params_to_attributes

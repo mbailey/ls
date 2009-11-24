@@ -1,24 +1,24 @@
 class Admin::InterviewsController < Admin::BaseController
 
   def edit
-    @volunteer = Volunteer.find(params[:volunteer_id])
+    @carer = Carer.find(params[:carer_id])
   end
   
   def update
-    @volunteer = Volunteer.find(params[:volunteer_id])
-    @volunteer.attributes = params[:volunteer]
-    if @volunteer.completing_interview?
-      @volunteer.interview_user_id = current_user.id
+    @carer = Carer.find(params[:carer_id])
+    @carer.attributes = params[:carer]
+    if @carer.completing_interview?
+      @carer.interview_user_id = current_user.id
     end
     
     respond_to do |format|
-      if @volunteer.save
-        flash[:notice] = 'Volunteer was successfully updated.'
-        format.html { redirect_to(pending_admin_volunteers_path) }
+      if @carer.save
+        flash[:notice] = 'Carer was successfully updated.'
+        format.html { redirect_to(pending_admin_carers_path) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @volunteer.errors, :status => :unprocessable_entity }
+        format.xml  { render :xml => @carer.errors, :status => :unprocessable_entity }
       end
     end
     

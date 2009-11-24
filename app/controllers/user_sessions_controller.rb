@@ -10,7 +10,7 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       flash[:notice] = "Login successful!"
-      redirect_back_or_default admin_volunteers_path
+      redirect_back_or_default admin_carers_path
     else
       # don't need to hint what part of login failed with errors
       @user_session.errors.clear

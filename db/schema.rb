@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(:version => 20091123122027) do
 
   create_table "home_checks", :force => true do |t|
     t.integer  "booked_by_id"
-    t.integer  "volunteer_id"
+    t.integer  "carer_id"
     t.datetime "scheduled_at"
     t.boolean  "completed"
     t.text     "notes"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(:version => 20091123122027) do
 
   create_table "placement_requests", :force => true do |t|
     t.integer  "placement_id"
-    t.integer  "volunteer_id"
+    t.integer  "carer_id"
     t.datetime "request_date"
     t.string   "request_method"
     t.text     "request_msg"
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(:version => 20091123122027) do
 
   create_table "placements", :force => true do |t|
     t.string   "animal_id"
-    t.integer  "volunteer_id"
+    t.integer  "carer_id"
     t.datetime "start_date"
     t.datetime "end_date"
     t.text     "notes"
@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(:version => 20091123122027) do
     t.datetime "updated_at"
   end
 
-  create_table "volunteers", :force => true do |t|
+  create_table "carers", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.string   "address_1"

@@ -1,0 +1,9 @@
+%h1= "Listing carers (#{@carers.size} in total)"
+
+-# = link_to 'download csv file', '/admin/carers.csv'
+-# = link_to 'view all on map', '/carers/map'
+-# = link_to 'New carer', new_admin_carer_path
+
+= will_paginate @carers, :class => 'apple_pagination'
+= render :partial => 'carers'
+= will_paginate @carers, :class => 'apple_pagination'

@@ -10,12 +10,12 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
-    when /the volunteer signup page/
+    when /the carer signup page/
       root_path
-    when /the admin volunteers page/
-      admin_volunteers_path
+    when /the admin carers page/
+      admin_carers_path
     when /the details page for this (.*)$/
-      admin_volunteer_path get_current_object_for($1)
+      admin_carer_path get_current_object_for($1)
     when /the placements page/
       admin_placements_path
 

@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>Volunteers: <%= controller.action_name %></title>
+  <title>Carers: <%= controller.action_name %></title>
   <%= stylesheet_link_tag 'master' %>
   <%= stylesheet_link_tag 'admin' %>
   <!--[if IE]> <%= stylesheet_link_tag 'ie' %><![endif]-->
@@ -19,8 +19,8 @@
 <div id="admin_dashboard">
   <ul>
     <li><%= link_to 'Animals', admin_animals_path %></li>
-    <li><%= link_to "Volunteers", admin_volunteers_path %></li>
-    <li><%= link_to 'Process an Application', pending_admin_volunteers_path %></li>
+    <li><%= link_to "Carers", admin_carers_path %></li>
+    <li><%= link_to 'Process an Application', pending_admin_carers_path %></li>
     <li><%= link_to 'Home Checks', admin_home_checks_path %></li>
     <li><%= link_to 'Placements', admin_placements_path %></li>
     <li><%= link_to 'Place an animal', search_admin_placements_path %></li>

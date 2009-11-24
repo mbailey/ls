@@ -1,7 +1,7 @@
 class Placement < ActiveRecord::Base
   
   has_many :placement_requests
-  has_one :volunteer
+  has_one :carer
   
   validate_on_create :cannot_have_two_open_placements_for_same_animal 
   
@@ -13,7 +13,7 @@ class Placement < ActiveRecord::Base
   
   STATUSES = ['seeking carer', 'with carer', 'closed']
   
-  belongs_to :volunteer
+  belongs_to :carer
   belongs_to :animal
   
   named_scope :current, :conditions => "status != 'closed'", :order => 'created_at desc'

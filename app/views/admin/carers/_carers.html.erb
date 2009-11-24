@@ -1,0 +1,23 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Suburb</th>
+    <th>Status</th>
+    <th>Dog</th>
+    <th>Cat</th>
+    <th>Other</th>
+    <th colspan="2">Skills</th>
+  </tr>
+<% for carer in @carers %>
+  <tr class="carer">
+    <td><%= link_to h("#{carer.first_name} #{carer.last_name}"), [:admin, carer] %></td>
+    <td><%=h carer.suburb %></td>
+    <td><%=h carer.state %></td>
+    <td><%=h carer.can_keep_dogs %></td>
+    <td><%=h carer.can_keep_cats %></td>
+    <td><%=h carer.can_keep_other %></td>
+    <td><%=h carer.special_skills %></td>
+    <td><%= link_to 'Destroy', carer, :confirm => 'Are you sure?', :method => :delete if params[:d] %></td>
+  </tr>
+<% end %>
+</table>
