@@ -2,6 +2,11 @@ require 'machinist/active_record'
 require 'sham'
 require 'faker'
 
+HomeCheck.blueprint do
+  volunteer
+  booked_by
+end
+
 Volunteer.blueprint do
   first_name { Faker::Name.first_name }
   last_name { Faker::Name.last_name }
@@ -51,6 +56,8 @@ Volunteer.blueprint(:takes_dogs_and_cats) do
   can_keep_cats true
 end
 
+# TODO: Saving a user takes ages under AuthLogic, which means all the
+# specs end up running really slowly. Need to find a way around this.
 User.blueprint do
   username  { Faker::Internet.user_name }
   first_name { Faker::Name.first_name }

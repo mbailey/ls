@@ -1,15 +1,39 @@
-<h1>Schedule a Home Check</h1>
+<h1>Schedule a Home Check for <%=h @volunteer.name %></h1>
 
 <% form_for(@home_check, :url => [:admin, @volunteer, :home_check]) do |f| %>
   <%= f.error_messages %>
   
+  <div class="row clear">
+    <%= f.hidden_field :scheduled_at_date %>
+    <div id="datepicker"></div>
+  </div>
   
   <div class="row clear">
-    <%= f.label :scheduled_at %>
-    <%= f.datetime_select :scheduled_at %>
+    <%= f.label :scheduled_at_time %>
+    <%= f.text_field :scheduled_at_time, :value => @home_check.scheduled_at_time.to_s(:time) %>
   </div>
   
   <div class="row clear">
     <%= f.submit "Schedule" %>
   </div>
+<% end %>
+
+<div id="home_checks">
+  <%= render :partial => "index_for_date" %>
+</div>
+
+
+<% content_for :head do %>
+  <script type="text/javascript" charset="utf-8">
+    function datepickerChanged(dateText, datepicker) {
+      $("#home_checks").load("/admin/home_checks/index_for_date?" + jQuery.param({date: dateText}));
+    }
+    
+    $(function() {
+      $("#datepicker").datepicker({
+        altField: "#home_check_scheduled_at_date",
+        onSelect: datepickerChanged
+      });
+    });
+  </script>
 <% end %>
