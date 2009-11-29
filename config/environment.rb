@@ -10,6 +10,7 @@ RAILS_GEM_VERSION = '2.3.4' unless defined? RAILS_GEM_VERSION
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
 
+# Add this line at your own risk!  
 Rails::VendorGemSourceIndex.silence_spec_warnings = true
 
 Rails::Initializer.run do |config|

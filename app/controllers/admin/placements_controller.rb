@@ -2,7 +2,7 @@ class Admin::PlacementsController < Admin::BaseController
 
   def search
     @search = PlacementSearch.new(params[:search])
-    @volunteers = @search.all#.paginate(:page => params[:page])
+    @carers = @search.all#.paginate(:page => params[:page])
   end
   
   def index
@@ -37,6 +37,10 @@ class Admin::PlacementsController < Admin::BaseController
     end
   end
 
+  def edit
+    @placement = Placement.find(params[:id])
+  end
+  
   def update
     @placement = Placement.find(params[:id])
 

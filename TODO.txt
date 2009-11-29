@@ -1,3 +1,13 @@
++ Ensure there can't be more than one open placement for an animal
+
++ fix 'book a home check'
+  - if you add notes but don't mark it completed the 'process list' 
+    tells you to create one
+
+
+
+
+
 Add users
 - name
 - email
@@ -114,4 +124,4 @@ Milestone 2
 # Reporting
 
 
-# Volunteer.find(:all, :origin => owner, :within => 1)
+# Carer.find(:all, :origin => owner, :within => 1)

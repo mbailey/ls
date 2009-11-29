@@ -1,0 +1,22 @@
+.placement{:style => "border: solid 2px grey; padding: 2px; margin: 5px;"}
+
+  %h2 Placement
+  %b Status:
+  = placement.status
+  %br
+  %b Experience:
+  = placement.experience_level
+  %br
+  - if placement.status == 'seeking_carer'
+    %b Request Status:
+    = request_status(placement)
+  
+.placement_requests{:style => "border: solid 2px grey; padding: 2px; margin: 5px;"}
+  
+  %h2 
+    Invitations
+    = "(#{request_status(placement)})"
+  
+  - @animal.current_placement.placement_requests.each do |placement_request|
+    = render :partial => 'admin/placement_requests/placement_request', :object => placement_request
+    %br

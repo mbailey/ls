@@ -2,12 +2,7 @@ require 'machinist/active_record'
 require 'sham'
 require 'faker'
 
-HomeCheck.blueprint do
-  volunteer
-  booked_by
-end
-
-Volunteer.blueprint do
+Carer.blueprint do
   first_name { Faker::Name.first_name }
   last_name { Faker::Name.last_name }
   address_1 { Faker::Address.street_address }
@@ -40,20 +35,25 @@ end
     # t.string   "special_skills"
     # t.boolean  "can_administer_medical_care"
 
-Volunteer.blueprint(:takes_dogs) do
+Carer.blueprint(:takes_dogs) do
   state 'approved'
   can_keep_dogs true
 end
 
-Volunteer.blueprint(:takes_cats) do
+Carer.blueprint(:takes_cats) do
   state 'approved'
   can_keep_cats true
 end
 
-Volunteer.blueprint(:takes_dogs_and_cats) do
+Carer.blueprint(:takes_dogs_and_cats) do
   state 'approved'
   can_keep_dogs true
   can_keep_cats true
+end
+
+HomeCheck.blueprint do
+  carer
+  booked_by
 end
 
 # TODO: Saving a user takes ages under AuthLogic, which means all the

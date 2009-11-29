@@ -1,0 +1,5 @@
+%h2 Listing carers (#{@carers.total_entries} in total)
+
+= will_paginate @carers, :class => 'apple_pagination'
+= render :partial => 'pending_carers'
+= will_paginate @carers, :class => 'apple_pagination'

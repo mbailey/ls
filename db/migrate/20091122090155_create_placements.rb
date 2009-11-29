@@ -3,7 +3,7 @@ class CreatePlacements < ActiveRecord::Migration
     create_table :placements do |t|
       t.string :animal_id
       t.string :animal_desc
-      t.integer :volunteer_id
+      t.integer :carer_id
       t.datetime :start_date
       t.datetime :end_date
       t.text :notes

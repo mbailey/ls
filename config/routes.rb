@@ -7,19 +7,19 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :home_checks, :only       => [:index, :show, :update, :edit, :destroy], 
                                   :collection => { :index_for_date => :get }
     admin.resources :animals
-    admin.resources :volunteers, :collection => { :pending => :get, :map => :get} do |volunteer|
-      volunteer.resource :interview
-      volunteer.resource :home_check
+    admin.resources :carers, :collection => { :pending => :get, :map => :get} do |carer|
+      carer.resource :interview
+      carer.resource :home_check
     end
     admin.resources :placements, :collection => { :search => :get }
-    admin.root :controller => 'volunteers'
+    admin.root :controller => 'carers'
   end
 
   map.resources :home
-  map.resources :volunteers, :only => [:new, :create]
-  map.connect '/search', :controller => 'volunteers', :action => 'search'
+  map.resources :carers, :only => [:new, :create]
+  map.connect '/search', :controller => 'carers', :action => 'search'
 
   map.logout 'logout', :controller => 'user_sessions', :action => 'destroy'
 
-  map.root :controller => "volunteers", :action => "new"
+  map.root :controller => "carers", :action => "new"
 end

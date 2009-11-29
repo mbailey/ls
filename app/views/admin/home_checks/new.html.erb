@@ -1,6 +1,6 @@
-<h1>Schedule a Home Check for <%=h @volunteer.name %></h1>
+<h1>Schedule a Home Check for <%=h @carer.name %></h1>
 
-<% form_for(@home_check, :url => [:admin, @volunteer, :home_check]) do |f| %>
+<% form_for(@home_check, :url => [:admin, @carer, :home_check]) do |f| %>
   <%= f.error_messages %>
   
   <div class="row clear">

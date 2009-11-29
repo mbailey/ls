@@ -10,7 +10,7 @@ Sham.define do
   mobile_phone  { Faker.numerify('04## ### ###') }
 end
 
-Volunteer.blueprint do
+Carer.blueprint do
   first_name    { Sham.first_name }
   last_name     { Sham.last_name }
   email_address { Sham.email_address }

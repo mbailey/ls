@@ -1,11 +1,11 @@
 class HomeCheck < ActiveRecord::Base
   validates_presence_of :booked_by
-  validates_presence_of :volunteer
+  validates_presence_of :carer
   validates_presence_of :scheduled_at
   
   belongs_to :booked_by, :class_name => "User"
   belongs_to :performed_by, :class_name => "User"
-  belongs_to :volunteer
+  belongs_to :carer
   
   # Return all the home checks on a given date.
   named_scope :on_date, lambda {|date|
@@ -32,5 +32,4 @@ class HomeCheck < ActiveRecord::Base
     self.scheduled_at ||= Time.zone.now
     self.scheduled_at = Time.zone.local(scheduled_at.year, scheduled_at.month, scheduled_at.day, time.hour, time.min, time.sec)
   end
-    
 end
