@@ -1,5 +1,12 @@
 class Placement < ActiveRecord::Base
   
+  # Special requirements
+  # cage confinement
+  # recovering from surgery
+  # timid cats
+  # oral medication
+  # bandage changes
+  
   has_many :invitations
   has_one :carer
   
