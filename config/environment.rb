@@ -82,3 +82,4 @@ Rails::Initializer.run do |config|
   end
   load PASSWORD_FILE
 end
+

@@ -4,11 +4,16 @@ class Admin::HomeChecksController < Admin::BaseController
   def index
     @home_checks = HomeCheck.all
     
-
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @home_checks }
     end
+  end
+  
+  # GET /home_checks/index_for_date?date=...
+  def index_for_date
+    @home_checks = HomeCheck.on_date(params[:date])
+    render :partial => "index_for_date", :layout => false
   end
 
   # GET /home_checks/1
@@ -26,7 +31,8 @@ class Admin::HomeChecksController < Admin::BaseController
   # GET /home_checks/new.xml
   def new
     @carer = Carer.find(params[:carer_id])
-    @home_check = HomeCheck.new
+    @home_check = HomeCheck.new(:scheduled_at_date => Time.zone.now, :scheduled_at_time => "9:00")
+    @home_checks = HomeCheck.on_date(Time.zone.today)
 
     respond_to do |format|
       format.html # new.html.erb

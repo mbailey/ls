@@ -1,0 +1,7 @@
+<table>
+  <% @home_checks.each do |home_check| %>
+    <tr>
+      <td><%= home_check.scheduled_at.to_s(:date_and_time) %></td>
+    </tr>
+  <% end %>
+</table>

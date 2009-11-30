@@ -51,6 +51,13 @@ Carer.blueprint(:takes_dogs_and_cats) do
   can_keep_cats true
 end
 
+HomeCheck.blueprint do
+  carer
+  booked_by
+end
+
+# TODO: Saving a user takes ages under AuthLogic, which means all the
+# specs end up running really slowly. Need to find a way around this.
 User.blueprint do
   username  { Faker::Internet.user_name }
   first_name { Faker::Name.first_name }

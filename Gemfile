@@ -1,5 +1,5 @@
 # clear_sources
-# source 'http://gemcutter.org'
+source 'http://gemcutter.org'
 source 'http://gems.github.com/'
 source 'http://gems.rubyforge.org'
 
@@ -32,7 +32,7 @@ gem 'rspec-rails', '1.2.9', :only => :test, :require_as => 'spec/rails'
 gem 'remarkable_rails', '3.1.10', :only => :test
 gem 'faker', '0.3.1', :only => :test
 gem 'launchy', '0.3.3', :only => :test
-gem 'notahat-machinist', '1.0.3', :require_as => 'machinist', :only => :test
+gem 'machinist', '1.0.5', :only => :test
 gem 'bmabey-email_spec', '0.3.4', :require_as => 'email_spec'
 
 disable_system_gems
