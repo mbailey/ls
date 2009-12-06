@@ -1,3 +1,6 @@
++ Animal
+  + add kind
+
 + Ensure there can't be more than one open placement for an animal
 
 + fix 'book a home check'
