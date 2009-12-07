@@ -1,6 +1,6 @@
 module AnimalsHelper
   def animal_icon(a)
-    a.class == Animal &&  link_to((image_tag a.avatar.url(:icon), :alt => a.name, :title => a.name), [:admin, a])
+    a.class == Animal &&  link_to((image_tag a.image.url(:icon), :alt => a.name, :title => a.name), [:admin, a])
   end
   
   def animal_details(a)

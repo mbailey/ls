@@ -1,7 +1,7 @@
 class Animal < ActiveRecord::Base
   has_many :placements
   
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>", :icon => "32x32#" }  
+  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>", :icon => "32x32#" }  
   
   KINDS = ['Large Dog', 'Small Dog', 'Puppy', 'Cat', 'Mum with kittens', 'Kittens', 'Other']
   

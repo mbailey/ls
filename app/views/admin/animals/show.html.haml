@@ -10,7 +10,7 @@
       = @animal.identifier
   
   .photo{:style=>'padding: 30px'}
-    = image_tag @animal.avatar.url(:medium)
+    = image_tag @animal.image.url(:medium)
 
 
 - if @animal.current_placement?

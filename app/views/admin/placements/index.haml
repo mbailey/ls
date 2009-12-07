@@ -9,7 +9,7 @@
   - for placement in @placements    
     %tr.placement
       %td
-        = link_to((image_tag placement.animal.avatar.url(:icon)), edit_admin_placement_path(placement))
+        = link_to((image_tag placement.animal.image.url(:icon)), edit_admin_placement_path(placement))
         =h placement.animal.identifier
       %td
         = link_to 'Destroy', carer, :confirm => 'Are you sure?', :method => :delete if params[:d]

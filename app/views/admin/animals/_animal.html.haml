@@ -21,10 +21,10 @@
         = f.text_area :description
 
     .photo{:style=>'padding: 30px'}
-      = image_tag @animal.avatar.url(:medium)
+      = image_tag @animal.image.url(:medium)
       
-      = f.label :avatar
-      = f.file_field :avatar
+      = f.label :image
+      = f.file_field :image
       
     .row.clear 
       = f.submit 'Update'
