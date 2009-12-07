@@ -10,8 +10,8 @@
         = link_to h("#{carer.first_name} #{carer.last_name}"), [:admin, carer]
       %td 
         =h carer.suburb
-      %td 
-        = next_action_link(carer)
+      %td
+        =h availability(carer)
       %td 
         = 'dog' if carer.can_keep_dogs
         = 'cat' if carer.can_keep_cats

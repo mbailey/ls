@@ -1,11 +1,12 @@
-class Carer < ActiveRecord::Base
+class Signup < ActiveRecord::Base
   
   EXPERIENCE_LEVELS = %w(novice intermediate advanced expert)
   
-  has_many :placements
-  has_many :invitations
-  has_one  :signup
-  has_one  :home_check, :through => :signup
+  DECIDED_STATUSES = 'rejected', 'approved'
+  
+  has_one :home_check
+  belongs_to :carer
+  belongs_to :decided_by, :class_name => "User", :foreign_key => :decided_by
 
   acts_as_mappable
   validates_presence_of :first_name, :last_name
@@ -21,7 +22,6 @@ class Carer < ActiveRecord::Base
 
   before_validation_on_create :geocode_address
 
-
   named_scope :can_keep_dogs, lambda { |number|
     { :conditions => ["can_keep_dogs >= ?", number.to_i] }
   }
@@ -29,13 +29,13 @@ class Carer < ActiveRecord::Base
   named_scope :hours_at_home, lambda { |number|
     { :conditions => ["hours_spent_at_home_per_day >= ?", number.to_i] }
   }
-  
-  def current_placement
-    placements.current.first
+
+  def interview
+    nil
   end
-  
-  def placement_status
-    current_placement? && current_placement.status
+
+  def completing_interview?
+    interview_completed_changed? && interview_completed?
   end
 
   def self.generate_csv(carers)
@@ -75,16 +75,16 @@ class Carer < ActiveRecord::Base
     save
   end
 
-  def pending?
-    status == 'pending'
+  def rejected?
+    status == 'rejected'
   end
-
+  
   def approved?
     status == 'approved'
   end
-
-  def rejected?
-    status == 'rejected'
+  
+  def pending?
+    ! (approved? || rejected?)
   end
 
   private

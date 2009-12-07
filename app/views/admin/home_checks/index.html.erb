@@ -12,7 +12,7 @@
 
 <% @home_checks.each do |home_check| %>
   <tr>
-    <td><%=h home_check.carer.name %></td>
+    <td><%=h home_check.signup.name %></td>
     <td><%=h home_check.booked_by.name %></td>
     <td><%=h home_check.performed_by && home_check.performed_by.name %></td>
     <td><%= link_to home_check.scheduled_at.to_s(:date_and_time), edit_admin_home_check_path(home_check) %></td>

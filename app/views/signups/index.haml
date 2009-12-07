@@ -1,0 +1,8 @@
+%h1= "Listing signups (#{@signup_count} in total)"
+
+  = link_to 'download csv file', '/signups.csv'
+  = link_to 'view all on map', '/signups/map'
+  = will_paginate @signups, :class => 'apple_pagination'
+  = render :partial => 'signups'
+  = will_paginate @signups, :class => 'apple_pagination'
+  = link_to 'New signup', new_signup_path

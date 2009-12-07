@@ -1,3 +1,6 @@
++ accept/reject application
++ can't place an animal unless person approved
+
 + move "logged in" links to RHS
 
 + Animal
@@ -8,9 +11,6 @@
 + fix 'book a home check'
   - if you add notes but don't mark it completed the 'process list' 
     tells you to create one
-
-
-
 
 
 Add users

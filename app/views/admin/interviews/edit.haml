@@ -1,7 +1,6 @@
-%h1
-  Editing carer
-- form_for(@carer, :url => admin_carer_interview_path(@carer)) do |f|
+%h1 Editing Carer Application
+- form_for(@signup, :url => admin_signup_interview_path(@signup)) do |f|
   -#= f.error_messages
   = render :partial => 'admin/interviews/interview', :locals => {:f => f}
-  = render :partial => 'admin/carers/carer', :locals => {:f => f}
+  = render :partial => 'admin/signups/signup', :locals => {:f => f}
   = f.submit "Update"

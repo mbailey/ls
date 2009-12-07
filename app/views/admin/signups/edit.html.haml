@@ -1,0 +1,10 @@
+%h1 Editing Carer Application
+- form_for([:admin, @signup]) do |f|
+  = f.error_messages
+  = f.submit "Update"
+  = render :partial => 'signup', :locals => {:f => f}
+  = f.submit "Update"
+
+= link_to 'Show', [:admin, @signup]
+|
+= link_to 'Back', admin_signups_path

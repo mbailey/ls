@@ -6,11 +6,7 @@ class Animal < ActiveRecord::Base
   KINDS = ['Large Dog', 'Small Dog', 'Puppy', 'Cat', 'Mum with kittens', 'Kittens', 'Other']
   
   def current_placement
-    placements.current.first || Placement.new(:animal => self)
-  end
-  
-  def current_placement?
-    ! current_placement.blank?
+    placements.current.first
   end
   
   def placement_status

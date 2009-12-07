@@ -1,11 +1,11 @@
 class HomeCheck < ActiveRecord::Base
   validates_presence_of :booked_by
-  validates_presence_of :carer
+  validates_presence_of :signup
   validates_presence_of :scheduled_at
   
   belongs_to :booked_by, :class_name => "User"
   belongs_to :performed_by, :class_name => "User"
-  belongs_to :carer
+  belongs_to :signup
   
   # Return all the home checks on a given date.
   named_scope :on_date, lambda {|date|

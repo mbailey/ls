@@ -30,7 +30,7 @@ class Admin::HomeChecksController < Admin::BaseController
   # GET /home_checks/new
   # GET /home_checks/new.xml
   def new
-    @carer = Carer.find(params[:carer_id])
+    @signup = Signup.find(params[:signup_id])
     @home_check = HomeCheck.new(:scheduled_at_date => Time.zone.now, :scheduled_at_time => "9:00")
     @home_checks = HomeCheck.on_date(Time.zone.today)
 
@@ -48,8 +48,8 @@ class Admin::HomeChecksController < Admin::BaseController
   # POST /home_checks
   # POST /home_checks.xml
   def create
-    @carer = Carer.find(params[:carer_id])
-    @home_check = HomeCheck.new(params[:home_check].merge(:carer => @carer, :booked_by => current_user))
+    @signup = Signup.find(params[:signup_id])
+    @home_check = HomeCheck.new(params[:home_check].merge(:signup => @signup, :booked_by => current_user))
 
     respond_to do |format|
       if @home_check.save
