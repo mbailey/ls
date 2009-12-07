@@ -13,7 +13,6 @@ gem 'actionpack', '2.3.4'
 gem 'activerecord', '2.3.4'
 gem 'activesupport', '2.3.4'
 gem 'mislav-will_paginate', :require_as => 'will_paginate', :only => :bundle
-# gem 'will_paginate', '2.3.11'
 gem "andre-geokit", :require_as => 'geokit'
 gem 'rails', '2.3.4', :only => :bundle
 gem 'mysql', '2.8.1'

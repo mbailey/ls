@@ -4,7 +4,7 @@ class Carer < ActiveRecord::Base
   
   has_one :home_check
   has_many :placements
-  has_many :placement_requests
+  has_many :invitations
 
   acts_as_mappable
   validates_presence_of :first_name, :last_name

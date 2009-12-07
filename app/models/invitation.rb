@@ -1,4 +1,4 @@
-class PlacementRequest < ActiveRecord::Base
+class Invitation < ActiveRecord::Base
   
   RESPONSE_TYPES = %w(declined accepted)
   

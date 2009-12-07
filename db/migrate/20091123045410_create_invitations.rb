@@ -1,6 +1,6 @@
-class CreatePlacementRequests < ActiveRecord::Migration
+class CreateInvitations < ActiveRecord::Migration
   def self.up
-    create_table :placement_requests do |t|
+    create_table :invitations do |t|
       t.integer :placement_id
       t.integer :carer_id
       t.datetime :request_date
@@ -20,6 +20,6 @@ class CreatePlacementRequests < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :placement_requests
+    drop_table :invitations
   end
 end

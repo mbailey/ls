@@ -1,6 +1,13 @@
 class Placement < ActiveRecord::Base
   
-  has_many :placement_requests
+  # Special requirements
+  # cage confinement
+  # recovering from surgery
+  # timid cats
+  # oral medication
+  # bandage changes
+  
+  has_many :invitations
   has_one :carer
   
   validate_on_create :cannot_have_two_open_placements_for_same_animal 
@@ -19,15 +26,15 @@ class Placement < ActiveRecord::Base
   named_scope :current, :conditions => "status != 'closed'", :order => 'created_at desc'
   
   def requests_sent
-    placement_requests.size
+    invitations.size
   end
   
   def accepted_requests
-    placement_requests.accepted
+    invitations.accepted
   end
   
   def outstanding_requests
-    placement_requests.outstanding
+    invitations.outstanding
   end
   
   

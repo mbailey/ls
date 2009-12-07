@@ -11,12 +11,12 @@
     %b Request Status:
     = request_status(placement)
   
-.placement_requests{:style => "border: solid 2px grey; padding: 2px; margin: 5px;"}
+.invitations{:style => "border: solid 2px grey; padding: 2px; margin: 5px;"}
   
   %h2 
     Invitations
     = "(#{request_status(placement)})"
   
-  - @animal.current_placement.placement_requests.each do |placement_request|
-    = render :partial => 'admin/placement_requests/placement_request', :object => placement_request
+  - @animal.current_placement.invitations.each do |invitation|
+    = render :partial => 'admin/invitations/invitation', :object => invitation
     %br

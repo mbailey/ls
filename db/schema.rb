@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091123122027) do
+ActiveRecord::Schema.define(:version => 20091207040627) do
 
   create_table "animals", :force => true do |t|
     t.string   "name"
@@ -19,10 +19,10 @@ ActiveRecord::Schema.define(:version => 20091123122027) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "carers", :force => true do |t|
@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(:version => 20091123122027) do
     t.string   "work_phone"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "email_address"
     t.integer  "can_keep_dogs"
     t.integer  "can_keep_cats"
     t.string   "can_keep_other"
@@ -52,14 +51,15 @@ ActiveRecord::Schema.define(:version => 20091123122027) do
     t.boolean  "can_transport"
     t.boolean  "requires_financial_support"
     t.integer  "offer_duration"
+    t.string   "email_address"
     t.boolean  "will_take_stray"
     t.string   "how_secure"
-    t.boolean  "dog_safe_gates"
+    t.integer  "dog_safe_gates",              :limit => 1
     t.string   "special_skills"
     t.boolean  "can_administer_medical_care"
     t.float    "lat"
     t.float    "lng"
-    t.string   "state",                       :default => "pending"
+    t.string   "state",                                    :default => "pending"
     t.boolean  "interview_completed"
     t.text     "interview_notes"
     t.datetime "interview_date"
@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(:version => 20091123122027) do
     t.integer  "performed_by_id"
   end
 
-  create_table "placement_requests", :force => true do |t|
+  create_table "invitations", :force => true do |t|
     t.integer  "placement_id"
     t.integer  "carer_id"
     t.datetime "request_date"

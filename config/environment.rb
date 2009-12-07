@@ -24,8 +24,7 @@ Rails::Initializer.run do |config|
   # config.frameworks -= [ :active_record, :active_resource, :action_mailer ]
 
   # Specify gems in RAILS_ROOT/Gemfile
-  # Then run 'gem bundle --cached' to install
-  config.gem 'haml'
+  # Then run 'gem bundle' to install
 
   # Only load the plugins named here, in the order given. By default, all plugins
   # in vendor/plugins are loaded in alphabetical order.
