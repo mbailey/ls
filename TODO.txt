@@ -1,3 +1,5 @@
++ move "logged in" links to RHS
+
 + Animal
   + add kind
 
