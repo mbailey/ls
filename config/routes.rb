@@ -14,7 +14,7 @@ ActionController::Routing::Routes.draw do |map|
       carer.resource :home_check
     end
     admin.resources :placements, :collection => { :search => :get }
-    admin.root :controller => 'carers'
+    admin.root :controller => 'dashboard'
   end
 
   map.resources :home

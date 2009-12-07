@@ -14,6 +14,7 @@ class Placement < ActiveRecord::Base
   belongs_to :animal
   
   named_scope :current, :conditions => "status != 'closed'", :order => 'created_at desc'
+  named_scope :limit, lambda { |num| { :limit => num } }
   
   validate_on_create :cannot_have_two_open_placements_for_same_animal 
   

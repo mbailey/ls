@@ -5,6 +5,8 @@ class Animal < ActiveRecord::Base
   
   KINDS = ['Large Dog', 'Small Dog', 'Puppy', 'Cat', 'Mum with kittens', 'Kittens', 'Other']
   
+  named_scope :limit, lambda { |num| { :limit => num } }
+  
   def current_placement
     placements.current.first
   end

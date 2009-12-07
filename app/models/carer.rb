@@ -21,7 +21,7 @@ class Carer < ActiveRecord::Base
 
   before_validation_on_create :geocode_address
 
-
+  named_scope :limit, lambda { |num| { :limit => num } }
   named_scope :can_keep_dogs, lambda { |number|
     { :conditions => ["can_keep_dogs >= ?", number.to_i] }
   }
