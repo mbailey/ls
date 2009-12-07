@@ -1,5 +1,7 @@
 class Placement < ActiveRecord::Base
   
+  STATUSES = ['seeking carer', 'with carer', 'closed']
+  
   # Special requirements
   # cage confinement
   # recovering from surgery
@@ -8,7 +10,11 @@ class Placement < ActiveRecord::Base
   # bandage changes
   
   has_many :invitations
-  has_one :carer
+  belongs_to :carer
+  belongs_to :animal
+  
+  named_scope :current, :conditions => "status != 'closed'", :order => 'created_at desc'
+  named_scope :limit, lambda { |num| { :limit => num } }
   
   validate_on_create :cannot_have_two_open_placements_for_same_animal 
   
@@ -17,13 +23,6 @@ class Placement < ActiveRecord::Base
       errors.add(:animal_id, "there is already a placement open for this animal")  
     end
   end
-  
-  STATUSES = ['seeking carer', 'with carer', 'closed']
-  
-  belongs_to :carer
-  belongs_to :animal
-  
-  named_scope :current, :conditions => "status != 'closed'", :order => 'created_at desc'
   
   def requests_sent
     invitations.size

@@ -1,0 +1,38 @@
+%table
+  %tr
+    %th
+      Id
+    %th
+      Name
+    %th
+      Suburb
+    %th
+      Postcode
+    %th
+      Dog
+    %th
+      Cat
+    %th
+      Other
+    %th
+      Skills
+  - for signup in @signups
+  %tr
+    %td
+      = h signup.id
+    %td
+      = link_to h("#{signup.first_name} #{signup.last_name}"), signup
+    %td
+      = h signup.suburb
+    %td
+      = h signup.postcode
+    %td
+      = h signup.can_keep_dogs
+    %td
+      = h signup.can_keep_cats
+    %td
+      = h signup.can_keep_other
+    %td
+      = h signup.special_skills
+    %td
+      = link_to 'Destroy', signup, :confirm => 'Are you sure?', :method => :delete if params[:d]

@@ -1,0 +1,5 @@
+%h2 Listing signups (#{@signups.total_entries} in total)
+
+= will_paginate @signups, :class => 'apple_pagination'
+= render :partial => 'signups'
+= will_paginate @signups, :class => 'apple_pagination'

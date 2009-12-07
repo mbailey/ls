@@ -1,0 +1,37 @@
+%h1 Admin Dashboard
+
+#quick_links
+  %h2 Quick Links
+
+  %ul
+    %li= link_to 'Create new placement', new_admin_placement_path
+
+
+#searching
+  %form
+    %fieldset
+      %legend searching for something will come here
+  
+
+.recent
+  %h2 Recent Animals
+  %p= link_to 'See all animals', admin_animals_path
+  = render :partial => 'admin/animals/animals_listings', :locals => { :animals => @animals } 
+
+.recent
+  %h2 Recent Carers
+  %p= link_to 'See all carers', admin_carers_path
+  = render :partial => 'admin/carers/carers', :locals => { :carers => @carers } 
+
+.recent
+  %h2 Recent Placements
+  %p= link_to "See all animals' placements", admin_animals_path
+  %table
+    %tr
+      %th Animal
+      %th Status
+    - for placement in @placements    
+      %tr.placement
+        %td
+          = link_to((image_tag placement.animal.image.url(:icon)), edit_admin_placement_path(placement))
+          =h placement.animal.identifier

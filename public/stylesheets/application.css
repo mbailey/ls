@@ -12,8 +12,9 @@ body { font: 15px/18px Helvetica, Arial, sans-serif; width: 800px; margin: 2em a
 a { color: #333; font-weight: bold; }
 
 /* = Headings and typography */
-h1 {font-size: 30px; font-weight:  normal; }
-h1, h2, h3 {margin: 15px 0; color: #2E6AB1;}
+h1, h2, h3 {margin: 15px 0; color: #2E6AB1; font-weight:  normal;}
+h1 {font-size: 30px;}
+h2 {font-size:24px;}
 p {margin-bottom: 10px;}
 
 /* =Forms */
@@ -35,14 +36,20 @@ tr.even { background: #fff; }
 div.row { font-size: 14px; margin: 8px 0; float: left; }
 .fieldWithErrors input { background-color: #fcc; }
 p#help { float: right; background: #FEFFF1; padding: 30px; color: #F08080; }
-#notice {padding: 5px; margin: 0 0 10px 0; background: #D0F1D7; color: green; border: 1px solid green;}
+#notice {padding: 5px; margin: 0 0 10px 0; background: #D0F1D7; color: green; border: 1px solid green; clear:both;}
 
 /* =Layout */
 #header, #content {width: 800px;}
 #header {margin-bottom: 40px;}
 #content {}
 
+/* Dashboard page */
+#quick_links {float:right; width: 30%; border:1px solid #ddd; padding:5px;}
+#quick_links ul {list-style: none;}
 
+#searching {min-height: 200px; width: 60%;}
+#searching fieldset {width: 95%;}
+div.recent {margin-bottom:50px;}
 
 /* =mislav-will_paginate styles */
 .digg_pagination { background: white; /* self-clearing method: */ }

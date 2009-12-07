@@ -5,16 +5,14 @@ class Animal < ActiveRecord::Base
   
   KINDS = ['Large Dog', 'Small Dog', 'Puppy', 'Cat', 'Mum with kittens', 'Kittens', 'Other']
   
-  def current_placement
-    placements.current.first || Placement.new(:animal => self)
-  end
+  named_scope :limit, lambda { |num| { :limit => num } }
   
-  def current_placement?
-    ! current_placement.blank?
+  def current_placement
+    placements.current.first
   end
   
   def placement_status
-    current_placement? && current_placement.status
+    current_placement && current_placement.status
   end
   
 end

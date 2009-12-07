@@ -1,0 +1,14 @@
+%table
+  %tr
+    %th Animal
+    %th Kind
+    %th Status
+    %th Carer invitations
+
+  - @animals.each do |animal|
+    %tr
+      %td= animal_icon(animal)
+      %td= animal.kind
+      %td= animal.placement_status
+      - if animal.placement_status == 'seeking_carer'
+        %td= request_status(animal.current_placement)

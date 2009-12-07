@@ -1,0 +1,8 @@
+%h1 Decide on Carer Application
+- form_for(@signup, :url => admin_signup_decision_path(@signup)) do |f|
+  -#= f.error_messages
+  = render :partial => 'admin/decisions/decision', :locals => {:f => f}
+  - Signup.viewable_fields.map do |fn|
+    %dt= fn.humanize.capitalize
+    %dd=h @signup.send(fn)
+  = f.submit "Update"

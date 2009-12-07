@@ -1,0 +1,20 @@
+%table
+  %tr
+    %th Name
+    %th Suburb
+    %th Status
+    %th{:colspan => 2} Details
+  - for signup in @signups
+    %tr
+      %td 
+        = link_to h("#{signup.first_name} #{signup.last_name}"), [:admin, signup]
+      %td 
+        =h signup.suburb
+      %td 
+        = next_action_link(signup)
+      %td 
+        = 'dog' if signup.can_keep_dogs
+        = 'cat' if signup.can_keep_cats
+        = 'other' if signup.can_keep_other
+      %td
+        = link_to 'Destroy', [:admin, signup], :confirm => 'Are you sure?', :method => :delete if params[:d]

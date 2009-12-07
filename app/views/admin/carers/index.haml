@@ -1,4 +1,4 @@
-%h2 Listing carers (#{@carers.total_entries} in total)
+%h1 Listing carers (#{@carers.total_entries} in total)
 
 = will_paginate @carers, :class => 'apple_pagination'
 = render :partial => 'carers'
