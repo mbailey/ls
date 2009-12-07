@@ -35,7 +35,7 @@ class Carer < ActiveRecord::Base
   end
   
   def placement_status
-    current_placement? && current_placement.status
+    current_placement && current_placement.status
   end
 
   def self.generate_csv(carers)
