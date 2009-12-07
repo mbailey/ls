@@ -29,10 +29,6 @@ class Carer < ActiveRecord::Base
     { :conditions => ["hours_spent_at_home_per_day >= ?", number.to_i] }
   }
 
-  def home_check
-    nil
-  end
-
   def interview
     nil
   end
