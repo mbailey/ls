@@ -12,7 +12,7 @@ class Admin::CarersController < Admin::BaseController
   def index
     # @carers = Carer.find(:all)
     # @carers = Carer.paginate_by_board_id @board.id, :page => params[:page], :order => 'updated_at DESC'
-    @carers = Carer.paginate :page => params[:page], :order => 'state, id'
+    @carers = Carer.paginate :page => params[:page], :order => 'status, id'
 
     respond_to do |format|
       format.html # index.html.erb
@@ -23,7 +23,7 @@ class Admin::CarersController < Admin::BaseController
   end
   
   def pending
-    @carers = Carer.pending.paginate :page => params[:page], :order => 'state, id'
+    @carers = Carer.pending.paginate :page => params[:page], :order => 'status, id'
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @carers }

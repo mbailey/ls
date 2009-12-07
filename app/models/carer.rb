@@ -16,7 +16,7 @@ class Carer < ActiveRecord::Base
   wraps_attribute :work_phone,   PhoneNumber, :allow_blank => true
   validate :must_have_at_least_one_phone_number
 
-  named_scope :pending, :conditions => {:state => 'pending'}
+  named_scope :pending, :conditions => {:status => 'pending'}
 
   before_validation_on_create :geocode_address
 
@@ -75,15 +75,15 @@ class Carer < ActiveRecord::Base
   end
 
   def pending?
-    state == 'pending'
+    status == 'pending'
   end
 
   def approved?
-    state == 'approved'
+    status == 'approved'
   end
 
   def rejected?
-    state == 'rejected'
+    status == 'rejected'
   end
 
   private

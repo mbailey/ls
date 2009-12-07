@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091207040627) do
+ActiveRecord::Schema.define(:version => 20091207063824) do
 
   create_table "animals", :force => true do |t|
     t.string   "name"
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(:version => 20091207040627) do
     t.boolean  "can_administer_medical_care"
     t.float    "lat"
     t.float    "lng"
-    t.string   "state",                                    :default => "pending"
+    t.string   "status",                                   :default => "pending"
     t.boolean  "interview_completed"
     t.text     "interview_notes"
     t.datetime "interview_date"
