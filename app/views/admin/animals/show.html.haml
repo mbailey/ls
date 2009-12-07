@@ -13,7 +13,7 @@
     = image_tag @animal.image.url(:medium)
 
 
-- if @animal.current_placement?
+- if @animal.current_placement
 
   = render :partial => 'admin/placements/placement', :object => @animal.current_placement
       
