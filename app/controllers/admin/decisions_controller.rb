@@ -10,7 +10,7 @@ class Admin::DecisionsController < Admin::BaseController
     @signup.decided_by = current_user
     @signup.decided_on = Time.now
 
-    if @signup.status == 'accepted'
+    if @signup.status == 'approved'
       @signup.carer = Carer.new
       @signup.carer.update_attributes(@signup.attributes.reject{|k,v| %w(decided_on decided_by decided_notes status carer_id).include? k})
     end

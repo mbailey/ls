@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091207085159) do
+ActiveRecord::Schema.define(:version => 20091207100030) do
 
   create_table "animals", :force => true do |t|
     t.string   "name"
@@ -152,7 +152,6 @@ ActiveRecord::Schema.define(:version => 20091207085159) do
     t.integer  "decided_by"
     t.datetime "decided_on"
     t.text     "decided_notes"
-    t.string   "decided_status"
   end
 
   create_table "users", :force => true do |t|
