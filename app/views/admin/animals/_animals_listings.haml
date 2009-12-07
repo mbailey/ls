@@ -9,7 +9,6 @@
     %tr
       %td= animal_icon(animal)
       %td= animal.kind
-      / temporary commented out. to be fixed
-      / %td= animal.placement_status
-      /       - if animal.placement_status == 'seeking_carer'
-      /         %td= request_status(animal.current_placement)
+      %td= animal.placement_status
+      - if animal.placement_status == 'seeking_carer'
+        %td= request_status(animal.current_placement)
