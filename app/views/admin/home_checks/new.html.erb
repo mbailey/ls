@@ -1,4 +1,10 @@
+<% page_id "new_home_check_page" %>
+
 <h1>Schedule a Home Check for <%=h @signup.name %></h1>
+
+<div id="home_checks">
+  <%= render :partial => "index_for_date" %>
+</div>
 
 <% form_for(@home_check, :url => [:admin, @signup, :home_check]) do |f| %>
   <%= f.error_messages %>
@@ -10,17 +16,13 @@
   
   <div class="row clear">
     <%= f.label :scheduled_at_time %>
-    <%= f.text_field :scheduled_at_time, :value => @home_check.scheduled_at_time.to_s(:time) %>
+    <%= f.select :scheduled_at_time, HomeCheck.possible_times, :selected => @home_check.scheduled_at_time.to_s(:time) %>
   </div>
   
   <div class="row clear">
     <%= f.submit "Schedule" %>
   </div>
 <% end %>
-
-<div id="home_checks">
-  <%= render :partial => "index_for_date" %>
-</div>
 
 
 <% content_for :head do %>

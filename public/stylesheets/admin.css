@@ -7,3 +7,8 @@
 dl {overflow: hidden; margin-bottom: 20px;}
 dt {display: block; float: left; width: 200px; clear: left; margin-bottom: 10px;}
 dd {display: block; float: left; clear: right;}
+
+/* New home check page styles */
+body#new_home_check_page div.row.clear { clear: left; }
+body#new_home_check_page div#home_checks { width: 400px; float: right; }
+body#new_home_check_page div#home_checks table { width: 400px; }

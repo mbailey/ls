@@ -12,7 +12,8 @@ class Admin::HomeChecksController < Admin::BaseController
   
   # GET /home_checks/index_for_date?date=...
   def index_for_date
-    @home_checks = HomeCheck.on_date(params[:date])
+    @date = Time.zone.parse(params[:date])
+    @home_checks = HomeCheck.on_date(@date)
     render :partial => "index_for_date", :layout => false
   end
 
@@ -31,8 +32,9 @@ class Admin::HomeChecksController < Admin::BaseController
   # GET /home_checks/new.xml
   def new
     @signup = Signup.find(params[:signup_id])
-    @home_check = HomeCheck.new(:scheduled_at_date => Time.zone.now, :scheduled_at_time => "9:00")
-    @home_checks = HomeCheck.on_date(Time.zone.today)
+    @date = Time.zone.now.beginning_of_day
+    @home_check = HomeCheck.new(:scheduled_at_date => @date, :scheduled_at_time => "9:00")
+    @home_checks = HomeCheck.on_date(@date)
 
     respond_to do |format|
       format.html # new.html.erb

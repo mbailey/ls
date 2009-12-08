@@ -1,7 +1,14 @@
-<table>
-  <% @home_checks.each do |home_check| %>
-    <tr>
-      <td><%= home_check.scheduled_at.to_s(:date_and_time) %></td>
-    </tr>
-  <% end %>
-</table>
+<h2>Home checks for <%= @date.to_s(:date) %></h2>
+
+<% if @home_checks.empty? %>
+  <p>&mdash; None &mdash;</p>
+<% else %>
+  <table>
+    <% @home_checks.each do |home_check| %>
+      <tr>
+        <td><%= home_check.scheduled_at.to_s(:time) %></td>
+        <td><%=h home_check.signup.suburb %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
