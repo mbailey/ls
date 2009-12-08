@@ -2,7 +2,7 @@ class Admin::HomeChecksController < Admin::BaseController
   # GET /home_checks
   # GET /home_checks.xml
   def index
-    @home_checks = HomeCheck.all
+    @home_checks = HomeCheck.all :order => :scheduled_at
     
     respond_to do |format|
       format.html # index.html.erb

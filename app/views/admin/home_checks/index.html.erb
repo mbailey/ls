@@ -2,20 +2,20 @@
 
 <table>
   <tr>
+    <th>Scheduled For</th>
     <th>Carer</th>
     <th>Booked by</th>
     <th>Performed By</th>
-    <th>Scheduled at</th>
     <th>Completed</th>
     <th>Notes</th>
   </tr>
 
 <% @home_checks.each do |home_check| %>
   <tr>
+    <td><%= link_to home_check.scheduled_at.to_s(:date_and_time), edit_admin_home_check_path(home_check) %></td>
     <td><%=h home_check.signup.name %></td>
     <td><%=h home_check.booked_by.name %></td>
     <td><%=h home_check.performed_by && home_check.performed_by.name %></td>
-    <td><%= link_to home_check.scheduled_at.to_s(:date_and_time), edit_admin_home_check_path(home_check) %></td>
     <td><%=h home_check.completed %></td>
     <td><%=h home_check.notes %></td>
   </tr>

@@ -1,5 +1,11 @@
-+ accept/reject application
-+ can't place an animal unless person approved
++ homechecks
+  - can't book more than one for same timeslot
+  - view running sheet for one day
+  - link to running sheet for days in home visits list
+  - order homechecks by time when listing them
+
++ by default, only show applications that 
+
 
 + move "logged in" links to RHS
 
