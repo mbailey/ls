@@ -63,7 +63,7 @@ p#help { float: right; background: #FEFFF1; padding: 30px; color: #F08080; }
 #footer {width: 925px; text-align: center; margin-top: 10px; color: #CCC9C6;}
 
 /* =New signup form */
-#new_signup label { display: block; }
+#new_signup label { display: block; width: auto; }
 #new_signup fieldset {width: 760px;}
 
 
