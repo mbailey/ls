@@ -5,27 +5,42 @@
 
   %ul
     %li= link_to 'Create new placement', new_admin_placement_path
+    %li= link_to 'Add another animal', new_admin_animal_path
 
 
 #searching
-  %form
+  - form_for(:search, @search, :url => admin_placements_path, :html => { :method => :get }) do |f|
     %fieldset
-      %legend searching for something will come here
+      %legend Search for something
+      %p
+        = f.label :kind
+        = f.select :kind, Animal::KINDS
+
+      %p
+        = f.label :hours_at_home
+        = f.text_field :hours_at_home
+
+      %p
+        = f.label :level_of_experience
+        = f.select :level_of_experience, []
+
+      = f.submit 'Search'
   
 
 .recent
   %h2 Recent Animals
-  %p= link_to 'See all animals', admin_animals_path
-  = render :partial => 'admin/animals/animals_listings', :locals => { :animals => @animals } 
+  = render :partial => 'admin/animals/animals_listings', :locals => { :animals => @animals }
+  %p{:class => 'see_all'}
+    = link_to 'See all animals', admin_animals_path
 
 .recent
   %h2 Recent Carers
-  %p= link_to 'See all carers', admin_carers_path
-  = render :partial => 'admin/carers/carers', :locals => { :carers => @carers } 
+  = render :partial => 'admin/carers/carers', :locals => { :carers => @carers }
+  %p{:class => 'see_all'}
+    = link_to 'See all carers', admin_carers_path 
 
 .recent
   %h2 Recent Placements
-  %p= link_to "See all animals' placements", admin_animals_path
   %table
     %tr
       %th Animal
@@ -35,3 +50,5 @@
         %td
           = link_to((image_tag placement.animal.image.url(:icon)), edit_admin_placement_path(placement))
           =h placement.animal.identifier
+  %p{:class => 'see_all'}
+    = link_to "See all animals' placements", admin_animals_path

@@ -8,20 +8,19 @@ Version:  2009.11
 
 @import url("reset.css");            /* Reset default styles */
 @import url("application.css");      /* general */
+@import url("cupertino/jquery-ui-1.7.2.custom.css"); /* jquery ui styles */
 
 
 /* =Global Super Classes
 Miscellaneous conveniences:
 ----------------------------------------------- */
-
 .hide               { display: none; }
 .invisible          { visibility: hidden; }
 
 .left               { float: left; }
 .right              { float: right; }
 .clear              { clear:both; }
-
-.last 				      { margin-right: 0; }
+.last 				{ margin-right: 0; }
 
 form label          { cursor: pointer; }
 acronym, abbr       { border-bottom: 1px dotted; cursor: help; }

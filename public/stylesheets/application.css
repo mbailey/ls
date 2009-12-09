@@ -6,50 +6,66 @@
 .col_F0F8FF {background: #F0F8FF;} /* lightest blue */
 .col_CDC1C5 {background: #CDC1C5;}
 .col_fafafa {background: #fafafa;}
+.col_524A41 {background: #524A41;} /* rgb 82,74,65 */
+.col_61584E {background: #61584E;} /* rgb 97,88,78 */
+.col_70655A {background: #70655A;} /* 112,101,90 */
+.col_B3C2E2 {background: #B3C2E2;} /* rgb 179,194,226 */
+.col_CBD6EC {background: #CBD6EC;} /* rgb 203,214,236 */
+.col_DB5402 {background: #DB5402;} /* rgb 219,84,2 */
+
+.col_6D93BF {background: #6D93BF;} /* rgb 109,147,191 */
+.col_7CA6D8 {background: #7CA6D8;} /* rgb 124,166,216 */
+.col_F4F2F2 {background: #F4F2F2;}
+.col_EFEDED {background: #EFEDED;}
+.col_E6E4E3 {background: #E6E4E3;} /* rgb 230,228,227 */
+.col_CCC9C6 {background: #CCC9C6;} /* rgb 204,201,198 */
+.col_F7941E {background: #F7941E;} /* rgb 247,148,30 */
 
 
-body { font: 15px/18px Helvetica, Arial, sans-serif; width: 800px; margin: 2em auto; color: #555; background: #fff;}
-a { color: #333; font-weight: bold; }
+body {font: 15px/18px Helvetica, Arial, sans-serif; width: 925px; margin: 0 auto; color: #6c6c6c; background: #fff url(../images/bkg.jpg) top left repeat-x;}
+
+a {color: #6D93BF;}
+a:hover {color: #524A41;}
 
 /* = Headings and typography */
-h1, h2, h3 {margin: 15px 0; color: #2E6AB1; font-weight:  normal;}
+h1, h2, h3 {color: #2E6AB1; font-weight: normal; margin: 5px 0 15px 0; text-transform: capitalize;}
 h1 {font-size: 30px;}
-h2 {font-size:24px;}
+h2 {font-size:21px;}
 p {margin-bottom: 10px;}
 
-/* =Forms */
-input { margin: 2px 20px 5px 0; padding: 5px;}
-label { display: block; }
-fieldset { background: #F0F8FF; float: left; border: 1px solid #F0F8FF; border-top: 1px dashed #BCD2EE; border-bottom: 1px dashed #BCD2EE; width: 660px; margin: .5em 0 1em 0; padding: 15px; }
-legend { background: #fff; border: 1px solid #BCD2EE; padding: 7px 4px 4px 4px; font-size: 18px; }
-input[type='submit']{background: #2E6AB1; color: #fff; font-size: 14px;}
 
 /* =Tables */
-table, tr, th, td { border-bottom: 1px dotted #CDC1C5; margin: 0; text-align: left; }
-table {width: 800px; background-color: #fafafa; border-collapse: collapse; border-spacing: 0; }
-th { background: #666; color: #fff; padding: 5px; font-weight: normal;}
+table, tr, th, td { margin: 0;}
+table {width: 885px; border-collapse: collapse; border-spacing: 0;}
+th {color: #70655A; background: #fff; padding: 5px; text-align: left; border-bottom: 2px solid #70655A;}
 td { border-bottom: 1px #fff dotted; padding: 5px;}
-tr.odd { background: #B0E2FF; }
-tr.even { background: #fff; }
+tr { background: #F4F2F2;}
+tr.even { background: #EFEDED;}
+tr:hover, tr.even:hover {background: #E6E4E3;}
 
+/*=Forms in general */
+fieldset {overflow: hidden;background: #F0F8FF; border: 1px solid #F0F8FF; border-top: 1px dashed #BCD2EE; border-bottom: 1px dashed #BCD2EE; margin: 6px 0 12px 0; padding: 15px; }
+legend {color: #7CA6D8;background: #fff; border: 1px solid #BCD2EE; padding: 7px 5px 4px; font-size: 18px;}
+label {display: inline-block; width: 90px;}
+input { margin: 2px 20px 5px 0; padding: 5px;}
+input[type='text'], textarea {border: 1px solid #E6E4E3;}
+input[type='submit']{background: #2E6AB1; color: #fff; font-size: 14px;}
+form .row { font-size: 14px; margin: 8px 0; float: left; }
 
-div.row { font-size: 14px; margin: 8px 0; float: left; }
+/* =Error messages */
 .fieldWithErrors input { background-color: #fcc; }
 p#help { float: right; background: #FEFFF1; padding: 30px; color: #F08080; }
 #notice {padding: 5px; margin: 0 0 10px 0; background: #D0F1D7; color: green; border: 1px solid green; clear:both;}
 
 /* =Layout */
-#header, #content {width: 800px;}
-#header {margin-bottom: 40px;}
-#content {}
+#wrap {width: 925px; background: #fff; overflow: hidden; border: 1px solid #F4F2F2; padding-bottom: 40px;}
+#header, #content {padding: 0 20px; margin-top: 40px;}
+#footer {width: 925px; text-align: center; margin-top: 10px; color: #CCC9C6;}
 
-/* Dashboard page */
-#quick_links {float:right; width: 30%; border:1px solid #ddd; padding:5px;}
-#quick_links ul {list-style: none;}
+/* =New signup form */
+#new_signup label { display: block; }
+#new_signup fieldset {width: 760px;}
 
-#searching {min-height: 200px; width: 60%;}
-#searching fieldset {width: 95%;}
-div.recent {margin-bottom:50px;}
 
 /* =mislav-will_paginate styles */
 .digg_pagination { background: white; /* self-clearing method: */ }

@@ -1,14 +1,39 @@
 /* Admin page styles */
-#admin_dashboard {border-bottom: 1px dotted #2E6AB1; float: left; overflow: hidden; width: 800px; margin-bottom: 20px;}
-#admin_dashboard ul {list-style: none;}
-#admin_dashboard li a {display: block; float: left; background: #2E6AB1; color: #fff; text-decoration: none; padding: 5px 8px; font-weight: normal; margin: 0 3px 0 0; line-height: 1;}
+/* utilities links */
+#header {position: relative;}
+#header ul{ position: absolute; top: -25px; right: 20px;}
+#header li {list-style: none; display: inline;}
+
+#admin_nav {margin: 20px; overflow: hidden; border-bottom: 1px solid #CCC9C6; border-top: 1px solid #CCC9C6;   background: #F9F7F7;}
+#admin_nav ul {list-style: none;}
+#admin_nav li a {display: block; float: left; color: #524A41; text-decoration: none; padding: 6px 8px; font-weight: normal; margin: 0 3px 0 0; line-height: 1;}
+#admin_nav li a.current, #admin_nav li a:hover {border-bottom: 3px solid; padding-bottom: 3px;}
 
 /* a carer's show view */
 dl {overflow: hidden; margin-bottom: 20px;}
 dt {display: block; float: left; width: 200px; clear: left; margin-bottom: 10px;}
 dd {display: block; float: left; clear: right;}
 
+
 /* New home check page styles */
 body#new_home_check_page div.row.clear { clear: left; }
 body#new_home_check_page div#home_checks { width: 400px; float: right; }
 body#new_home_check_page div#home_checks table { width: 400px; }
+
+/* Dashboard page */
+#quick_links {float:right; width: 30%;}
+#quick_links h2 {color: #524A41;}
+#quick_links ul {list-style: none;}
+#quick_links ul li {margin-bottom: 8px;}
+#searching {width: 60%; margin-bottom: 30px;}
+#searching label {width: 145px;}
+div.recent {margin-bottom:60px;}
+p.see_all {text-align: right; margin-top: 10px;}
+
+div.animal img {float: right; border: 1px solid #EFEDED; padding: 3px;}
+div.details {}
+
+/* Carer's application edit form */
+div.edit_signup label {width: auto; display: block;}
+div.edit_signup .interview label {display: inline;}
+div.edit_signup textarea {width: 440px;}

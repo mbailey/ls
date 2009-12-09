@@ -10,5 +10,6 @@
       %td= animal_icon(animal)
       %td= animal.kind
       %td= animal.placement_status
+      %td
       - if animal.placement_status == 'seeking_carer'
-        %td= request_status(animal.current_placement)
+        = request_status(animal.current_placement)

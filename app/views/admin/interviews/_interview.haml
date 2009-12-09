@@ -1,14 +1,13 @@
-%p
-  = f.label :interview_completed
-  %br
-  = f.check_box :interview_completed
-  
-%p
-  = f.label :interview_date
-  %br
-  = f.datetime_select :interview_date
-  
-%p
-  = f.label :interview_notes
-  %br
-  = f.text_area :interview_notes
+%fieldset{:class => 'interview'}
+  %legend Interview information
+  %p
+    = f.check_box :interview_completed
+    = f.label :interview_completed
+  %p
+    = f.label :interview_date
+    = f.datetime_select :interview_date
+    
+  %p
+    = f.label :interview_notes
+    %br
+    = f.text_area :interview_notes
