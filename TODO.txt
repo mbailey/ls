@@ -1,3 +1,6 @@
++ make it simple for admin to add carer into system
+  - existing foster carers
+
 + homechecks
   - list should show day and number for that day
     - view for a day should show map and running sheet
