@@ -6,6 +6,8 @@ class Carer < ActiveRecord::Base
   has_many :invitations
   has_one  :signup
   has_one  :home_check, :through => :signup
+  
+  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>", :icon => "50x50#" }  
 
   acts_as_mappable
   validates_presence_of :first_name, :last_name
@@ -49,6 +51,11 @@ class Carer < ActiveRecord::Base
   end
 
   CSV_FIELDS = (Carer.column_names - ["id", "created_at", "updated_at", "lat", "lng"])
+
+
+  def subtitle
+    placements.count.to_s + ' placements'
+  end
 
   def self.viewable_fields
     CSV_FIELDS
