@@ -1,4 +1,4 @@
-%table
+%table.listing
   - @animals.each do |animal|
     %tr
       %td= render :partial => '/shared/object_listing', :locals => {:o => animal}

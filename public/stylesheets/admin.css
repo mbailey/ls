@@ -9,10 +9,18 @@
 #admin_nav li a {display: block; float: left; color: #524A41; text-decoration: none; padding: 6px 8px; font-weight: normal; margin: 0 3px 0 0; line-height: 1;}
 #admin_nav li a.current, #admin_nav li a:hover {border-bottom: 3px solid; padding-bottom: 3px;}
 
+body#dashboard li.dashboard a, body#animals li.animals a, body#carers li.carers a, body#signups li.signups a, body#home_checks li.home_checks a {
+	background-color: #DDDDF6;
+}
+
 /* a carer's show view */
 dl {overflow: hidden; margin-bottom: 20px;}
 dt {display: block; float: left; width: 200px; clear: left; margin-bottom: 10px;}
 dd {display: block; float: left; clear: right;}
+
+table.listing {
+	border-top: 2px solid #70655A;
+}
 
 
 /* New home check page styles */
@@ -84,3 +92,4 @@ div.edit_signup textarea {width: 440px;}
 .object_listing .metadata_subtitle {
 	font-size: 12px;
 }
+
