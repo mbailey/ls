@@ -1,9 +1,7 @@
 %h1
   Editing carer
-- form_for([:admin, @carer]) do |f|
-  = f.error_messages
-  = render :partial => 'carer', :locals => {:f => f}
-  = f.submit "Update"
+  = render :partial => 'carer'
+
 
 = link_to 'Show', [:admin, @carer]
 |

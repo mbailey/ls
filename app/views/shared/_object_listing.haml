@@ -1,0 +1,5 @@
+.object_listing
+  .image= object_icon(o)
+  .metadata
+    = link_to o.name, [:admin, o]
+    .metadata_subtitle= object_subtitle(o)

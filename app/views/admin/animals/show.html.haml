@@ -1,11 +1,11 @@
 .animal
   = image_tag @animal.image.url(:medium)
   .details
-    %h1= "Name: #{@animal.name}"
+    %h1= "#{@animal.name}"
     %p
       %b= @animal.kind
     %p
-      %b Identifier:
+      %b ID:
       = @animal.identifier
 
 - if @animal.current_placement
@@ -14,5 +14,3 @@
     
 %br
 = link_to 'Edit', edit_admin_animal_path(@animal)
-|
-= link_to 'Back', admin_animals_path

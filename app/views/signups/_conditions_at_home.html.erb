@@ -1,0 +1,49 @@
+    <legend>Conditions at home</legend>
+
+    <div class="row" style="width: 100%">
+      <%= f.label :can_keep_inside_initially, 'Are you able to safely confine the foster pet(s) within your house for an initial settling in period?' %>
+      Yes <%= f.radio_button :can_keep_inside_initially, true %>
+      No <%= f.radio_button :can_keep_inside_initially, false %>
+    </div>
+
+    <div class="row clear" style="width: 100%">
+      <%= f.label :can_sleep_inside_ongoing, 'Can the animal sleep inside on an ongoing basis?' %>
+      Yes <%= f.radio_button :can_sleep_inside_ongoing, true %>
+      No <%= f.radio_button :can_sleep_inside_ongoing, false %>
+    </div>
+
+    <div class="row" style="width: 100%">
+      <%= f.label :how_secure, 'Is your property securely fenced to prevent a dog escaping?' %>
+      Yes <%= f.radio_button :how_secure, true %>
+      No <%= f.radio_button :how_secure, false %>
+    </div>
+
+    <div class="row" style="width: 100%">
+      <%= f.label :dog_safe_gates, 'Do you have dog safe gates?' %>
+      Yes <%= f.radio_button :dog_safe_gates, true %>
+      No <%= f.radio_button :dog_safe_gates, false %>
+    </div>
+
+    <div class="row" style="width: 100%">
+      <%= f.label :hours_spent_at_home_per_day, 'How many hours a day are you generally home?' %>
+      <%= f.select :hours_spent_at_home_per_day, (0..24).to_a %>
+    </div>
+
+    <div class="row" style="width: 100%">
+      <%= f.label :children, 'How many children live at the property?' %>
+      <%= f.select :children, (0..5).to_a %>
+    </div>
+
+    <div class="row clear" style="width: 100%">
+      <%= f.label :dogs_owned, 'How many dogs live at the property?' %>
+      <%= f.select :dogs_owned, (0..5).to_a %>
+    </div>
+
+    <div class="row clear" style="width: 100%">
+      <%= f.label :cats_owned, 'How many cats live at the property?' %>
+      <%= f.select :cats_owned, (0..5).to_a %>
+    </div>
+
+    <div class="clear"></div>
+
+    <%= f.text_field_row :other_owned, 'Any other pets? (please specify)', 'size' => 60 %>

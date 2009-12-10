@@ -1,0 +1,8 @@
+.carer
+  = image_tag @carer.image.url(:medium)
+  .details
+    %h1= "#{@carer.name}"
+    %p
+      %b= @carer.email_address
+    %p
+      %b= @carer.mobile_phone

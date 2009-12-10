@@ -1,10 +1,16 @@
 + homechecks
+  - list should show day and number for that day
+    - view for a day should show map and running sheet
   - can't book more than one for same timeslot
   - view running sheet for one day
   - link to running sheet for days in home visits list
   - order homechecks by time when listing them
 
 + by default, only show applications that 
+
++ carers
+  - keep photo of carer
+  - move to using S3 for storage
 
 
 + move "logged in" links to RHS

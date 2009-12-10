@@ -1,37 +1,30 @@
--#= f.error_messages
-%p
-  = f.label :first_name
-  %br
-  = f.text_field :first_name
-%p
-  = f.label :last_name
-  %br
-  = f.text_field :last_name
-%p
-  = f.label :address_1
-  %br
-  = f.text_field :address_1
-%p
-  = f.label :address_2
-  %br
-  = f.text_field :address_2
-%p
-  = f.label :suburb
-  %br
-  = f.text_field :suburb
-%p
-  = f.label :postcode
-  %br
-  = f.text_field :postcode
-%p
-  = f.label :mobile_phone
-  %br
-  = f.text_field :mobile_phone
-%p
-  = f.label :home_phone
-  %br
-  = f.text_field :home_phone
-%p
-  = f.label :work_phone
-  %br
-  = f.text_field :work_phone
+.carer
+  - form_for([:admin, @carer], :html => { :multipart => true }) do |f|
+    .details
+  
+      = f.error_messages
+
+      .row.clear
+        = f.label :first_name   
+        = f.text_field :first_name
+    
+      .row.clear
+        = f.label :last_name
+        = f.text_field :last_name
+    
+      .row.clear
+        = f.label :mobile_phone
+        = f.text_field :mobile_phone
+ 
+      .row.clear
+        = f.label :email_address 
+        = f.text_field :email_address
+
+    .photo{:style=>'padding: 30px'}
+      = image_tag @carer.image.url(:medium)
+      
+      = f.label :image
+      = f.file_field :image
+      
+    .row.clear 
+      = f.submit 'Update'
