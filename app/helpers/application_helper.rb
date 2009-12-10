@@ -13,5 +13,13 @@ module ApplicationHelper
     @page_title ||= page_title
     @page_title.nil? ? "Carers: #{action_name}" : "#{@page_title} @ Lort Smith"
   end
-
+  
+  def object_icon(o)
+    link_to((image_tag o.image.url(:icon), :alt => o.name, :title => o.name), [:admin, o])
+  end
+  
+  def object_subtitle(o)
+    o.subtitle rescue nil 
+  end
+  
 end
