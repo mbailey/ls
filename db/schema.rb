@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091207100030) do
+ActiveRecord::Schema.define(:version => 20091210120431) do
 
   create_table "animals", :force => true do |t|
     t.string   "name"
@@ -23,6 +23,10 @@ ActiveRecord::Schema.define(:version => 20091207100030) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "sex"
+    t.string   "age"
+    t.string   "color"
+    t.string   "breed"
   end
 
   create_table "carers", :force => true do |t|
@@ -37,7 +41,6 @@ ActiveRecord::Schema.define(:version => 20091207100030) do
     t.string   "work_phone"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "email_address"
     t.integer  "can_keep_dogs"
     t.integer  "can_keep_cats"
     t.string   "can_keep_other"
@@ -52,19 +55,26 @@ ActiveRecord::Schema.define(:version => 20091207100030) do
     t.boolean  "can_transport"
     t.boolean  "requires_financial_support"
     t.integer  "offer_duration"
+    t.string   "email_address"
     t.boolean  "will_take_stray"
     t.string   "how_secure"
-    t.boolean  "dog_safe_gates"
+    t.integer  "dog_safe_gates",              :limit => 1
     t.string   "special_skills"
     t.boolean  "can_administer_medical_care"
     t.float    "lat"
     t.float    "lng"
-    t.string   "status",                      :default => "pending"
+    t.string   "status",                                   :default => "pending"
     t.boolean  "interview_completed"
     t.text     "interview_notes"
     t.datetime "interview_date"
     t.integer  "interview_user_id"
     t.string   "experience_level"
+    t.string   "state"
+    t.string   "country",                                  :default => "Australia"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "home_checks", :force => true do |t|
@@ -152,6 +162,8 @@ ActiveRecord::Schema.define(:version => 20091207100030) do
     t.integer  "decided_by"
     t.datetime "decided_on"
     t.text     "decided_notes"
+    t.string   "state"
+    t.string   "country",                                  :default => "Australia"
   end
 
   create_table "users", :force => true do |t|

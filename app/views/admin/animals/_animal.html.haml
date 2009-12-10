@@ -11,10 +11,26 @@
       .row.clear
         = f.label :name
         = f.text_field :name
-    
+        
       .row.clear
         = f.label :identifier
         = f.text_field :identifier
+        
+      .row.clear
+        = f.label :sex
+        = f.select :sex, [:male, :female]
+        
+      .row.clear
+        = f.label :age
+        = f.text_field :age
+        
+      .row.clear
+        = f.label :color, 'Colour'
+        = f.text_field :color
+        
+      .row.clear
+        = f.label :breed
+        = f.text_field :breed
  
       .row.clear
         = f.label :description   
