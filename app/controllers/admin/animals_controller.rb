@@ -2,7 +2,7 @@ class Admin::AnimalsController < Admin::BaseController
   # GET /animals
   # GET /animals.xml
   def index
-    @animals = Animal.all
+    @animals = Animal.paginate :page => params[:page]
 
     respond_to do |format|
       format.html # index.html.erb

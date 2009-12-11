@@ -1,6 +1,8 @@
-%h1 Listing animals
+%h1 Listing animals (#{@animals.total_entries} in total)
 
+= will_paginate @animals, :class => 'apple_pagination'
 = render :partial => 'animals_listings'
+= will_paginate @animals, :class => 'apple_pagination'
 
 %br
 
