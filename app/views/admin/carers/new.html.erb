@@ -1,6 +1,6 @@
 <h1>Register as a pet foster carer</h1>
 
-<% form_for(@carer) do |f| %>
+<% form_for([:admin, @carer]) do |f| %>
   <%= f.error_messages %>
   <fieldset>
     <legend>Personal details</legend>
