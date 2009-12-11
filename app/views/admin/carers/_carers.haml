@@ -7,8 +7,7 @@
   - for carer in @carers
     %tr
       %td 
-        -#= link_to h("#{carer.first_name} #{carer.last_name}"), [:admin, carer]
-        = render :partial => '/shared/object_listing', :locals => {:o => carer}
+        = object_listing(carer)
       %td 
         =h carer.suburb
       %td

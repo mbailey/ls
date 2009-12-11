@@ -14,6 +14,11 @@ module ApplicationHelper
     @page_title.nil? ? "Carers: #{action_name}" : "#{@page_title} @ Lort Smith"
   end
   
+  # Pretty little image, title and subtitle - Facebook Style
+  def object_listing(o)
+    render :partial => '/shared/object_listing', :locals => {:o => o}
+  end
+  
   def object_icon(o)
     link_to((image_tag o.image.url(:icon), :alt => o.name, :title => o.name), [:admin, o])
   end
