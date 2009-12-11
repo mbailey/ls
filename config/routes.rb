@@ -24,5 +24,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.logout 'logout', :controller => 'user_sessions', :action => 'destroy'
 
+  map.signup '/signup', :controller => "signups", :action => "new"
   map.root :controller => "signups", :action => "new"
+  
 end

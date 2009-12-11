@@ -1,0 +1,20 @@
+%fieldset
+  = render :partial => 'shared/carer/personal_details', :locals => {:f => f, :object => object}
+
+%fieldset
+  = render :partial => 'shared/carer/contact_details', :locals => {:f => f}
+  
+%fieldset
+  = render :partial => 'shared/carer/address', :locals => {:f => f}
+  
+%fieldset
+  = render :partial => 'shared/carer/assistance_you_can_offer', :locals => {:f => f}
+  
+%fieldset
+  = render :partial => 'shared/carer/conditions_at_home', :locals => {:f => f}
+  
+%fieldset
+  = render :partial => 'shared/carer/termsandconditions', :locals => {:f => f}
+  = f.submit "I accept. Register me."
+  
+.clear

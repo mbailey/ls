@@ -1,0 +1,8 @@
+%legend Contact details
+%p
+  %b We need an email address and at least one phone number we can contact you on.
+  = f.text_field_row :email_address
+  .clear
+    = f.text_field_row :mobile_phone, nil #, :value => @signup.mobile_phone.format
+    = f.text_field_row :home_phone, nil#, :value => @signup.home_phone.format
+    = f.text_field_row :work_phone, nil#, :value => @signup.work_phone.format

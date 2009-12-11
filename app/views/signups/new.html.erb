@@ -1,47 +1,6 @@
-<h1>Register as a pet foster signup</h1>
+<h1>Register as a pet foster carer</h1>
 
 <% form_for(@signup) do |f| %>
   <%= f.error_messages %>
-  <fieldset>
-    <legend>Personal details</legend>
-	<%= f.text_field_row :first_name %>
-	<%= f.text_field_row :last_name %>
-  </fieldset>
-
-  <fieldset>
-    <legend>Contact details</legend>
-    <p><b>We need an email address and at least one phone number we can contact you on.</b></p>
-    <%= f.text_field_row :email_address %>
-    <div class="clear">
-      <%= f.text_field_row :mobile_phone, nil, :value => @signup.mobile_phone.format %>
-      <%= f.text_field_row :home_phone, nil, :value => @signup.home_phone.format %>
-      <%= f.text_field_row :work_phone, nil, :value => @signup.work_phone.format %>
-    </div>
-  </fieldset>
-
-  <fieldset>
-    <legend>Address</legend>
-    <%= f.text_field_row :address_1 %>
-    <%= f.text_field_row :address_2 %>
-    <%= f.text_field_row :suburb %>
-    <%= f.text_field_row :state %>
-    <%= f.text_field_row :postcode %>
-  </fieldset>
-
-  <fieldset>
-    <%= render :partial => 'assistance_you_can_offer', :locals => {:f => f} %>
-  </fieldset>
-
-  <fieldset>
-      <%= render :partial => 'conditions_at_home', :locals => {:f => f} %>
-  </fieldset>
-
-  <fieldset>
-      <%= render :partial => 'termsandconditions', :locals => {:f => f} %>
-      <%= f.submit "I accept. Register me." %>
-  </fieldset>
-
-  <div class="clear">
-  </div>
-
+  <%= render :partial => 'shared/carer/carer_form_fields', :locals => {:f => f} %>
 <% end %>

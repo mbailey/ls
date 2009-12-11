@@ -1,0 +1,12 @@
+%h1 Add an approved foster carer
+
+%p
+  This form is for admins to add pre-approved carers to the system.
+  
+%p
+  Applications to become a foster carer can be made at
+  = link_to signup_url, signup_url
+ 
+- form_for([:admin, @carer]) do |f|
+  = f.error_messages
+  = render :partial => 'carer_form_fields', :locals => {:f => f}

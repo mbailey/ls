@@ -1,0 +1,27 @@
+%legend Assistance you can offer
+.row
+  = f.label :can_keep_dogs, 'Number of dogs?'
+  = f.select :can_keep_dogs, (0..2).to_a
+  
+.row.clear
+  = f.label :can_keep_cats, 'Number of cats?'
+  = f.select :can_keep_cats, (0..6).to_a
+  
+.clear
+  = f.text_field_row :can_keep_other, 'Other (please specify)', 'size' => 60
+  
+.row.clear	
+  = f.label :can_transport, 'Are you able to transport the animals to and from the hospital for weekly checkups?'
+  Yes 
+  = f.radio_button :can_transport, true
+  No
+  = f.radio_button :can_transport, false
+	
+.row.clear
+  = f.label :can_administer_medical_care, 'Are you able to administer basic medical care under vet advice if required?'
+  Yes
+  = f.radio_button :can_administer_medical_care, true
+  No
+  = f.radio_button :can_administer_medical_care, false
+.clear
+  = f.text_field_row :special_skills, 'Please list any relevant experience such as vet nursing, dog training etc?', 'size' => 60

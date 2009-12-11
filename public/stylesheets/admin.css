@@ -93,3 +93,6 @@ div.edit_signup textarea {width: 440px;}
 	font-size: 12px;
 }
 
+/* =New signup form */
+#new_carer label { display: block; width: auto; }
+#new_carer fieldset {width: 760px;}
