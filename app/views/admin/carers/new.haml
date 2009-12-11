@@ -7,6 +7,6 @@
   Applications to become a foster carer can be made at
   = link_to signup_url, signup_url
  
-- form_for([:admin, @carer]) do |f|
+- form_for([:admin, @carer], :html => { :multipart => true }) do |f|
   = f.error_messages
   = render :partial => 'carer_form_fields', :locals => {:f => f}

@@ -75,8 +75,8 @@ class Admin::CarersController < Admin::BaseController
 
     respond_to do |format|
       if @carer.save
-        flash[:notice] = 'Submission was accepted.'
-        format.html
+        flash[:notice] = 'Carer was added.'
+        format.html { redirect_to([:admin, @carer]) }
         format.xml  { render :xml => @carer, :status => :created, :location => @carer }
       else
         format.html { render :action => "new" }

@@ -1,5 +1,4 @@
-+ make it simple for admin to add carer into system
-  - existing foster carers
++ welcome video
 
 + homechecks
   - list should show day and number for that day
