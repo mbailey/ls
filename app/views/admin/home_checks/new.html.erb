@@ -28,7 +28,7 @@
 <% content_for :head do %>
   <script type="text/javascript" charset="utf-8">
     function datepickerChanged(dateText, datepicker) {
-      $("#home_checks").load("/admin/home_checks/index_for_date?" + jQuery.param({date: dateText}));
+      $("#home_check_list").load("/admin/home_checks/index_for_date?" + jQuery.param({date: dateText}));
     }
     
     $(function() {
