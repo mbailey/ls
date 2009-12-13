@@ -24,9 +24,9 @@ table.listing {
 
 
 /* New home check page styles */
-body#new_home_check_page div.row.clear { clear: left; }
-body#new_home_check_page div#home_checks { width: 400px; float: right; }
-body#new_home_check_page div#home_checks table { width: 400px; }
+body#home_checks div.row.clear { clear: left; }
+body#home_checks div#home_check_list { width: 400px; float: right; }
+body#home_checks div#home_check_list table { width: 400px; }
 
 /* Dashboard page */
 #quick_links {float:right; width: 30%;}
