@@ -6,3 +6,4 @@
       %b= @carer.email_address
     %p
       %b= @carer.mobile_phone
+    %p= render :partial => 'admin/shared/capabilities', :locals => { :o => @carer }

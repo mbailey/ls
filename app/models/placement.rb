@@ -3,12 +3,15 @@ class Placement < ActiveRecord::Base
   STATUSES = ['seeking carer', 'with carer', 'closed']
   
   # Special requirements
-  # cage confinement
-  # recovering from surgery
-  # timid cats
-  # oral medication
-  # bandage changes
+  #   cage confinement
+  #   recovering from surgery
+  #   timid cats
+  #   oral medication
+  #   bandage changes
   
+  #   no kids
+  
+  has_and_belongs_to_many :capabilities, :uniq => true
   has_many :invitations
   belongs_to :carer
   belongs_to :animal

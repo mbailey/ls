@@ -1,5 +1,7 @@
 class Animal < ActiveRecord::Base
+  
   has_many :placements
+  has_and_belongs_to_many :capabilities, :uniq => true
   
   has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>", :icon => "50x50#" }  
   

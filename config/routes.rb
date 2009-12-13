@@ -1,5 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :animals
 
   map.resource :user_session
 
@@ -7,6 +6,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :home_checks, :only       => [:index, :show, :update, :edit, :destroy], 
                                   :collection => { :index_for_date => :get }
     admin.resources :animals
+    admin.resources :capabilities
     admin.resources :carers
     admin.resources :signups, :collection => { :pending => :get, :map => :get} do |carer|
       carer.resource :decision

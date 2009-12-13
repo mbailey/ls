@@ -1,0 +1,23 @@
+<h1>Listing capabilities</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+
+<% @capabilities.each do |capability| %>
+  <tr>
+    <td><%=h capability.name %></td>
+    <td><%=h capability.description %></td>
+
+    <td><%= link_to 'Show', [:admin, capability] %></td>
+    <td><%= link_to 'Edit', edit_admin_capability_path(capability) %></td>
+    <td><%= link_to 'Destroy', [:admin, capability], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New capability', new_admin_capability_path %>

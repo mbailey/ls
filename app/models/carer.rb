@@ -2,6 +2,7 @@ class Carer < ActiveRecord::Base
   
   EXPERIENCE_LEVELS = %w(novice intermediate advanced expert)
   
+  has_and_belongs_to_many :capabilities, :uniq => true
   has_many :placements
   has_many :invitations
   has_one  :signup
