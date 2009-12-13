@@ -31,7 +31,7 @@ a:hover {color: #524A41;}
 h1, h2, h3 {color: #2E6AB1; font-weight: normal; margin: 5px 0 15px 0; text-transform: capitalize;}
 h1 {font-size: 30px;}
 h2 {font-size:21px;}
-p {margin-bottom: 10px;}
+p {margin-bottom: 12px;}
 
 
 /* =Tables */
@@ -44,8 +44,8 @@ tr.even { background: #EFEDED;}
 tr:hover, tr.even:hover {background: #E6E4E3;}
 
 /*=Forms in general */
-fieldset {overflow: hidden;background: #F0F8FF; border: 1px solid #F0F8FF; border-top: 1px dashed #BCD2EE; border-bottom: 1px dashed #BCD2EE; margin: 6px 0 12px 0; padding: 15px; }
-legend {color: #7CA6D8;background: #fff; border: 1px solid #BCD2EE; padding: 7px 5px 4px; font-size: 18px;}
+fieldset {overflow: hidden;background: #F0F8FF; border: 1px solid #F0F8FF; border-top: 1px dashed #BCD2EE; border-bottom: 1px dashed #BCD2EE; margin: 20px 0; padding: 15px; }
+legend {color: #2E6AB1;background: #fff; border: 1px solid #BCD2EE; padding: 7px 5px 4px; font-size: 18px;}
 label {display: inline-block; width: 90px;}
 input { margin: 2px 20px 5px 0; padding: 5px;}
 input[type='text'], textarea {border: 1px solid #E6E4E3;}

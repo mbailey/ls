@@ -7,10 +7,10 @@
 #admin_nav {margin: 20px; overflow: hidden; border-bottom: 1px solid #CCC9C6; border-top: 1px solid #CCC9C6;   background: #F9F7F7;}
 #admin_nav ul {list-style: none;}
 #admin_nav li a {display: block; float: left; color: #524A41; text-decoration: none; padding: 6px 8px; font-weight: normal; margin: 0 3px 0 0; line-height: 1;}
-#admin_nav li a.current, #admin_nav li a:hover {border-bottom: 3px solid; padding-bottom: 3px;}
+#admin_nav li a.current, #admin_nav li a:hover {border-bottom: 3px solid #524A41; padding-bottom: 3px;}
 
 body#dashboard li.dashboard a, body#animals li.animals a, body#carers li.carers a, body#signups li.signups a, body#home_checks li.home_checks a {
-	background-color: #DDDDF6;
+	border-bottom: 3px solid #524A41; padding-bottom: 3px;
 }
 
 /* a carer's show view */
@@ -48,9 +48,7 @@ div.edit_signup .interview label {display: inline;}
 div.edit_signup textarea {width: 440px;}
 
 /* Displaying objects Facebook style */
-.object_listing { 
-	display:block;
-}
+.object_listing { display:block;}
 
 .object_listing .image {	
 	float:left;
