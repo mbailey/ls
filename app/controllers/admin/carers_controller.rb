@@ -12,7 +12,7 @@ class Admin::CarersController < Admin::BaseController
   def index
     # @carers = Carer.find(:all)
     # @carers = Carer.paginate_by_board_id @board.id, :page => params[:page], :order => 'updated_at DESC'
-    @carers = Carer.paginate :page => params[:page], :order => 'status, id'
+    @carers = Carer.paginate :per_page => 10, :page => params[:page], :order => 'status, id'
 
     respond_to do |format|
       format.html # index.html.erb

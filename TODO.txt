@@ -8,8 +8,6 @@
   - link to running sheet for days in home visits list
   - order homechecks by time when listing them
 
-+ by default, only show applications that 
-
 + carers
   - keep photo of carer
   - move to using S3 for storage
