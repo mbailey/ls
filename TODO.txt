@@ -1,3 +1,4 @@
++ add photo(s) of home
 + welcome video
 
 + homechecks
