@@ -7,9 +7,7 @@ User.find_or_create_by_username(
   :email => 'admin@example.com'
 )
 
-
-
-@v1 = Signup.find_or_create_by_email_address(
+@s1 = Signup.find_or_create_by_email_address(
   :first_name => 'user', 
   :last_name => 'one', 
   :address_1 => '1 The Street', 
@@ -19,7 +17,7 @@ User.find_or_create_by_username(
   :email_address => 'v1@example.com'
 )
 
-@v2 = Signup.find_or_create_by_email_address(
+@s2 = Signup.find_or_create_by_email_address(
   :first_name => 'user', 
   :last_name => 'two', 
   :address_1 => '2 The Street', 
@@ -29,7 +27,7 @@ User.find_or_create_by_username(
   :email_address => 'v2@example.com'
 )
 
-@v3 = Signup.find_or_create_by_email_address(
+@s3 = Signup.find_or_create_by_email_address(
   :first_name => 'user', 
   :last_name => 'three', 
   :address_1 => '3 The Street', 
@@ -39,26 +37,40 @@ User.find_or_create_by_username(
   :email_address => 'v3@example.com'
 )
 
-@v4 = Signup.find_or_create_by_email_address(
-  :first_name => 'user', 
-  :last_name => 'four', 
+@capabilities = [ 'cage confinement',
+  'recovering from surgery',
+  'timid cats',
+  'oral medication',
+  'bandage changes',
+  'no kids' ].collect {|c| Capability.find_or_create_by_name c }
+
+@c1 = Carer.find_or_create_by_email_address(
+  :email_address => 'v4@example.com',
+  :first_name => 'John', 
+  :last_name => 'Smith', 
   :address_1 => 'Upstairs', 
   :address_2 => '4 The Street', 
-  :suburb => 'Somewhereville', 
-  :postcode => '3001', 
-  :mobile_phone => '0400444444',
-  :email_address => 'v4@example.com'
+  :suburb => 'Lustawere', 
+  :postcode => '3020', 
+  :mobile_phone => '0400444444'
 )
+File.open('data/images/mike.jpg') { |image_file| @c1.image = image_file }
+@c1.save
+@c1.capabilities << Capability.first
 
-@v5 = Signup.find_or_create_by_email_address(
-  :first_name => 'user', 
-  :last_name => 'five', 
-  :address_1 => '5 The Street', 
-  :suburb => 'Somewhereville', 
-  :postcode => '3001', 
-  :mobile_phone => '0400555555',
-  :email_address => 'v5@example.com'
+@c2 = Carer.find_or_create_by_email_address(
+  :first_name => 'Jane', 
+  :last_name => 'Smith', 
+  :address_1 => '12 Tapes Lane', 
+  :suburb => 'Bentleigh', 
+  :postcode => '3043', 
+  :mobile_phone => '0408336276',
+  :email_address => 'jane@example.com'
 )
+File.open('data/images/girl_sketch.jpg') { |image_file| @c2.image = image_file }
+@c2.save
+@c1.capabilities << Capability.last
+
 
  
 
