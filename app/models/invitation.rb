@@ -9,6 +9,8 @@ class Invitation < ActiveRecord::Base
   named_scope :accepted, :conditions => {:response_type => 'accept'}
   named_scope :declined, :conditions => {:response_type => 'decline'}
   
+  validates_presence_of :carer
+  
   def status
     response_type || 'not yet responded'
   end
