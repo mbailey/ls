@@ -1,145 +1,39 @@
-+ add photo(s) of home
-+ welcome video
+Milestone 1 - Lort Smith Animal Hospital pilot
+==============================================
++ change default animal thumbnail to be blue like default carer thumbnail
++ add signups to seed data (for development only)
++ carer
+  + show view needs edit link
++ homechecks
+  - editing should use same interface as adding
+  - list to show days and number of homechecks
+  - view map and running sheet for one day
+  - order by time when listing
+
+
+Milestone 2 - launch
+====================
++ welcome video - introduce system on front page
++ homechecks
+  + option for morning/afternoon booking timeslots
+  + reorder within timeslot based on locations
+
+
+
+Future
+======
++ add photo(s) of carer's home
++ move to using S3 for storage
+
+
+
+
 
 + homechecks
-  - list should show day and number for that day
-    - view for a day should show map and running sheet
-  - can't book more than one for same timeslot
-  - view running sheet for one day
-  - link to running sheet for days in home visits list
-  - order homechecks by time when listing them
 
-+ carers
-  - keep photo of carer
-  - move to using S3 for storage
-
-
-+ move "logged in" links to RHS
-
-+ Animal
-  + add kind
 
 + Ensure there can't be more than one open placement for an animal
 
-+ fix 'book a home check'
-  - if you add notes but don't mark it completed the 'process list' 
-    tells you to create one
-
-
-Add users
-- name
-- email
-- password
-- role
-- created_by
-
-foster_carer
-- type [carer,volly]
-- date_created
-- home_check_date
-- police_check_date
-- review periods [fortnightly, weekly, monthly] # how often to bring in
-- available
-- status [application being processed, active, not active, not suitable] # track change
-- grading [entry]
-- where_keeping checkbox? [backyard, garage, laundry, en suite, verandah, spare room, entire house]
-- home visit comments
-- competancies
-  - cage confinemant
-  - cat flu
-  - emergency boarders
-  - ear meds
-  - oral meds
-  - eye meds
-  - mange
-  - parvo
-  - mum and bubs
-  - ringworm
-  - 28 day dogs
-  - 28 day cats
-- grading [entry level, competent, experienced, highly experienced]
-- manageability [green, yellow, red]
-- equipment
-  - confinement cage
-  - play pen
-  - foster care pack
-  
-carer_status
-- carer_id
-- status
-- created_at
-- created_by
-
-capabilities
-- available
-- kind [dog, puppy, cat, kitten, rabbit, ferret, fish, bird]
-- location [inside, outside]
-- approved by
-- deleted_at
 
 
 
-
-
-What kind of shelter is available outside?
-: text field
-
-# Why do you want to be involved?
-Moving overseas
-loves kittens, hates cats
-loves cookies
-
-# How did you hear about foster care program?
-# Have you been involved in foster care program?
-  # Details including organizations name
-# What previous animal experience have you had?
-# Which of the following would you foster?
-  - injured dogs
-  - puppies
-  - puppies with mum
-  - injured cats
-  - kittens
-  - kittens with mum
-  
-# Medicating cats
-# Medicating dogs
-
-
-
-
-
-
-
-
-
-
-
-Milestone 1
-
-* populate missing latlngs
-
-* add validations for new fields
-* add new field to tests
-
-* generate csv
-* what fields to show in list
-* show total count on list
-
-# INFO FROM LUKE #############################
-* get details for mailout
-	subject line
-	from name
-	from email
-	reply to
-* verify campaign monitor email contact@fun4paws.com.au
-* enter credit card info for campaign monitor
-
-
-Milestone 2
-* Send confirmation email: add email_confirmed
-
-
-# Reporting
-
-
-# Carer.find(:all, :origin => owner, :within => 1)
