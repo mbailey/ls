@@ -4,11 +4,19 @@
   <%= f.error_messages %>
 
   <div class="row clear">
+    <%= f.label 'Applicant' %>
+    <%= @home_check.signup.name %>
+  </div>
+  <div class="row clear">
+    <%= f.label 'Address' %>
+    <%= @home_check.signup.address %>
+  </div>
+  <div class="row clear">
     <%= f.label :performed_by_id %>
     <%= f.collection_select :performed_by_id, User.all, :id, :name %>
   </div>
   <div class="row clear">
-    <%= f.label :scheduled_at %>
+    <%= f.label :scheduled_at, 'Performed at' %>
     <%= f.datetime_select :scheduled_at %>
   </div>
   <div class="row clear">
