@@ -1,7 +1,7 @@
 class AnimalKind < ActiveRecord::Base
   
-  has_one :carer
-  has_one :animal
+  has_many :carers
+  has_many :animals
   
   validates_uniqueness_of :name
   

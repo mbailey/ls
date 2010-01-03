@@ -2,6 +2,24 @@ class Carer < ActiveRecord::Base
   
   EXPERIENCE_LEVELS = %w(novice intermediate advanced expert)
   
+  # Search for a carer like this
+  # Carer.with_animal_kind(Animal.first.animal_kind).with_capabilities(Animal.first.capabilities)
+  #
+  # Filter carers on the kinds of animals they can take
+  named_scope :with_animal_kind, lambda {|animal_kind|
+    { :joins => :animal_kinds, :conditions => ['animal_kinds.id = ?', animal_kind.id] }
+  }
+  #
+  # Filter carers on capabilities
+  named_scope :with_capabilities, lambda { |capabilities| 
+    { :joins => [:capabilities], :group => 'capabilities_carers.carer_id', :conditions => ['capability_id in (?)', capabilities.map(&:id)], :having => ['count(distinct(capability_id)) >= ?', capabilities.size] }
+  }
+  # This above solution is funky. Return carers where the grouped result has at least the same number 
+  # of entries as there are capabilities required. How do other people do this?
+  #
+  # select carer_id from capabilities_carers where capability_id in (1,3) group by carer_id having count(distinct(capability_id)) >= 1;
+
+  
   has_and_belongs_to_many :capabilities, :uniq => true
   has_and_belongs_to_many :animal_kinds, :uniq => true
   has_many :placements

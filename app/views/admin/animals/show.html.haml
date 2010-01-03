@@ -12,7 +12,11 @@
 
 - if @animal.current_placement
   = render :partial => 'admin/placements/placement', :object => @animal.current_placement
-      
+
+- if ! @potential_carers.blank?
+  %h2= "Potential Carers (#{@potential_carers.size})"
+  - @potential_carers.each do |potential_carer|
+    =object_listing potential_carer     
     
 %br
 = link_to 'Edit', edit_admin_animal_path(@animal)

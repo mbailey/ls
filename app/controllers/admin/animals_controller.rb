@@ -14,6 +14,9 @@ class Admin::AnimalsController < Admin::BaseController
   # GET /animals/1.xml
   def show
     @animal = Animal.find(params[:id])
+    if @animal.placement_status == 'seeking_carer'
+      @potential_carers = Carer.with_animal_kind(@animal.animal_kind).with_capabilities(@animal.capabilities)
+    end
 
     respond_to do |format|
       format.html # show.html.erb

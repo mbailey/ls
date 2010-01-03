@@ -82,5 +82,9 @@ AnimalKind.all.each_with_index do |kind, i|
   Animal.find_or_create_by_animal_kind_id(:animal_kind_id => kind.id, :name => "animal_#{i}", :identifier => "#{i}")
 end
 
+Animal.first.capabilities = Capability.all
+Animal.last.capabilities << Capability.first
+
+
  
 

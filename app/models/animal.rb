@@ -11,8 +11,17 @@ class Animal < ActiveRecord::Base
   
   named_scope :limit, lambda { |num| { :limit => num } }
   
+   # Filter animals by kinds
+   named_scope :animal_kind_in, lambda {|animal_kinds|
+     { :joins => :animal_kind, :conditions => ['animal_kinds.id in (?)', animal_kinds.map(&:id)] }
+   }
+     
   validates_uniqueness_of :identifier
   validates_presence_of :animal_kind
+  
+  def potential_carers
+    Carer.with_animal_kind(animal_kind).with_capabilities(capabilities)
+  end
   
   def current_placement
     placements.current.first
