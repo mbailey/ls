@@ -1,3 +1,5 @@
+require 'faker'
+
 User.find_or_create_by_username(
   :first_name => 'admin',
   :last_name => 'account',
@@ -71,6 +73,9 @@ File.open('data/images/girl_sketch.jpg') { |image_file| @c2.image = image_file }
 @c2.save
 @c1.capabilities << Capability.last
 
+Animal::KINDS.each_with_index do |kind, i|
+  Animal.find_or_create_by_kind(:kind => kind, :name => "animal_#{i}", :identifier => "#{i}")
+end
 
  
 
