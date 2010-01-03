@@ -7,3 +7,6 @@
     %p
       %b= @carer.mobile_phone
     %p= render :partial => 'admin/shared/capabilities', :locals => { :o => @carer }
+    
+%br
+= link_to 'Edit', edit_admin_carer_path(@carer)

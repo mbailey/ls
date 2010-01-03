@@ -4,6 +4,7 @@ Milestone 1 - Lort Smith Animal Hospital pilot
 + add signups to seed data (for development only)
 + carer
   + show view needs edit link
+  + manage capabilities
 + homechecks
   - editing should use same interface as adding
   - list to show days and number of homechecks
@@ -13,6 +14,7 @@ Milestone 1 - Lort Smith Animal Hospital pilot
 
 Milestone 2 - launch
 ====================
++ in place editing for animal + carer
 + welcome video - introduce system on front page
 + homechecks
   + option for morning/afternoon booking timeslots
