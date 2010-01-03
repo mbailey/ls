@@ -1,6 +1,5 @@
 
 %h2= o.class == Animal ? 'Requirements' : 'Capabilities'
-%capabilities_list
-  %ul
-    - o.capabilities.each do |capability|
-      %li= capability.name
+%ul.capabilities_list
+  - o.capabilities.each do |capability|
+    %li= capability.name
