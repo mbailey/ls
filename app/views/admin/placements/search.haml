@@ -1,7 +1,7 @@
 - form_for(:search, @search, :url => admin_placements_path, :html => { :method => :get }) do |f|
   %p
     = f.label :kind
-    = f.select :kind, Animal::KINDS
+    = f.select :kind, AnimalKind.all.collect {|k| [ k.name, k.id ] }
 
   %p
     = f.label :hours_at_home

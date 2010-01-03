@@ -5,8 +5,8 @@
       = f.error_messages
 
       .row.clear
-        = f.label :kind   
-        = f.select :kind, Animal::KINDS
+        = f.label :animal_kind_id   
+        = f.select :animal_kind_id, AnimalKind.all.collect {|k| [ k.name, k.id ] }
     
       .row.clear
         = f.label :name

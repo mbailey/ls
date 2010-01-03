@@ -14,7 +14,7 @@
       %legend Search for something
       %p
         = f.label :kind
-        = f.select :kind, Animal::KINDS
+        = f.select :kind, AnimalKind.all.collect {|k| [ k.name, k.id ] }
 
       %p
         = f.label :hours_at_home

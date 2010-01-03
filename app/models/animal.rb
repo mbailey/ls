@@ -1,6 +1,6 @@
 class Animal < ActiveRecord::Base
   
-  KINDS = ['Large Dog', 'Medium Dog', 'Small Dog', 'Puppy', 'Cat', 'Mum with kittens', 'Kittens', 'Other']
+  # KINDS = ['Large Dog', 'Medium Dog', 'Small Dog', 'Puppy', 'Cat', 'Mum with kittens', 'Kittens', 'Other']
   
   has_many :placements
   has_and_belongs_to_many :capabilities, :uniq => true
