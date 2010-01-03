@@ -9,7 +9,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091213121356) do
+ActiveRecord::Schema.define(:version => 20100103073844) do
+
+  create_table "animal_kinds", :force => true do |t|
+    t.string "name"
+  end
+
+  create_table "animal_kinds_carers", :id => false, :force => true do |t|
+    t.integer "animal_kind_id"
+    t.integer "carer_id"
+  end
 
   create_table "animals", :force => true do |t|
     t.string   "name"
@@ -27,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20091213121356) do
     t.string   "age"
     t.string   "color"
     t.string   "breed"
+    t.integer  "animal_kind_id"
   end
 
   create_table "animals_capabilities", :id => false, :force => true do |t|
@@ -63,6 +73,7 @@ ActiveRecord::Schema.define(:version => 20091213121356) do
     t.string   "work_phone"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email_address"
     t.integer  "can_keep_dogs"
     t.integer  "can_keep_cats"
     t.string   "can_keep_other"
@@ -77,22 +88,21 @@ ActiveRecord::Schema.define(:version => 20091213121356) do
     t.boolean  "can_transport"
     t.boolean  "requires_financial_support"
     t.integer  "offer_duration"
-    t.string   "email_address"
     t.boolean  "will_take_stray"
     t.string   "how_secure"
-    t.integer  "dog_safe_gates",              :limit => 1
+    t.boolean  "dog_safe_gates"
     t.string   "special_skills"
     t.boolean  "can_administer_medical_care"
     t.float    "lat"
     t.float    "lng"
-    t.string   "status",                                   :default => "pending"
+    t.string   "status",                      :default => "pending"
     t.boolean  "interview_completed"
     t.text     "interview_notes"
     t.datetime "interview_date"
     t.integer  "interview_user_id"
     t.string   "experience_level"
     t.string   "state"
-    t.string   "country",                                  :default => "Australia"
+    t.string   "country",                     :default => "Australia"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -110,7 +120,7 @@ ActiveRecord::Schema.define(:version => 20091213121356) do
     t.integer  "performed_by_id"
   end
 
-  create_table "placement_requests", :force => true do |t|
+  create_table "invitations", :force => true do |t|
     t.integer  "placement_id"
     t.integer  "carer_id"
     t.datetime "request_date"

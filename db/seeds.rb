@@ -39,7 +39,8 @@ User.find_or_create_by_username(
   :email_address => 'v3@example.com'
 )
 
-@capabilities = [ 'cage confinement',
+@capabilities = [ 
+  'cage confinement',
   'recovering from surgery',
   'timid cats',
   'oral medication',
@@ -73,8 +74,12 @@ File.open('data/images/girl_sketch.jpg') { |image_file| @c2.image = image_file }
 @c2.save
 @c1.capabilities << Capability.last
 
-Animal::KINDS.each_with_index do |kind, i|
-  Animal.find_or_create_by_kind(:kind => kind, :name => "animal_#{i}", :identifier => "#{i}")
+['Large Dog', 'Medium Dog', 'Small Dog', 'Puppy', 'Cat', 'Mum with kittens', 'Kittens', 'Other'].each do |animal_kind|
+  AnimalKind.find_or_create_by_name(:name => animal_kind)
+end
+
+AnimalKind.all.each_with_index do |kind, i|
+  Animal.find_or_create_by_animal_kind_id(:animal_kind_id => kind.id, :name => "animal_#{i}", :identifier => "#{i}")
 end
 
  
