@@ -7,6 +7,8 @@
     %p
       %b ID:
       = @animal.identifier
+    %p= render :partial => 'admin/shared/capabilities', :locals => { :o => @animal }
+
 
 - if @animal.current_placement
   = render :partial => 'admin/placements/placement', :object => @animal.current_placement
