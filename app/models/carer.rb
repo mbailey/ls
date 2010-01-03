@@ -8,7 +8,9 @@ class Carer < ActiveRecord::Base
   has_one  :signup
   has_one  :home_check, :through => :signup
   
-  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>", :icon => "50x50#" }  
+  has_attached_file :image, 
+    :styles => { :medium => "300x300>", :thumb => "100x100>", :icon => "50x50#" },
+    :default_url => "/images/default/:style/missing_person.gif"
 
   acts_as_mappable
   validates_presence_of :first_name, :last_name
