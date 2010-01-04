@@ -1,4 +1,10 @@
 class Admin::AnimalsController < Admin::BaseController
+  
+  def invite
+    @carers = Carer.all
+  end
+  
+  
   # GET /animals
   # GET /animals.xml
   def index

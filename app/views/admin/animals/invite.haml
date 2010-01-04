@@ -1,0 +1,25 @@
+
+#invite_panel_container
+  %h2 Carers
+ 
+  #invite_panel
+
+    - form_for([:admin, @carers.first], :html => { :multipart => true }) do |f|
+
+      .filters
+        .foo{:style => "font-size:14px; padding:3px 10px;"} Select Carers to invite
+
+      %ul.carers{:style=>"height: 210px;"}
+        - @carers.each do |carer|
+          %li{:carer_id => carer.id, :class => ('disabled' if carer.id % 3 == 1)}
+            %a{:onclick=>"fs.click(this.parentNode); return false;", :title=>carer.name, :href=>"#"}
+              =image_tag carer.image.url(:icon), :alt => carer.name, :title => carer.name
+              %strong= carer.name
+      %br
+      %br
+      = f.label :name, "Write them a little msg", :style => "width: 605px;"
+      = f.text_area :name, :rows => 4, :style => "width: 605px;"
+      %br
+      %br
+      = f.submit 'Send invitations'
+    

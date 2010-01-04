@@ -48,14 +48,14 @@ User.find_or_create_by_username(
   'no kids' ].collect {|c| Capability.find_or_create_by_name c }
 
 @c1 = Carer.find_or_create_by_email_address(
-  :email_address => 'v4@example.com',
   :first_name => 'John', 
   :last_name => 'Smith', 
   :address_1 => 'Upstairs', 
   :address_2 => '4 The Street', 
   :suburb => 'Lustawere', 
   :postcode => '3020', 
-  :mobile_phone => '0400444444'
+  :mobile_phone => '0400444444',
+  :email_address => 'v4@example.com'
 )
 File.open('data/images/mike.jpg') { |image_file| @c1.image = image_file }
 @c1.save
@@ -73,6 +73,29 @@ File.open('data/images/mike.jpg') { |image_file| @c1.image = image_file }
 File.open('data/images/girl_sketch.jpg') { |image_file| @c2.image = image_file }
 @c2.save
 @c1.capabilities << Capability.last
+
+@c3 = Carer.find_or_create_by_email_address(
+  :first_name => 'Fred', 
+  :last_name => 'Nerks', 
+  :address_1 => 'Upstairs', 
+  :address_2 => '4 The Street', 
+  :suburb => 'Lustawere', 
+  :postcode => '3020', 
+  :mobile_phone => '0400444444',
+  :email_address => 'c3@example.com'
+)
+
+100.times do
+  c = Carer.find_or_create_by_email_address(
+    :first_name => Faker::Name.first_name, 
+    :last_name => Faker::Name.last_name, 
+    :address_1 => Faker::Address.street_address, 
+    :suburb => Faker::Address.uk_county, 
+    :postcode => Faker.numerify('####'), 
+    :mobile_phone => Faker.numerify('0400 ### ###'),
+    :email_address => Faker::Internet.free_email
+  )
+end 
 
 ['Large Dog', 'Medium Dog', 'Small Dog', 'Puppy', 'Cat', 'Mum with kittens', 'Kittens', 'Other'].each do |animal_kind|
   AnimalKind.find_or_create_by_name(:name => animal_kind)

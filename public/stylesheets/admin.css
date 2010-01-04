@@ -94,3 +94,89 @@ div.edit_signup textarea {width: 440px;}
 /* =New signup form */
 #new_carer label { display: block; width: auto; }
 #new_carer fieldset {width: 760px;}
+
+#invite_panel_container {
+	-moz-background-clip:border;
+	-moz-background-inline-policy:continuous;
+	-moz-background-origin:padding;
+	background:#F6F6F6 none repeat scroll 0 0;
+	border:1px solid #C1C1C1;
+	padding: 11px;
+}
+
+#invite_panel {
+	width:605px;
+	}
+
+ul.carers a {
+	display:block;
+	height:56px;
+	padding:4px;
+	color:#3B5998;
+	cursor:pointer;
+	outline-style:none;
+	text-decoration:none;
+}
+ul.carers { 
+	list-style-type: none;
+	-moz-background-clip:border;
+	-moz-background-inline-policy:continuous;
+	-moz-background-origin:padding;
+	background:#FFFFFF none repeat scroll 0 0;
+	border-color:-moz-use-text-color #C1C1C1 #C1C1C1;
+	border-style:none solid solid;
+	border-width:medium 1px 1px;
+	height:300px;
+	overflow:auto;
+	padding:0 0 0 3px;
+	z-index:1;
+	font-size:11px;
+	text-align:left;
+}
+
+ul.carers .metadata_subtitle { display: none;}
+
+ul.carers .metadata {
+	color: #000000;
+	font-size:11px;
+    font-weight:normal; 
+    margin-top:2px;
+}
+
+ul.carers a:hover {
+	-moz-background-clip:border;
+	-moz-background-inline-policy:continuous;
+	-moz-background-origin:padding;
+	background:transparent url(/images/carer_background_highlight.gif) no-repeat scroll left top;
+}
+
+ul.carers .disabled a:hover { background:none; }
+ 
+
+ul.carers strong {
+	color:#222222;
+	font-size:11px;
+	font-weight:normal;
+	margin-top:2px;
+	display:block;
+	float:left;
+	width:65px;
+}
+
+ul.carers li {
+	float:left;
+	height:64px;
+	width: 134px;
+	margin:3px;
+	overflow:hidden;
+}
+
+.filters {
+	-moz-background-clip:border;
+	-moz-background-inline-policy:continuous;
+	-moz-background-origin:padding;
+	background:#F6F6F6 none repeat scroll 0 0;
+	border:1px solid #C1C1C1;
+}
+
+.disabled {opacity:0.5;}
