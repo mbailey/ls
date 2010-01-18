@@ -1,46 +1,51 @@
 /* Admin page styles */
+
 /* utilities links */
 #header {position: relative;}
-#header ul{ position: absolute; top: -25px; right: 20px;}
+#header ul {position: absolute; top: -25px; right: 20px;}
 #header li {list-style: none; display: inline;}
 
-#admin_nav {margin: 20px; overflow: hidden; border-bottom: 1px solid #CCC9C6; border-top: 1px solid #CCC9C6;   background: #F9F7F7;}
+#admin_nav {margin: 20px; overflow: hidden; border-bottom: 1px solid #CCC9C6; border-top: 1px solid #CCC9C6; background: #F9F7F7;}
 #admin_nav ul {list-style: none;}
 #admin_nav li a {display: block; float: left; color: #524A41; text-decoration: none; padding: 6px 8px; font-weight: normal; margin: 0 3px 0 0; line-height: 1;}
 #admin_nav li a.current, #admin_nav li a:hover {border-bottom: 3px solid #524A41; padding-bottom: 3px;}
 
-body#dashboard li.dashboard a, body#animals li.animals a, body#carers li.carers a, body#signups li.signups a, body#home_checks li.home_checks a {
-	border-bottom: 3px solid #524A41; padding-bottom: 3px;
-}
-
-/* a carer's show view */
-dl {overflow: hidden; margin-bottom: 20px;}
-dt {display: block; float: left; width: 200px; clear: left; margin-bottom: 10px;}
-dd {display: block; float: left; clear: right;}
-
-table.listing {
-	border-top: 2px solid #70655A;
-}
-
-
-/* New home check page styles */
-body#home_checks div.row.clear { clear: left; }
-body#home_checks div#home_check_list { width: 400px; float: right; }
-body#home_checks div#home_check_list table { width: 400px; }
+body#dashboard li.dashboard a,
+body#animals li.animals a,
+body#carers li.carers a,
+body#signups li.signups a,
+body#home_checks li.home_checks a {border-bottom: 3px solid #524A41; padding-bottom: 3px;}
 
 /* Dashboard page */
-#quick_links {float:right; width: 30%;}
+#quick_links {float: right; width: 30%;}
 #quick_links h2 {color: #524A41;}
 #quick_links ul {list-style: none;}
 #quick_links ul li {margin-bottom: 8px;}
 #searching {width: 60%; margin-bottom: 30px;}
 #searching label {width: 145px;}
-div.recent {margin-bottom:60px;}
+div.recent {margin-bottom: 60px;}
 p.see_all {text-align: right; margin-top: 10px;}
 
-div.animal img {float: right; border: 1px solid #EFEDED; padding: 3px;}
-div.carer img {float: right; border: 1px solid #EFEDED; padding: 3px;}
-div.details {}
+table.listing {border-top: 2px solid #70655A;}
+
+/* New home check page styles */
+body#home_checks div.row.clear {clear: left;}
+body#home_checks div#home_check_list {width: 400px; float: right;}
+body#home_checks div#home_check_list table {width: 400px;}
+
+/* show views for animals and carers */
+div.photo {float: right;}
+div.photo img {border: 1px solid #EFEDED; padding: 3px;}
+div.details {width: 26em; float: left; overflow: hidden;}
+/* but a tiny bit different for edit views
+   when these divs are within a form */
+form div.photo {float: left;}
+form div.photo img {display: block; margin-bottom: 7px;}
+form div.photo label {display: block;}
+/* description textarea in the form */
+p.description label {display: block; margin: 20px 0 7px;}
+p.description textarea {width: 58em; height: 15em; margin-bottom: 10px;}
+
 
 /* Carer's application edit form */
 div.edit_signup label {width: auto; display: block;}
@@ -48,135 +53,31 @@ div.edit_signup .interview label {display: inline;}
 div.edit_signup textarea {width: 440px;}
 
 /* Displaying objects Facebook style */
-.object_listing { display:block;}
-
-.object_listing .image {	
-	float:left;
-	height:50px;
-	overflow:hidden;
-	position:relative;
-	width:50px;
-}
-.object_listing .metadata {
-	float:left;
-	overflow:hidden;
-	padding-left:10px;
-	padding-top:12px;
-	white-space:nowrap;
-}
-
-.object_listing .metadata a {
-	font-size: 15px;
-	font-weight: bold;
-}
-
-.object_listing .metadata {
-	float:left;
-	overflow:hidden;
-	padding-left:10px;
-	padding-top:12px;
-	white-space:nowrap;
-}
-
-.object_listing .metadata a { 
-	text-decoration: none;
-	color: #3B5998; 
-}
-
-.object_listing .metadata a.hover {
-	text-decoration: underline;
-}
-
-.object_listing .metadata_subtitle {
-	font-size: 12px;
-}
+.object_listing {display: block;}
+.object_listing .image {float: left; height: 50px; overflow: hidden; position: relative; width: 50px;}
+.object_listing .metadata {float: left; overflow: hidden; padding-left: 10px; padding-top: 12px; white-space: nowrap;}
+.object_listing .metadata a {font-size: 15px; font-weight: bold;}
+.object_listing .metadata {float: left; overflow: hidden; padding-left: 10px; padding-top: 12px; white-space: nowrap;}
+.object_listing .metadata a {text-decoration: none; color: #3B5998;}
+.object_listing .metadata a.hover {text-decoration: underline;}
+.object_listing .metadata_subtitle {font-size: 12px;}
 
 /* =New signup form */
-#new_carer label { display: block; width: auto; }
+#new_carer label {display: block; width: auto;}
 #new_carer fieldset {width: 760px;}
 
-#invite_panel_container {
-	-moz-background-clip:border;
-	-moz-background-inline-policy:continuous;
-	-moz-background-origin:padding;
-	background:#F6F6F6 none repeat scroll 0 0;
-	border:1px solid #C1C1C1;
-	padding: 11px;
-}
+#invite_panel_container {-moz-background-clip: border; -moz-background-inline-policy: continuous; -moz-background-origin: padding; background: #F6F6F6 none repeat scroll 0 0; border: 1px solid #C1C1C1; padding: 11px;}
+#invite_panel {width: 605px;}
 
-#invite_panel {
-	width:605px;
-	}
+ul.carers a {display: block; height: 56px; padding: 4px; color: #3B5998; cursor: pointer; outline-style: none; text-decoration: none;}
+ul.carers {list-style-type: none; -moz-background-clip: border; -moz-background-inline-policy: continuous; -moz-background-origin: padding; background: #fff none repeat scroll 0 0; border-color: -moz-use-text-color #C1C1C1 #C1C1C1; border-style: none solid solid; border-width: medium 1px 1px; height: 300px; overflow: auto; padding: 0 0 0 3px; z-index: 1; font-size: 11px; text-align: left;}
+ul.carers .metadata_subtitle {display: none;}
+ul.carers .metadata {color: #000; font-size: 11px; font-weight: normal; margin-top: 2px;}
+ul.carers a:hover {-moz-background-clip: border; -moz-background-inline-policy: continuous; -moz-background-origin: padding; background: transparent url(/images/carer_background_highlight.gif) no-repeat scroll left top;}
+ul.carers .disabled a:hover {background: none;}
+ul.carers strong {color: #222; font-size: 11px; font-weight: normal; margin-top: 2px; display: block; float: left; width: 65px;}
+ul.carers li {float: left; height: 64px; width: 134px; margin: 3px; overflow: hidden;}
 
-ul.carers a {
-	display:block;
-	height:56px;
-	padding:4px;
-	color:#3B5998;
-	cursor:pointer;
-	outline-style:none;
-	text-decoration:none;
-}
-ul.carers { 
-	list-style-type: none;
-	-moz-background-clip:border;
-	-moz-background-inline-policy:continuous;
-	-moz-background-origin:padding;
-	background:#FFFFFF none repeat scroll 0 0;
-	border-color:-moz-use-text-color #C1C1C1 #C1C1C1;
-	border-style:none solid solid;
-	border-width:medium 1px 1px;
-	height:300px;
-	overflow:auto;
-	padding:0 0 0 3px;
-	z-index:1;
-	font-size:11px;
-	text-align:left;
-}
+.filters {-moz-background-clip: border; -moz-background-inline-policy: continuous; -moz-background-origin: padding; background: #F6F6F6 none repeat scroll 0 0; border: 1px solid #C1C1C1;}
 
-ul.carers .metadata_subtitle { display: none;}
-
-ul.carers .metadata {
-	color: #000000;
-	font-size:11px;
-    font-weight:normal; 
-    margin-top:2px;
-}
-
-ul.carers a:hover {
-	-moz-background-clip:border;
-	-moz-background-inline-policy:continuous;
-	-moz-background-origin:padding;
-	background:transparent url(/images/carer_background_highlight.gif) no-repeat scroll left top;
-}
-
-ul.carers .disabled a:hover { background:none; }
- 
-
-ul.carers strong {
-	color:#222222;
-	font-size:11px;
-	font-weight:normal;
-	margin-top:2px;
-	display:block;
-	float:left;
-	width:65px;
-}
-
-ul.carers li {
-	float:left;
-	height:64px;
-	width: 134px;
-	margin:3px;
-	overflow:hidden;
-}
-
-.filters {
-	-moz-background-clip:border;
-	-moz-background-inline-policy:continuous;
-	-moz-background-origin:padding;
-	background:#F6F6F6 none repeat scroll 0 0;
-	border:1px solid #C1C1C1;
-}
-
-.disabled {opacity:0.5;}
+.disabled {opacity: 0.5;}

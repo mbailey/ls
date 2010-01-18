@@ -1,12 +1,16 @@
-.carer
+.photo
   = image_tag @carer.image.url(:medium)
-  .details
-    %h1= "#{@carer.name}"
-    %p
-      %b= @carer.email_address
-    %p
-      %b= @carer.mobile_phone
-    %p= render :partial => 'admin/shared/capabilities', :locals => { :o => @carer }
+  
+.details
+  %h1= "#{@carer.name}"
+  %p
+    Email:
+    %b= @carer.email_address
+  %p
+    Mobile:
+    %b= @carer.mobile_phone
+  = render :partial => 'admin/shared/capabilities', :locals => { :o => @carer }
     
 %br
-= link_to 'Edit', edit_admin_carer_path(@carer)
+%p.clear
+  = link_to 'Edit', edit_admin_carer_path(@carer)

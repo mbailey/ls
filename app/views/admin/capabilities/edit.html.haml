@@ -1,0 +1,20 @@
+%h1 Editing capability
+
+= form_for([:admin, @capability]) do |f|
+  = f.error_messages
+
+  %p.row
+  = f.label :name
+  = f.text_field :name
+
+  %p.row
+    = f.label :description
+    = f.text_area :description
+
+  %p.row
+    = f.submit 'Update'
+
+%p.clear
+= link_to 'Show', [:admin, @capability]
+| 
+= link_to 'Back', admin_capabilities_path

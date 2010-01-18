@@ -1,0 +1,13 @@
+%p
+  %b
+    Name:
+  = h @capability.name
+%p
+  %b
+    Description:
+  = h @capability.description
+
+%p
+= link_to 'Edit', edit_admin_capability_path(@capability)
+|
+= link_to 'Back', admin_capabilities_path

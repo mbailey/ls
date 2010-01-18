@@ -1,8 +1,8 @@
-%h1
-  Editing carer
-  = render :partial => 'carer'
+%h1 Editing carer
 
+= render :partial => 'carer'
 
-= link_to 'Show', [:admin, @carer]
-|
-= link_to 'Back', admin_carers_path
+%p.clear
+  = link_to 'Show', [:admin, @carer]
+  |
+  = link_to 'Back', admin_carers_path

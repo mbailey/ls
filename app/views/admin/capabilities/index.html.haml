@@ -1,0 +1,21 @@
+%h1 Listing capabilities
+%table
+  %tr
+    %th Name
+    %th Description
+  - @capabilities.each do |capability|
+  %tr
+    %td
+      = h capability.name
+    %td
+      = h capability.description
+    %td
+      = link_to 'Show', [:admin, capability]
+    %td
+      = link_to 'Edit', edit_admin_capability_path(capability)
+    %td
+      = link_to 'Destroy', [:admin, capability], :confirm => 'Are you sure?', :method => :delete
+
+%br
+%p
+  = link_to 'New capability', new_admin_capability_path

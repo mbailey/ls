@@ -3,6 +3,7 @@
 = render :partial => 'animal'
 
 %br
-= link_to 'Show', [:admin, @animal]
-|
-= link_to 'Back', admin_animals_path
+%p
+  = link_to 'Show', [:admin, @animal]
+  |
+  = link_to 'Back', admin_animals_path

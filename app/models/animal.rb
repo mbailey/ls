@@ -6,8 +6,8 @@ class Animal < ActiveRecord::Base
   has_and_belongs_to_many :capabilities, :uniq => true
   belongs_to :animal_kind
   has_attached_file :image, 
-    :styles => { :medium => "300x300>", :thumb => "100x100>", :icon => "50x50#" },
-    :default_url => "/images/default/:style/missing_dog.jpg"
+    :styles => { :medium => "300x300>", :thumb => "100x100>", :icon => "45x45#" },
+    :default_url => "/images/default/:style/missing_pet.png"
   
   named_scope :limit, lambda { |num| { :limit => num } }
   

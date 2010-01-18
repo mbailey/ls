@@ -1,46 +1,43 @@
-.animal
-  - form_for([:admin, @animal], :html => { :multipart => true }) do |f|
-    .details
+- form_for([:admin, @animal], :html => { :multipart => true }) do |f| 
+  .details
+    = f.error_messages
+
+    %p.row
+      = f.label :animal_kind_id   
+      = f.select :animal_kind_id, AnimalKind.all.collect {|k| [ k.name, k.id ] }
   
-      = f.error_messages
-
-      .row.clear
-        = f.label :animal_kind_id   
-        = f.select :animal_kind_id, AnimalKind.all.collect {|k| [ k.name, k.id ] }
-    
-      .row.clear
-        = f.label :name
-        = f.text_field :name
-        
-      .row.clear
-        = f.label :identifier
-        = f.text_field :identifier
-        
-      .row.clear
-        = f.label :sex
-        = f.select :sex, [:male, :female]
-        
-      .row.clear
-        = f.label :age
-        = f.text_field :age
-        
-      .row.clear
-        = f.label :color, 'Colour'
-        = f.text_field :color
-        
-      .row.clear
-        = f.label :breed
-        = f.text_field :breed
- 
-      .row.clear
-        = f.label :description   
-        = f.text_area :description
-
-    .photo{:style=>'padding: 30px'}
-      = image_tag @animal.image.url(:medium)
+    %p.row
+      = f.label :name
+      = f.text_field :name
       
-      = f.label :image
-      = f.file_field :image
+    %p.row
+      = f.label :identifier
+      = f.text_field :identifier
       
-    .row.clear 
-      = f.submit 'Update'
+    %p.row
+      = f.label :sex
+      = f.select :sex, [:male, :female]
+      
+    %p.row
+      = f.label :age
+      = f.text_field :age
+      
+    %p.row
+      = f.label :color, 'Colour'
+      = f.text_field :color
+      
+    %p.row
+      = f.label :breed
+      = f.text_field :breed
+      
+  .photo
+    = image_tag @animal.image.url(:medium)
+    = f.label :image
+    = f.file_field :image
+      
+  %p.description.clear
+    = f.label :description   
+    = f.text_area :description
+      
+  %p.clear 
+    = f.submit 'Update'

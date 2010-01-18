@@ -1,30 +1,28 @@
-.carer
-  - form_for([:admin, @carer], :html => { :multipart => true }) do |f|
-    .details
+- form_for([:admin, @carer], :html => { :multipart => true }) do |f|
+  .details
+    = f.error_messages
+
+    %p.row
+      = f.label :first_name   
+      = f.text_field :first_name
   
-      = f.error_messages
+    %p.row
+      = f.label :last_name
+      = f.text_field :last_name
+  
+    %p.row
+      = f.label :mobile_phone
+      = f.text_field :mobile_phone
 
-      .row.clear
-        = f.label :first_name   
-        = f.text_field :first_name
-    
-      .row.clear
-        = f.label :last_name
-        = f.text_field :last_name
-    
-      .row.clear
-        = f.label :mobile_phone
-        = f.text_field :mobile_phone
- 
-      .row.clear
-        = f.label :email_address 
-        = f.text_field :email_address
+    %p.row
+      = f.label :email_address 
+      = f.text_field :email_address
 
-    .photo{:style=>'padding: 30px'}
-      = image_tag @carer.image.url(:medium)
-      
+  .photo
+    = image_tag @carer.image.url(:medium)
+    %p.row
       = f.label :image
       = f.file_field :image
-      
-    .row.clear 
-      = f.submit 'Update'
+    
+  %p.clear
+    = f.submit 'Update'

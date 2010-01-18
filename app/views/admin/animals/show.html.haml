@@ -1,13 +1,14 @@
-.animal
+.photo
   = image_tag @animal.image.url(:medium)
-  .details
-    %h1= "#{@animal.name}"
-    %p
-      %b= @animal.kind
-    %p
-      %b ID:
-      = @animal.identifier
-    %p= render :partial => 'admin/shared/capabilities', :locals => { :o => @animal }
+  
+.details
+  %h1= "#{@animal.name}"
+  %p
+    %b= @animal.kind
+  %p
+    %b ID:
+    = @animal.identifier
+  %p= render :partial => 'admin/shared/capabilities', :locals => { :o => @animal }
 
 
 - if @animal.current_placement
@@ -19,4 +20,5 @@
     =object_listing potential_carer     
     
 %br
-= link_to 'Edit', edit_admin_animal_path(@animal)
+%p.clear
+  = link_to 'Edit', edit_admin_animal_path(@animal)

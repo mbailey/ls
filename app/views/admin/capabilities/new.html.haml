@@ -1,0 +1,14 @@
+%h1 New capability
+- form_for([:admin, @capability]) do |f|
+  = f.error_messages
+  %p.row
+    = f.label :name
+    = f.text_field :name
+  %p.row
+    = f.label :description
+    = f.text_area :description
+  %p.row
+    = f.submit 'Create'
+    
+%p.clear
+  = link_to 'Back', admin_capabilities_path
